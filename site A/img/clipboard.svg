@@ -1,0 +1,28 @@
+<!-- Clipboard Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <style>
+      /* Combo 3: Espresso stroke + Peach fill */
+      :root {
+        --stroke: #4A3B32;
+        --clipboard-fill: #E8C9A0;
+      }
+      rect, path { stroke: var(--stroke); }
+      .clipboard { fill: var(--clipboard-fill); }
+      .check { fill: none; stroke: var(--stroke); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <!-- Clipboard body -->
+  <rect x="44" y="52" width="112" height="120" rx="10" class="clipboard" stroke-width="10"/>
+  
+  <!-- Top tab -->
+  <rect x="74" y="34" width="52" height="28" rx="5" class="clipboard" stroke-width="10"/>
+  
+  <!-- Checkmarks (left) -->
+  <path d="M63 100 L72 109 L85 87" class="check"/>
+  <path d="M63 135 L72 144 L85 122" class="check"/>
+  
+  <!-- Checklist lines (right) -->
+  <rect x="98" y="95" width="42" height="8" rx="2" fill="var(--stroke)"/>
+  <rect x="98" y="130" width="42" height="8" rx="2" fill="var(--stroke)"/>
+</svg>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowJoe — Stay in the Flow, Bro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Baloo+2:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   FLOWJOE BRAND TOKENS — Site B (Brand Guide v1.0)
+   Source: FlowJoe_Brand_Guide.pdf
+   ========================================================= */
+:root{
+  /* 2. Core Color Palette */
+  --color-deep-cocoa:     #2D251E; /* primary typography, dark navbar, structural containers */
+  --color-warm-alabaster: #F9F6F0; /* primary page backgrounds, workspace canvas */
+  --color-sage-olive:     #4A5842; /* secondary headers, positive actions, node groups */
+  --color-flow-orange:    #E25C38; /* CTAs, active branding, focal underlines */
+
+  /* Derived tints (Deep Cocoa spectrum only — no pure black per guide) */
+  --color-cocoa-70:  rgba(45,37,30,.7);
+  --color-cocoa-15:  rgba(45,37,30,.15);
+  --color-cocoa-07:  rgba(45,37,30,.07);
+  --color-sage-30:   rgba(74,88,66,.3);
+  --color-white:     #FFFFFF;
+
+  /* 3. Typography & Hierarchy */
+  --font-display: "Archivo", Arial, sans-serif;   /* FlowJoe Display Heavy stand-in */
+  --font-body:    "Inter", Arial, sans-serif;      /* UI & body copy */
+  --font-logo:    "Baloo 2", "Archivo", sans-serif;/* wordmark (see BRAND-DEVIATIONS.md) */
+  --tracking-display: -0.5px;                      /* per guide */
+
+  /* Shape & spacing — whitespace priority */
+  --radius-card: 14px;
+  --radius-btn:  10px;
+  --space-section: 130px;
+  --shadow-soft: 0 16px 40px var(--color-cocoa-15); /* cocoa spectrum, never black */
+  --glow: radial-gradient(ellipse at center, rgba(226,92,56,.10) 0%, rgba(249,246,240,0) 70%);
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box;} /* absolute box-sizing across all layout blocks */
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--color-warm-alabaster);
+  color:var(--color-deep-cocoa);
+  line-height:1.65;
+}
+h1,h2{
+  font-family:var(--font-display);font-weight:800;
+  letter-spacing:var(--tracking-display);line-height:1.1;
+  color:var(--color-deep-cocoa);
+}
+h3{font-family:var(--font-display);font-weight:500;color:var(--color-sage-olive);}
+a{color:var(--color-flow-orange);}
+.container{max-width:1160px;margin:0 auto;padding:0 32px;}
+section{margin:var(--space-section) 0;}
+
+/* ---------- Wordmark ---------- */
+.wordmark{font-family:var(--font-logo);font-weight:800;text-decoration:none;}
+.wordmark .flow{color:var(--color-deep-cocoa);}
+.wordmark .joe{color:var(--color-flow-orange);}
+.wordmark .cup{font-size:.8em;}
+nav .wordmark .flow{color:var(--color-warm-alabaster);}
+.tagline{font-family:var(--font-logo);font-weight:700;color:var(--color-deep-cocoa);}
+
+/* ---------- Shared components ---------- */
+.btn{
+  display:inline-block;padding:15px 28px;border-radius:var(--radius-btn);
+  text-decoration:none;font-weight:600;font-size:16px;
+  border:1px solid var(--color-cocoa-15);color:var(--color-deep-cocoa);
+}
+.btn.primary{ /* Flow Orange strictly for the single primary action */
+  background:var(--color-flow-orange);color:var(--color-white);
+  border-color:var(--color-flow-orange);
+}
+.btn.sage{background:var(--color-sage-olive);color:var(--color-warm-alabaster);border-color:var(--color-sage-olive);}
+.kicker{
+  display:inline-block;font-size:13px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--color-sage-olive);
+  margin-bottom:14px;
+}
+.focal-underline{
+  display:inline-block;border-bottom:4px solid var(--color-flow-orange);
+  padding-bottom:4px;
+}
+.section-header{text-align:center;max-width:700px;margin:0 auto 70px;}
+.section-header h2{font-size:42px;margin:10px 0 18px;}
+.section-header p{font-size:19px;color:var(--color-cocoa-70);}
+
+/* Placeholder scaffolding for imagery */
+.placeholder{
+  background:var(--color-white);border:1px dashed var(--color-cocoa-15);
+  border-radius:var(--radius-card);display:flex;align-items:center;
+  justify-content:center;color:var(--color-cocoa-70);font-style:italic;
+  text-align:center;
+}
+
+/* Subtle environment glow behind product screens */
+.glow-frame{position:relative;padding:60px;}
+.glow-frame::before{
+  content:'';position:absolute;inset:0;background:var(--glow);
+  pointer-events:none;
+}
+.glow-frame .placeholder{position:relative;box-shadow:var(--shadow-soft);}
+.glow-frame .screenshot{
+  position:relative;display:block;width:100%;height:auto;
+  border-radius:var(--radius-card);box-shadow:var(--shadow-soft);
+}
+
+/* ---------- Nav (dark cocoa) ---------- */
+.navbar{background:var(--color-deep-cocoa);}
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 0;color:var(--color-warm-alabaster);
+}
+nav .wordmark{font-size:30px;}
+.menu{display:flex;gap:36px;font-size:15px;color:var(--color-warm-alabaster);}
+nav .btn.primary{padding:12px 22px;}
+
+/* ---------- Hero ---------- */
+.hero{text-align:center;padding-top:90px;margin-top:0;}
+.hero h1{font-size:64px;max-width:820px;margin:18px auto;}
+.hero .lead{font-size:21px;color:var(--color-cocoa-70);max-width:620px;margin:0 auto 36px;}
+.hero .tagline{font-size:22px;margin:0 0 6px;}
+.btns{display:flex;gap:16px;justify-content:center;margin-bottom:18px;}
+.hero-note{font-size:14px;color:var(--color-cocoa-70);}
+.hero .glow-frame .placeholder{height:540px;}
+
+/* ---------- Feature grid ---------- */
+.features{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.feature{
+  background:var(--color-white);border-radius:var(--radius-card);
+  padding:26px 20px;box-shadow:0 4px 14px var(--color-cocoa-07);
+}
+.feature-icon{font-size:34px;display:block;margin-bottom:12px;}
+.feature h3{font-size:17px;margin:6px 0;}
+.feature p{font-size:14px;margin:0;color:var(--color-cocoa-70);}
+
+/* ---------- Recognition ---------- */
+.recognition{text-align:center;}
+.recognition-items{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:860px;margin:0 auto 50px;}
+.recognition-item{
+  background:var(--color-white);border:1px solid var(--color-cocoa-15);
+  border-radius:50px;padding:11px 22px;font-size:16px;
+}
+.recognition-text{max-width:620px;margin:0 auto;font-size:19px;}
+.recognition-text p{margin:18px 0;}
+.recognition-highlight{font-family:var(--font-display);font-weight:800;font-size:23px;letter-spacing:var(--tracking-display);}
+.recognition-cta{margin-top:44px;font-size:21px;font-weight:600;color:var(--color-sage-olive);}
+
+/* ---------- Tree / node articulation ---------- */
+.tree-section{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center;}
+.tree-canvas{
+  background:var(--color-white);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-soft);padding:44px;position:relative;
+}
+.node-card{
+  display:inline-block;background:var(--color-warm-alabaster);
+  border-radius:10px;padding:12px 18px;font-size:15px;font-weight:500;
+  box-shadow:inset 0 0 0 1px var(--color-cocoa-07), 0 2px 8px var(--color-cocoa-07);
+  margin:10px 8px;
+}
+.node-card.group{color:var(--color-sage-olive);font-weight:600;}
+.node-card.active{box-shadow:inset 0 0 0 2px var(--color-flow-orange), 0 2px 8px var(--color-cocoa-07);}
+.branch-row{padding-left:34px;border-left:1.5px solid var(--color-sage-30);margin-left:22px;}
+.tree-copy h2{font-size:40px;margin-top:0;}
+.tree-copy p{font-size:18px;color:var(--color-cocoa-70);}
+.tree-copy strong{color:var(--color-deep-cocoa);}
+
+/* ---------- Stories ---------- */
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.story{
+  background:var(--color-white);border-radius:var(--radius-card);
+  padding:38px;box-shadow:0 4px 14px var(--color-cocoa-07);
+}
+.story h3{font-size:22px;margin:14px 0;}
+.story-emoji{font-size:38px;}
+.story ul{padding-left:20px;margin:0 0 16px;color:var(--color-cocoa-70);}
+.story li{margin:6px 0;}
+.story-close{font-weight:600;color:var(--color-sage-olive);}
+
+/* ---------- AI band (sage) ---------- */
+.ai{
+  background:var(--color-sage-olive);color:var(--color-warm-alabaster);
+  border-radius:var(--radius-card);padding:80px 60px;text-align:center;
+}
+.ai h2{color:var(--color-warm-alabaster);font-size:40px;margin:0 0 20px;}
+.ai p{font-size:19px;max-width:560px;margin:18px auto;}
+.ai-items{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:28px 0;}
+.ai-item{border:1px solid rgba(249,246,240,.4);border-radius:50px;padding:8px 20px;font-size:15px;}
+.ai-close{font-family:var(--font-display);font-weight:800;font-size:24px;letter-spacing:var(--tracking-display);}
+
+/* ---------- Local-first / future-self ---------- */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.pillar{
+  background:var(--color-white);border-radius:var(--radius-card);
+  padding:44px;box-shadow:0 4px 14px var(--color-cocoa-07);
+}
+.pillar h2{font-size:28px;margin:14px 0;}
+.pillar p{font-size:17px;color:var(--color-cocoa-70);}
+.pillar-emoji{font-size:36px;}
+
+/* ---------- Final CTA (dark cocoa) ---------- */
+.final{
+  background:var(--color-deep-cocoa);color:var(--color-warm-alabaster);
+  border-radius:var(--radius-card);padding:90px 60px;text-align:center;
+}
+.final h2{color:var(--color-warm-alabaster);font-size:46px;margin:0 0 18px;}
+.final p{font-size:19px;max-width:560px;margin:14px auto;}
+.final .tagline{color:var(--color-flow-orange);font-size:22px;}
+.final-scatter{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:30px 0;}
+.final-scatter span{
+  border:1px solid rgba(249,246,240,.25);border-radius:50px;
+  padding:8px 20px;font-size:14px;
+}
+.final-joke{font-size:15px;font-style:italic;color:rgba(249,246,240,.7);}
+
+/* ---------- Footer ---------- */
+footer{
+  padding:44px 0;display:flex;justify-content:space-between;
+  align-items:center;font-size:14px;color:var(--color-cocoa-70);
+}
+footer .wordmark{font-size:24px;}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="navbar">
+  <div class="container">
+    <nav>
+      <a class="wordmark" href="#"><span class="cup">☕</span> <span class="flow">flow</span><span class="joe">joe</span></a>
+      <div class="menu">
+        <span>Product</span><span>Use Cases</span><span>Resources</span><span>Pricing</span>
+      </div>
+      <a class="btn primary" href="#">Download</a>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <p class="tagline">Stay in the Flow, Bro.</p>
+  <h1>Where projects <span class="focal-underline">take shape.</span></h1>
+  <p class="lead">FlowJoe is a visual workspace for makers, managers, and creatives to capture ideas, connect the pieces, and keep projects moving without losing the thread.</p>
+  <div class="btns">
+    <a class="btn primary" href="#">Download Free</a>
+    <a class="btn" href="#">Watch Demo</a>
+  </div>
+  <p class="hero-note">Local-first. Works offline. Your data (and ideas) stay yours.</p>
+  <div class="glow-frame">
+    <img class="screenshot" src="img/screenshot.jpg" alt="FlowJoe workspace canvas">
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<div class="section-header">
+  <span class="kicker">Built for how creative work happens</span>
+  <h2>Everything in one place. Everything in context.</h2>
+</div>
+<section class="features" style="margin-top:0;">
+  <div class="feature"><span class="feature-icon">📝</span><h3>Capture anything</h3><p>Notes, links, files, images, audio, and more. Jot it down and don't lose it.</p></div>
+  <div class="feature"><span class="feature-icon">🔗</span><h3>Connect ideas</h3><p>Visually link concepts and see the big picture emerge.</p></div>
+  <div class="feature"><span class="feature-icon">📊</span><h3>Track progress</h3><p>Tasks, checklists, and status that keep you organized, without boxing you in.</p></div>
+  <div class="feature"><span class="feature-icon">🤖</span><h3>AI that understands</h3><p>Get insights and suggestions with full context, never starting from scratch.</p></div>
+  <div class="feature"><span class="feature-icon">🔒</span><h3>Yours, always</h3><p>Local-first by design. Your data stays yours, and never hits our servers.</p></div>
+</section>
+
+<!-- ============ RECOGNITION ============ -->
+<section class="recognition">
+  <div class="section-header">
+    <span class="kicker">Does this look familiar?</span>
+    <h2>Somewhere in this pile is the project.</h2>
+  </div>
+  <div class="recognition-items">
+    <div class="recognition-item">📁 Downloads Folder</div>
+    <div class="recognition-item">📄 Notes App</div>
+    <div class="recognition-item">🖼 Screenshots</div>
+    <div class="recognition-item">🤖 AI Chats</div>
+    <div class="recognition-item">🗄️ Iterations</div>
+    <div class="recognition-item">🌐 Endless Browser Tabs</div>
+  </div>
+  <div class="recognition-text">
+    <p>The ideas. The decisions. The breakthroughs. The references you'll need later.</p>
+    <p>The problem isn't that you have too much information.</p>
+    <p class="recognition-highlight">The problem is that the context keeps getting lost, and the best ideas are buried.</p>
+  </div>
+  <p class="recognition-cta">Your project deserves better than twenty-seven tabs and a desktop folder.</p>
+</section>
+
+<!-- ============ REFRAME ============ -->
+<section>
+  <div class="section-header">
+    <span class="kicker">Before the first task is assigned</span>
+    <h2>Turn scattered information into <span class="focal-underline">clear direction.</span></h2>
+    <p>Most productivity tools start after a clear plan exists. FlowJoe helps you get there: explore ideas, collect the data, connect related thoughts, compare iterations, track decisions, preserve context. Then move into execution with confidence.</p>
+  </div>
+</section>
+
+<!-- ============ TREE / NODES ============ -->
+<section class="tree-section">
+  <div class="tree-canvas">
+    <div class="node-card group">🚀 Product Launch</div>
+    <div class="branch-row">
+      <div class="node-card">🔬 Research</div>
+      <div class="branch-row">
+        <div class="node-card">Customer Interviews</div>
+        <div class="node-card">Competitor Analysis</div>
+        <div class="node-card">Screenshots</div>
+      </div>
+      <div class="node-card active">🛠 MVP</div>
+      <div class="branch-row">
+        <div class="node-card">Features</div>
+        <div class="node-card">Wireframes</div>
+        <div class="node-card">Tasks</div>
+      </div>
+      <div class="node-card">📣 Marketing</div>
+      <div class="branch-row">
+        <div class="node-card">Messaging</div>
+        <div class="node-card">Assets</div>
+        <div class="node-card">Launch Plan</div>
+      </div>
+    </div>
+  </div>
+  <div class="tree-copy">
+    <span class="kicker">The tree keeps the story connected</span>
+    <h2>Every project has a story. FlowJoe lets you see it take shape.</h2>
+    <p>Projects naturally branch. Ideas lead to research. Research leads to decisions. Decisions lead to action.</p>
+    <p>Inside every node: notes, images, PDFs, audio, video, links, AI conversations, tasks, and summaries — <strong>and FlowJoe remembers the relationships between each one.</strong></p>
+    <p><strong>Every node becomes a tiny world.</strong> Folders are a thing of the past.</p>
+  </div>
+</section>
+
+<!-- ============ STORIES ============ -->
+<div class="section-header">
+  <span class="kicker">Built for the builders</span>
+  <h2>Two makers. One workspace.</h2>
+</div>
+<section class="stories" style="margin-top:0;">
+  <div class="story">
+    <span class="story-emoji">💻</span>
+    <h3>The Solo Developer</h3>
+    <ul>
+      <li>Maps features.</li>
+      <li>Tracks progress and priorities.</li>
+      <li>Captures ideas as they appear.</li>
+      <li>Converts them into AI-readable context.</li>
+    </ul>
+    <p>No complex Jira board required.</p>
+    <p class="story-close">Open the project. See exactly where things stand. Keep moving.</p>
+  </div>
+  <div class="story">
+    <span class="story-emoji">🎧</span>
+    <h3>The Music Creator</h3>
+    <ul>
+      <li>Collects inspiration.</li>
+      <li>Tracks revisions.</li>
+      <li>Connects AI outputs, notes, and references.</li>
+    </ul>
+    <p>Return weeks later.</p>
+    <p class="story-close">Pick up exactly where you left off.</p>
+  </div>
+</section>
+
+<!-- ============ AI ============ -->
+<section class="ai">
+  <h2>Most AI starts with a blank page.<br>FlowJoe starts with context.</h2>
+  <p>Because your project already contains:</p>
+  <div class="ai-items">
+    <span class="ai-item">📝 Notes</span>
+    <span class="ai-item">🔬 Research</span>
+    <span class="ai-item">📌 References</span>
+    <span class="ai-item">🖼 Media</span>
+    <span class="ai-item">✅ Decisions</span>
+    <span class="ai-item">🔗 Relationships</span>
+  </div>
+  <p>FlowJoe's AI can help without making you explain everything from scratch.</p>
+  <p class="ai-close">Less prompting. More progress.</p>
+</section>
+
+<!-- ============ PILLARS ============ -->
+<section class="pillars">
+  <div class="pillar">
+    <span class="pillar-emoji">🏠</span>
+    <h2>Your brain deserves a home that belongs to you.</h2>
+    <p>Local-first. Fast. Private. Built to stay with you long term.</p>
+    <p><strong>Your work remains yours.</strong></p>
+  </div>
+  <div class="pillar">
+    <span class="pillar-emoji">⏳</span>
+    <h2>Build something future you will thank you for.</h2>
+    <p>Three weeks from now. Maybe three months from now. You open the project again. And somehow... you still know exactly what was going on.</p>
+    <p><strong>No archaeological dig required.</strong></p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <p class="tagline">Stay in the Flow, Bro.</p>
+  <h2>Keep your project alive as it grows.</h2>
+  <p>FlowJoe helps you capture ideas, preserve context, and maintain momentum.</p>
+  <p>Start with the project currently spread across:</p>
+  <div class="final-scatter">
+    <span>🌐 12 tabs</span>
+    <span>📁 4 folders</span>
+    <span>📓 3 notebooks</span>
+    <span>🤖 2 AI chats</span>
+    <span>🖼 one mysterious screenshot</span>
+  </div>
+  <a class="btn primary" href="#">Download FlowJoe</a>
+  <p class="final-joke">give "final_final_v2_REAL" a better place to live. :)</p>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <a class="wordmark" href="#"><span class="cup">☕</span> <span class="flow">flow</span><span class="joe">joe</span></a>
+  <div>Capture it. Connect it. Build on it.</div>
+  <div>© 2026 FlowJoe · Mac &amp; Windows</div>
+</footer>
+
+</div>
+</body>
+</html>

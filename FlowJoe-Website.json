@@ -1,0 +1,475 @@
+{
+  "json_file_version": 1781199528532,
+  "data_schema_version": 1,
+  "treeName": "FlowJoe",
+  "flowId": "flow-2adf5c04-3d29-404c-9479-6c6ac79d7010",
+  "roots": [
+    {
+      "_flowJoeMeta": {
+        "entityType": "node",
+        "nodePath": "website"
+      },
+      "slotCount": 1,
+      "childNodeCount": 2,
+      "id": "ded54cbf-fa36-47e0-b23c-431df1633dc0",
+      "name": "website",
+      "images": [
+        {
+          "_flowJoeMeta": {
+            "entityType": "slot",
+            "slotType": "single-item",
+            "slotNumber": 1,
+            "itemCount": 1
+          },
+          "entryId": "gallery-489973df-902e-40f6-9de6-382fd54b0cb8",
+          "src": "indexeddb:file_orig_1781197506280_59301xugt",
+          "notes": "These are the rules that should be followed when building in this direcory. All sub directories will follow it.",
+          "title": "rules.md",
+          "notesUpdatedAt": 1781198631824,
+          "mimeType": "text/markdown",
+          "name": "rules.md",
+          "size": 502,
+          "timestamp": "2026-06-11T17:05:06.280Z",
+          "fileLastModified": 1781195975850,
+          "importedAt": 1781197506280,
+          "sourceTitle": "rules.md",
+          "unfurl": {
+            "status": "idle",
+            "mediaType": "link"
+          },
+          "type": "document"
+        }
+      ],
+      "summary": "We are building a SaaS website where the Product is FlowJoe, and downloadable desktop app for Mac and Windows.  Our positioning in the market is anyone who sits between left and right brain thinking, where organization is a priority and connecting dots/threads/ideas is paramount to accomplishing their task. Examples would be: project or product managers, solo builders, small startups, and creatives.  FlowJoe is a new type of software that we are calling a \"Visual Intelligence Workspace\" because it gives the user a dynamic desktop-like surface from which to organize ideas, spread out documents and media, sort through information, take notes, and interact with AI, pulling content into their \"Flow\" and ultimately building a tree (or visual knowledge base) as a project grows.",
+      "summaryUpdatedAt": 1781198586540,
+      "children": [
+        {
+          "_flowJoeMeta": {
+            "entityType": "child-node",
+            "nodePath": "website > site A",
+            "nodeDepth": 1
+          },
+          "slotCount": 4,
+          "id": "5ddedd20-97b0-49d0-ae09-38a164107bd4",
+          "name": "site A",
+          "images": [
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 1,
+                "itemCount": 1
+              },
+              "entryId": "gallery-f2ad024e-8f5f-4387-aa85-70d55fd7c107",
+              "src": "indexeddb:file_orig_1781197506292_m6pyxher7",
+              "notes": "This file carries some key ideas related to the product and how we might market it.",
+              "title": "FJ-Key-Ideas.md",
+              "notesUpdatedAt": 1781197822469,
+              "mimeType": "text/markdown",
+              "name": "FJ-Key-Ideas.md",
+              "size": 1536,
+              "timestamp": "2026-06-11T17:05:06.291Z",
+              "fileLastModified": 1781063435361,
+              "importedAt": 1781197506291,
+              "sourceTitle": "FJ-Key-Ideas.md",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "type": "document"
+            },
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 2,
+                "itemCount": 1
+              },
+              "entryId": "gallery-e9690ee1-2064-4e7a-af4c-c74e58ce4f77",
+              "src": "indexeddb:file_orig_1781197506298_w0b3x7kgb",
+              "notes": "This file contains an old website draft, you can glean more information from it on the product and brand voice.",
+              "title": "FJ-WebsiteDraft.md",
+              "notesUpdatedAt": 1781197849196,
+              "mimeType": "text/markdown",
+              "name": "FJ-WebsiteDraft.md",
+              "size": 6311,
+              "timestamp": "2026-06-11T17:05:06.298Z",
+              "fileLastModified": 1781063238968,
+              "importedAt": 1781197506298,
+              "sourceTitle": "FJ-WebsiteDraft.md",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "type": "document"
+            },
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 3,
+                "itemCount": 1
+              },
+              "entryId": "gallery-ad2c726d-1b3e-44ea-a1ca-d1e49949d834",
+              "src": "indexeddb:img_1781197506613_amrxagxao",
+              "notes": "This is an example of where the website will lean, with heavy emphasis on creativity, and a warm cafe feeling.",
+              "title": "FlowJoe_Mockup.png",
+              "notesUpdatedAt": 1781197754616,
+              "mimeType": "image/jpeg",
+              "name": "FlowJoe_Mockup.png",
+              "size": 2143051,
+              "timestamp": "2026-06-11T17:05:06.303Z",
+              "fileLastModified": 1780357230791,
+              "importedAt": 1781197506303,
+              "sourceTitle": "FlowJoe_Mockup.png",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "originalKey": "orig_img_1781197506613_amrxagxao"
+            },
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 4,
+                "itemCount": 1
+              },
+              "entryId": "gallery-f2590be3-7a7f-40c9-8428-9366d55151bb",
+              "src": "indexeddb:file_orig_1781197506619_lqopb55r3",
+              "notes": "This is a wireframe going off the Mockup image. Complete the rest of the page using the MD files for copy inspiration. Organzie the CSS into something that resembles a coherent brand, where changes can be made if necessary (e.g. using css vars, seperating styles by it's applicable use-cases). ",
+              "title": "start-wireframe.html",
+              "notesUpdatedAt": 1781198132617,
+              "mimeType": "text/html",
+              "name": "start-wireframe.html",
+              "size": 7514,
+              "timestamp": "2026-06-11T17:05:06.619Z",
+              "fileLastModified": 1780628701233,
+              "importedAt": 1781197506619,
+              "sourceTitle": "start-wireframe.html",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "type": "file"
+            }
+          ],
+          "summary": "This site will optimize for creativity and interpretation.",
+          "summaryUpdatedAt": 1781198229167,
+          "children": []
+        },
+        {
+          "_flowJoeMeta": {
+            "entityType": "child-node",
+            "nodePath": "website > site B",
+            "nodeDepth": 1
+          },
+          "slotCount": 4,
+          "id": "34273a24-9e84-4fbe-8d77-4c1fe9e3b50a",
+          "name": "site B",
+          "images": [
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 1,
+                "itemCount": 1
+              },
+              "entryId": "gallery-078be6ec-6d92-480c-9de9-b70515b36acb",
+              "src": "indexeddb:img_1781197506720_feup2fxfr",
+              "title": "example-brand-img-inspiration.png",
+              "mimeType": "image/jpeg",
+              "name": "example-brand-img-inspiration.png",
+              "size": 2052701,
+              "timestamp": "2026-06-11T17:05:06.624Z",
+              "fileLastModified": 1778279265208,
+              "importedAt": 1781197506624,
+              "sourceTitle": "example-brand-img-inspiration.png",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "originalKey": "orig_img_1781197506720_feup2fxfr"
+            },
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 2,
+                "itemCount": 1
+              },
+              "entryId": "gallery-a74d2f32-79a4-48e9-861f-2719a5bff875",
+              "src": "indexeddb:file_orig_1781197506725_y8rojp7if",
+              "title": "FJ-WebsiteDraft.md",
+              "mimeType": "text/markdown",
+              "name": "FJ-WebsiteDraft.md",
+              "size": 6311,
+              "timestamp": "2026-06-11T17:05:06.725Z",
+              "fileLastModified": 1781063238968,
+              "importedAt": 1781197506725,
+              "sourceTitle": "FJ-WebsiteDraft.md",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "type": "document"
+            },
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 3,
+                "itemCount": 1
+              },
+              "entryId": "gallery-3bfe6ee3-dc32-4f4c-9329-f9658e3b20eb",
+              "src": "indexeddb:pdf_orig_1781197506735_mra8crqxw",
+              "notes": "This brand guide has not been reviewed miticulously. Follow it closely so I can see the result, but there is room for some deviation if brand coherency is necessary. For example: the logo file shows a more creative font, but the guide has all plain fonts. Note any devience in a MD file.",
+              "title": "FlowJoe_Brand_Guide.pdf",
+              "notesUpdatedAt": 1781198989642,
+              "mimeType": "application/pdf",
+              "name": "FlowJoe_Brand_Guide.pdf",
+              "size": 29233,
+              "timestamp": "2026-06-11T17:05:06.734Z",
+              "fileLastModified": 1780347397164,
+              "importedAt": 1781197506735,
+              "sourceTitle": "FlowJoe_Brand_Guide.pdf",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "type": "pdf"
+            },
+            {
+              "_flowJoeMeta": {
+                "entityType": "slot",
+                "slotType": "single-item",
+                "slotNumber": 4,
+                "itemCount": 1
+              },
+              "entryId": "gallery-af9307f9-1722-4ca6-a870-8ee6832b045b",
+              "src": "indexeddb:img_1781197506925_hhxtcxxa6",
+              "title": "flowjoe-logo-with-padding.jpg",
+              "mimeType": "image/jpeg",
+              "name": "flowjoe-logo-with-padding.jpg",
+              "size": 49967,
+              "timestamp": "2026-06-11T17:05:06.794Z",
+              "fileLastModified": 1781051227309,
+              "importedAt": 1781197506794,
+              "sourceTitle": "flowjoe-logo-with-padding.jpg",
+              "unfurl": {
+                "status": "idle",
+                "mediaType": "link"
+              },
+              "originalKey": "orig_img_1781197506925_hhxtcxxa6"
+            }
+          ],
+          "summary": "This site will optimize for following closely to the assets provided, only deviating for the sake of coherency to the overall brand.",
+          "summaryUpdatedAt": 1781198788627,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "preferences": {
+    "schemaVersion": 1,
+    "enabled": true,
+    "selected": {
+      "appearance_theme": true,
+      "appearance_sub_node_themes": true,
+      "appearance_effect": true,
+      "appearance_typography": true,
+      "appearance_gallery_effects": true,
+      "appearance_surface_effects": true,
+      "appearance_glass_effects": true,
+      "appearance_show_toasts": true,
+      "tree_auto_resize": true,
+      "tree_resizer_width": true,
+      "tree_branch_toggle_style": true,
+      "tree_status_indicators": true,
+      "tree_image_counts": true,
+      "tree_child_counts": true,
+      "tree_open_summary_on_new_node": true,
+      "gallery_scrubber": true,
+      "gallery_slot_scrubber": true,
+      "gallery_metadata": true,
+      "gallery_show_notes_titlebar": true,
+      "gallery_show_notes": true,
+      "gallery_missing_placeholder": true,
+      "gallery_wireframe_buttons": true,
+      "gallery_nav_tooltips": true,
+      "gallery_notes_justification": true,
+      "data_audio_player": true,
+      "data_audio_saved_playlists": true,
+      "browser_preferences": true,
+      "data_delete_undo": true,
+      "data_joe_chat": true,
+      "data_flow_mutations": true,
+      "data_joe_voice": true,
+      "data_save_prompt_policy": true,
+      "data_import_action_policy": true,
+      "data_import_prefs_policy": true,
+      "data_reload_close_warning_policy": true,
+      "data_save_reminder": true,
+      "data_document_import_discard_markdown_originals": true,
+      "data_document_import_disable_markdown_copies": true,
+      "data_import_prefixes": true,
+      "data_image_compression": true,
+      "data_custom_placeholder": true,
+      "data_settings_panel_card_order": true
+    },
+    "values": {
+      "tree_auto_resize": true,
+      "tree_resizer_width": "small",
+      "tree_branch_toggle_style": "flat",
+      "tree_status_indicators": true,
+      "tree_image_counts": true,
+      "tree_child_counts": true,
+      "tree_open_summary_on_new_node": true,
+      "gallery_notes_justification": "normal",
+      "gallery_scrubber": {
+        "enabled": true,
+        "location": "bottom",
+        "style": "flat",
+        "sparksEnabled": true,
+        "shadowEnabled": true
+      },
+      "gallery_slot_scrubber": {
+        "enabled": true,
+        "position": "middle",
+        "style": "themed",
+        "thumb": "flat"
+      },
+      "gallery_metadata": {
+        "titleAtTop": true,
+        "led": true,
+        "labels": true,
+        "stackCountBadges": true,
+        "buttonBarLocation": "rail",
+        "railMode": "expanded",
+        "tags": true
+      },
+      "gallery_show_notes_titlebar": true,
+      "gallery_show_notes": true,
+      "gallery_nav_tooltips": true,
+      "appearance_theme": "aurora-3",
+      "appearance_sub_node_themes": true,
+      "appearance_effect": "fireworks",
+      "appearance_typography": {
+        "family": "raleway",
+        "size": "normal",
+        "lineHeight": "normal"
+      },
+      "appearance_gallery_effects": true,
+      "appearance_surface_effects": true,
+      "appearance_glass_effects": true,
+      "appearance_show_toasts": {
+        "enabled": true,
+        "themeMatch": true,
+        "position": "bottom-right"
+      },
+      "data_image_compression": "always",
+      "data_audio_player": {
+        "visible": true,
+        "mode": "continuous",
+        "tagMode": "all"
+      },
+      "data_delete_undo": true,
+      "data_flow_mutations": "propose",
+      "data_settings_panel_card_order": {
+        "appearance": [
+          "theme-settings",
+          "typography-setting-card",
+          "appearance-effects-card",
+          "card-nav-button-tooltips",
+          "card-show-toasts"
+        ],
+        "tree": [
+          "tree-branch-toggle-style-setting-card",
+          "tree-resizer-width-setting-card",
+          "card-status-indicators",
+          "card-child-counts",
+          "card-slot-counts",
+          "card-branch-toggle",
+          "card-open-summary-modal-on-new-node"
+        ],
+        "gallery": [
+          "card-gallery-scrubber",
+          "card-slot-scrubber",
+          "gallery-slot-actions-location-card",
+          "custom-placeholder-container",
+          "card-image-compression",
+          "card-wireframe-buttons",
+          "card-gallery-display"
+        ],
+        "audio": [
+          "audio-player-settings-card",
+          "audio-stack-advance-setting-card"
+        ],
+        "browser": [
+          "browser-startup-setting-card",
+          "browser-homepage-setting-card",
+          "browser-search-setting-card",
+          "browser-tabs-setting-card",
+          "browser-bookmarks-history-setting-card",
+          "browser-downloads-security-setting-card"
+        ],
+        "data": [
+          "delete-undo-setting-card",
+          "anti-nag-prefs-container",
+          "export-prefs-container",
+          "document-import-policy-setting-card",
+          "import-prefixes-container",
+          "card-api-settings",
+          "storage-stats-setting-card",
+          "storage-watchdog-setting-card",
+          "modal-layout-reset-card",
+          "onboarding-setting-card",
+          "factory-reset-prefs-card",
+          "joe-auto-compact-setting-card",
+          "joe-attachment-memory-setting-card",
+          "joe-voice-setting-card",
+          "flow-mutations-setting-card",
+          "flow-audit-log-setting-card"
+        ]
+      },
+      "data_save_prompt_policy": "dirty_only",
+      "data_import_action_policy": "overwrite",
+      "data_import_prefs_policy": "always_ask",
+      "data_reload_close_warning_policy": "dirty_only",
+      "data_save_reminder": "off",
+      "data_joe_voice": {
+        "voice": "cedar"
+      },
+      "data_joe_chat": {
+        "autoCompact": true,
+        "attachmentMemories": true
+      },
+      "browser_preferences": {
+        "restoreTabsOnLaunch": true,
+        "startupBehavior": "restore",
+        "newTabBehavior": "start",
+        "linkOpenBehavior": "new-tab",
+        "showBookmarkBar": true,
+        "homeUrl": "https://search.brave.com/",
+        "defaultSearchEngine": "brave",
+        "searchUrlTemplate": "https://search.brave.com/search?q=%s",
+        "saveHistory": true,
+        "historyRetentionDays": "forever",
+        "maxNavigationEntriesPerTab": 50,
+        "confirmCloseMultipleTabs": true,
+        "keepBackgroundTabsAlive": true,
+        "tabOverflowMode": "scroll",
+        "defaultBookmarkFolderId": "root",
+        "downloadsAskEveryTime": true,
+        "downloadShelfVisible": true,
+        "popupHandling": "tab",
+        "contentRailSortModes": {
+          "groups": "manual",
+          "bookmarks": "manual",
+          "folders": "manual",
+          "history": "recent"
+        }
+      }
+    }
+  }
+}
