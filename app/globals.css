@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), Arial, sans-serif;
+  background: linear-gradient(to bottom, #FAF2E6 0%, #FAF2E6 70%, #FFF8EF 100%);
+  background-attachment: fixed;
+  color: #4A3B32;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 600;
+}
