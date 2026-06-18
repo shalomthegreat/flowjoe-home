@@ -33,12 +33,12 @@ export default function UserStories() {
           <div key={s.title} className="bg-cream-soft border border-latte rounded-md p-8 md:p-9">
             <span className="text-[44px] block mb-3">{s.emoji}</span>
             <h3 className="text-[26px] mb-4 font-display font-semibold text-espresso">{s.title}</h3>
-            <ul className="pl-5 mb-5 list-disc text-espresso/90">
+            <ul className="pl-5 mb-5 list-disc text-lg text-espresso/90">
               {s.items.map((item) => (
                 <li key={item} className="my-1.5">{item}</li>
               ))}
             </ul>
-            <p className="italic text-cinnamon font-medium">{s.close}</p>
+            <p className=" text-espresso text-lg font-medium">{s.close}</p>
           </div>
         ))}
       </section>

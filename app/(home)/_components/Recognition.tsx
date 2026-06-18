@@ -1,3 +1,8 @@
+import Image from "next/image";
+import messyDesktopImg from "@/public/img/messy-desktop.jpg";
+import chaosIcon from "@/public/img/chaos.svg";
+import orderIcon from "@/public/img/order.svg";
+
 export default function Recognition() {
   return (
     <section className="my-[90px]">
@@ -15,13 +20,13 @@ export default function Recognition() {
           <hr className="border-t border-latte mb-7" />
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex items-start gap-4 flex-1">
-              <span className="text-[30px] leading-none flex-shrink-0">〰️</span>
+              <Image src={chaosIcon} alt="" width={44} height={44} className="flex-shrink-0" />
               <p className="text-lg leading-body text-espresso/90">
                 The problem isn't that you have <span className="text-cinnamon font-semibold">too much information.</span>
               </p>
             </div>
             <div className="flex items-start gap-4 flex-1">
-              <span className="text-[30px] leading-none flex-shrink-0">🌀</span>
+              <Image src={orderIcon} alt="" width={44} height={44} className="flex-shrink-0" />
               <p className="text-lg leading-body text-espresso/90">
                 The problem is that the <span className="text-cinnamon font-semibold">context keeps getting lost</span>, and the best ideas are buried.
               </p>
@@ -29,8 +34,8 @@ export default function Recognition() {
           </div>
         </div>
         <div className="overflow-hidden rounded-lg">
-          <img
-            src="/img/messy-desktop.jpg"
+          <Image
+            src={messyDesktopImg}
             alt="Cluttered desk with scattered notes and tabs"
             className="w-full h-full object-cover block"
             style={{ maskImage: "radial-gradient(ellipse 70% 70% at center, #000 55%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse 70% 70% at center, #000 55%, transparent 100%)" }}
@@ -38,7 +43,7 @@ export default function Recognition() {
         </div>
       </div>
       <div className="bg-sand rounded-lg mt-12 md:mt-[50px] px-6 py-8 md:px-10 md:py-8 text-center">
-        <p className="font-display text-xl md:text-[26px] text-cinnamon leading-subheading">
+        <p className="font-display italic text-xl md:text-[26px] text-cinnamon leading-subheading">
           Your project deserves better than twenty-seven tabs and endless folders.
         </p>
       </div>

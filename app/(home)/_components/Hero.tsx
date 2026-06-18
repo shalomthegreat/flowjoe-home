@@ -1,4 +1,5 @@
 import Image from "next/image";
+import flowjoeImg from "@/public/img/flowjoe.jpg";
 
 export default function Hero() {
   return (
@@ -25,9 +26,11 @@ export default function Hero() {
           Local-first. Works offline. Your data (and ideas) stay yours.
         </p>
       </div>
-      <div className="h-[320px] md:h-[520px] rounded-lg overflow-hidden shadow-soft">
-        <img src="/img/flowjoe.jpg" alt="FlowJoe — stay in the flow" className="w-full h-full object-contain" />
-      </div>
+      <Image
+        src={flowjoeImg}
+        alt="FlowJoe — stay in the flow"
+        className="w-full h-auto rounded-lg shadow-soft"
+      />
     </section>
   );
 }

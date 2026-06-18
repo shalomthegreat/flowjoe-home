@@ -1,0 +1,21 @@
+<!-- Chaos Icon (tangled stringy mess) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <style>
+      :root {
+        --stroke: #4A3B32;
+      }
+      .string { fill: none; stroke: var(--stroke); stroke-width: 8; stroke-linecap: round; }
+    </style>
+  </defs>
+  <!-- Single continuous pen-scribble forming a round yarn ball -->
+  <path d="M40 150
+           C20 120 30 70 70 55
+           C110 40 160 60 165 100
+           C170 140 130 170 95 158
+           C60 146 50 100 80 80
+           C110 60 150 80 145 115
+           C140 150 95 155 80 125
+           C68 100 95 80 120 95
+           C140 107 130 135 110 130" class="string"/>
+</svg>
