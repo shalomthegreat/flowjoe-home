@@ -5,8 +5,8 @@ const scatter = [
 
 export default function FinalCTA() {
   return (
-    <section className="text-center pt-16 md:pt-[100px] pb-10 my-[90px]">
-      <h2 className="text-[32px] md:text-[48px] leading-heading font-display font-semibold text-espresso">
+    <section className="text-center pt-16 md:pt-24 pb-10 my-24">
+      <h2 className="text-3xl md:text-5xl leading-heading font-display font-semibold text-espresso">
         Keep your project alive as it grows.
       </h2>
       <p className="text-lg md:text-xl mt-4 text-espresso">
@@ -17,7 +17,7 @@ export default function FinalCTA() {
       </p>
       <div className="flex flex-wrap justify-center gap-3 mt-8 mb-8">
         {scatter.map((s) => (
-          <span key={s} className="bg-cream-soft border border-latte rounded-full px-5 py-2 text-[15px] text-espresso/90">
+          <span key={s} className="bg-cream-soft border border-latte rounded-full px-5 py-2 text-sm text-espresso/90">
             {s}
           </span>
         ))}

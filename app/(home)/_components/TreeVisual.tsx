@@ -30,7 +30,7 @@ function Branch({ children }: { children: React.ReactNode }) {
 
 export default function TreeVisual() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-12 md:gap-[60px] items-center my-[90px]">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center my-24">
       <div className="bg-espresso text-cream rounded-lg p-8 md:p-10 shadow-soft">
         <Node variant="root">🚀 Product Launch</Node>
         <Branch>
@@ -60,7 +60,7 @@ export default function TreeVisual() {
         <span className="inline-block bg-sand-deep px-4 py-2 rounded-full text-xs tracking-widest uppercase">
           The Secret Sauce.
         </span>
-        <h2 className="text-[32px] md:text-[48px] leading-heading mt-4 font-display font-semibold text-espresso">
+        <h2 className="text-3xl md:text-5xl leading-heading mt-4 font-display font-semibold text-espresso">
           Every project has a story, and FlowJoe lets you see it grow.
         </h2>
         <p className="text-lg mt-4 text-espresso/90">Projects naturally branch.</p>

@@ -5,10 +5,10 @@ import orderIcon from "@/public/img/order.svg";
 
 export default function Recognition() {
   return (
-    <section className="my-[90px]">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 md:gap-[60px] items-center">
+    <section className="my-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div>
-          <h2 className="text-[32px] md:text-[48px] leading-heading mb-6 font-display font-semibold text-espresso">
+          <h2 className="text-3xl md:text-5xl leading-heading mb-6 font-display font-semibold text-espresso">
             Does this look familiar?
           </h2>
           <p className="text-lg md:text-xl font-semibold mb-4 text-espresso">
@@ -42,8 +42,8 @@ export default function Recognition() {
           />
         </div>
       </div>
-      <div className="bg-sand rounded-lg mt-12 md:mt-[50px] px-6 py-8 md:px-10 md:py-8 text-center">
-        <p className="font-display italic text-xl md:text-[26px] text-cinnamon leading-subheading">
+      <div className="bg-sand rounded-lg mt-12 md:mt-12 px-6 py-8 md:px-10 md:py-8 text-center">
+        <p className="font-display italic text-xl md:text-2xl text-cinnamon leading-subheading">
           Your project deserves better than twenty-seven tabs and endless folders.
         </p>
       </div>

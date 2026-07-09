@@ -1,6 +1,6 @@
 export default function QuoteCTA() {
   return (
-    <div className="bg-sand rounded-md px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6 my-[90px]">
+    <div className="bg-sand rounded-md px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6 my-24">
       <p className="text-lg italic text-espresso/90 text-center md:text-left">
         &ldquo;Everything I need is connected, so I can focus on creating instead of searching.&rdquo;<br />
         <span className="not-italic font-medium">— Maya, Writer</span>

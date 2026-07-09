@@ -15,12 +15,12 @@ const features = [
 
 export default function FeatureStrip() {
   return (
-    <section className="bg-cream-soft border border-latte rounded-lg p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 my-[90px]">
+    <section className="bg-cream-soft border border-latte rounded-lg p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 my-24">
       {features.map((f) => (
         <div key={f.title} className="text-center">
           <Image src={f.icon} alt="" width={56} height={56} className="mx-auto mb-3 block" />
           <h3 className="text-lg font-display font-semibold text-espresso mb-2">{f.title}</h3>
-          <p className="text-[15px] text-espresso/90">{f.text}</p>
+          <p className="text-sm text-espresso/90">{f.text}</p>
         </div>
       ))}
     </section>

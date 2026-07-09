@@ -1,9 +1,9 @@
 export default function Pillars() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-5 my-[90px]">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-5 my-24">
       <div className="bg-sand rounded-md p-8 md:p-10">
-        <span className="text-[40px] block mb-3">🏠</span>
-        <h2 className="text-[26px] leading-subheading font-display font-semibold text-espresso">
+        <span className="text-4xl block mb-3">🏠</span>
+        <h2 className="text-2xl leading-subheading font-display font-semibold text-espresso">
           Your ideas deserves a home that belongs to you.
         </h2>
         <p className="text-lg mt-4 text-espresso/90">
@@ -14,8 +14,8 @@ export default function Pillars() {
         </p>
       </div>
       <div className="bg-sand rounded-md p-8 md:p-10">
-        <span className="text-[40px] block mb-3">⏳</span>
-        <h2 className="text-[26px] leading-subheading font-display font-semibold text-espresso">
+        <span className="text-4xl block mb-3">⏳</span>
+        <h2 className="text-2xl leading-subheading font-display font-semibold text-espresso">
           Build something future you will thank you for.
         </h2>
         <p className="text-lg mt-4 text-espresso/90">
