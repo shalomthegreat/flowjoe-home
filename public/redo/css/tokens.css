@@ -1,0 +1,83 @@
+/* ==========================================================================
+   FlowJoe Design Tokens
+   Extracted from FlowJoe_Visual_Intelligence2.0.pdf + flowjoe-logo.svg
+   The system is built around a dual-hemisphere motif:
+     - AMBER  = structure / logic / "The Spine"
+     - CYAN   = visual freedom / creativity / "The Canvas"
+   ========================================================================== */
+
+:root {
+  /* ---- Core surfaces (deep charcoal / navy, cinematic) ---- */
+  --bg-900: #070a0f;   /* deepest background */
+  --bg-800: #0a0e14;   /* page background */
+  --bg-700: #0e131b;   /* raised background */
+  --bg-600: #131a24;   /* panel base */
+
+  /* ---- Glass panels ---- */
+  --glass: rgba(20, 26, 36, 0.55);
+  --glass-strong: rgba(24, 31, 43, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-strong: rgba(255, 255, 255, 0.14);
+
+  /* ---- Amber hemisphere (from logo "joe" fill #FE730C) ---- */
+  --amber-500: #fe730c;
+  --amber-400: #ff8a2b;
+  --amber-300: #ffab5e;
+  --amber-deep: #582c0f;   /* logo "flow" fill */
+  --amber-glow: rgba(254, 115, 12, 0.35);
+  --amber-glow-soft: rgba(254, 115, 12, 0.14);
+
+  /* ---- Cyan hemisphere ---- */
+  --cyan-500: #35a9ff;
+  --cyan-400: #5cc2ff;
+  --cyan-300: #8ad6ff;
+  --cyan-glow: rgba(53, 169, 255, 0.32);
+  --cyan-glow-soft: rgba(53, 169, 255, 0.12);
+
+  /* ---- Text ---- */
+  --text-100: #eef2f7;   /* headings */
+  --text-200: #cdd5df;   /* body strong */
+  --text-300: #9aa5b3;   /* body muted */
+  --text-400: #6b7683;   /* labels / captions */
+
+  /* ---- Status (from trade-off matrix) ---- */
+  --ok: #34d17a;
+  --no: #ff5b5b;
+
+  /* ---- Typography ---- */
+  --font-serif: "Fraunces", "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+  /* Fluid type scale */
+  --fs-display: clamp(2.75rem, 1.6rem + 5.2vw, 5.25rem);
+  --fs-h1: clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem);
+  --fs-h2: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+  --fs-h3: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  --fs-lead: clamp(1.05rem, 0.95rem + 0.6vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-small: 0.85rem;
+  --fs-mono: 0.78rem;
+
+  /* ---- Spacing & shape ---- */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+
+  --border-thin: 1px solid var(--glass-border);
+
+  /* ---- Shadows / glows ---- */
+  --shadow-panel: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  --shadow-float: 0 40px 90px -30px rgba(0, 0, 0, 0.85);
+  --glow-amber: 0 0 0 1px rgba(254, 115, 12, 0.3), 0 0 40px -6px var(--amber-glow);
+  --glow-cyan: 0 0 0 1px rgba(53, 169, 255, 0.3), 0 0 40px -6px var(--cyan-glow);
+
+  /* ---- Layout ---- */
+  --maxw: 1200px;
+  --nav-h: 72px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.6s;
+}
