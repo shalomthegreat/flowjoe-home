@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowJoe — A place where everything connects</title>
+  <meta name="description" content="Bring your notes, files, AI chats, research, and creative work together in one visual workspace. Spend less time searching and more time creating." />
+
+  <!-- Fonts: serif display + sans body + mono technical -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Global background: blueprint grid + hemisphere glows -->
+  <div class="bg-field" aria-hidden="true">
+    <div class="hemi hemi--amber"></div>
+    <div class="hemi hemi--cyan"></div>
+  </div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="#" aria-label="FlowJoe home">
+        <img src="img/flowjoe-logo.svg" alt="FlowJoe" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem">The problem</a>
+        <a href="#workspace">The workspace</a>
+        <a href="#joe">Meet Joe</a>
+        <a href="#compare">Why FlowJoe</a>
+      </nav>
+      <div class="nav__right">
+        <a href="#" class="btn btn--sm btn--ghost">Sign in</a>
+        <a href="#" class="btn btn--sm btn--primary">Get FlowJoe</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <!-- Copy (brand voice: warm, specific, guide) -->
+        <div class="hero__copy">
+          <span class="eyebrow" data-reveal>creative workspace for the solopreneur</span>
+          <h1 class="hero__title" data-reveal data-reveal-delay="1">
+            Finally, a place where <span class="accent">everything connects.</span>
+          </h1>
+          <p class="hero__lead" data-reveal data-reveal-delay="2">
+            Bring your notes, files, AI conversations, research, and creative work together in one
+            visual workspace &mdash; so you can <strong>spend less time searching and more time creating.</strong>
+          </p>
+          <div class="hero__cta" data-reveal data-reveal-delay="3">
+            <a href="#" class="btn btn--primary">Get FlowJoe &rarr;</a>
+            <a href="#workspace" class="btn btn--ghost">See how it works</a>
+          </div>
+          <p class="hero__note" data-reveal data-reveal-delay="3">
+            Local-first. Private by default. Your files stay on your machine. 
+          </p>
+        </div>
+
+        <!-- 3D workspace mockup with glowing callouts (recreates deck page 1) -->
+        <div class="hero__stage" data-reveal data-reveal-delay="2">
+          <div class="workspace" id="workspace">
+            <div class="workspace__bar">
+              <span class="dot dot--r"></span>
+              <span class="dot dot--y"></span>
+              <span class="dot dot--g"></span>
+              <span class="workspace__title mono">FlowJoe — Visual Intelligence Workspace</span>
+            </div>
+            <div class="workspace__body">
+              <!-- The Spine: structured tree -->
+              <aside class="tree">
+                <div class="tree__head">Tree</div>
+                <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> FlowJoe Devs</div>
+                <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Concept art</div>
+                <div class="tree__row indent2"><span class="node" style="background:#8a5cff"></span> Hero poses</div>
+                <div class="tree__row indent2"><span class="node" style="background:#8a5cff"></span> Bright idea</div>
+                <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Docs</div>
+                <div class="tree__row indent2"><span class="node" style="background:var(--ok)"></span> Update summary</div>
+                <div class="tree__row indent"><span class="node" style="background:#ff6bb0"></span> Music &amp; spoken</div>
+                <div class="tree__row indent"><span class="node" style="background:var(--amber-300)"></span> Testing</div>
+                <div class="tree__row indent2"><span class="node" style="background:var(--amber-300)"></span> Embed tests</div>
+                <div class="tree__row indent"><span class="node" style="background:var(--cyan-300)"></span> Research</div>
+              </aside>
+
+              <!-- The Canvas: media gallery -->
+              <div class="gallery">
+                <div class="card"><div class="card__media swatch--amber"></div><div class="card__meta"><div class="card__title">Bright Idea</div><div class="card__sub">stack · 12 imgs</div></div></div>
+                <div class="card"><div class="card__media swatch--iris"></div><div class="card__meta"><div class="card__title">Hero Pose</div><div class="card__sub">4K · png</div></div></div>
+                <div class="card"><div class="card__media swatch--cyan"></div><div class="card__meta"><div class="card__title">Sky Study</div><div class="card__sub">reference</div></div></div>
+                <div class="card"><div class="card__media swatch--indigo"></div><div class="card__meta"><div class="card__title">Feature — Wips</div><div class="card__sub">.fig embed</div></div></div>
+                <div class="card"><div class="card__media swatch--mint"></div><div class="card__meta"><div class="card__title">Scene 03</div><div class="card__sub">iteration</div></div></div>
+                <div class="card"><div class="card__media swatch--rose"></div><div class="card__meta"><div class="card__title">Palette</div><div class="card__sub">mood board</div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Callouts -->
+          <div class="callout-layer">
+            <div class="callout callout--amber callout--tree" data-float="1">
+              <div class="callout__label">THE TREE</div>
+              <div class="callout__text">Structure your thinking, one branch at a time.</div>
+            </div>
+            <div class="callout callout--cyan callout--gallery" data-float="2">
+              <div class="callout__label">THE GALLERY</div>
+              <div class="callout__text">See every version, side by side.</div>
+            </div>
+            <div class="callout callout--joe" data-float="3">
+              <div class="callout__label">JOE AI</div>
+              <div class="callout__text">Your built-in collaborator, right in the flow.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
