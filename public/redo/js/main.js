@@ -64,4 +64,104 @@
       );
     });
   }
+
+  /* ---- Hemisphere slider interaction ---- */
+  var hemiSlider = document.getElementById("hemiSlider");
+  var sliderLeft = document.getElementById("sliderLeft");
+  var sliderHandle = document.getElementById("sliderHandle");
+  if (hemiSlider && sliderLeft && sliderHandle) {
+    var isDragging = false;
+    var container = hemiSlider.querySelector(".slider-widget__container");
+
+    var updateSlider = function (clientX) {
+      if (window.innerWidth <= 940) return; // Disable dragging on mobile layout
+      var rect = container.getBoundingClientRect();
+      var x = clientX - rect.left;
+      var pct = Math.max(10, Math.min(90, (x / rect.width) * 100));
+      sliderLeft.style.width = pct + "%";
+      sliderHandle.style.left = pct + "%";
+    };
+
+    var onMove = function (e) {
+      if (!isDragging) return;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      updateSlider(clientX);
+    };
+
+    var onStart = function (e) {
+      if (window.innerWidth <= 940) return;
+      isDragging = true;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      updateSlider(clientX);
+      document.addEventListener("mousemove", onMove);
+      document.addEventListener("mouseup", onEnd);
+      document.addEventListener("touchmove", onMove);
+      document.addEventListener("touchend", onEnd);
+    };
+
+    var onEnd = function () {
+      isDragging = false;
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", onEnd);
+      document.removeEventListener("touchmove", onMove);
+      document.removeEventListener("touchend", onEnd);
+    };
+
+    sliderHandle.addEventListener("mousedown", onStart);
+    sliderHandle.addEventListener("touchstart", onStart);
+
+    // Click anywhere on container to move
+    container.addEventListener("mousedown", function (e) {
+      if (e.target !== sliderHandle && !sliderHandle.contains(e.target)) {
+        updateSlider(e.clientX);
+      }
+    });
+  }
+
+  /* ---- Core Features horizontal carousel ---- */
+  var scroller = document.getElementById("featuresScroller");
+  if (scroller) {
+    var arrows = document.querySelectorAll(".features__arrow");
+    var stepFor = function () {
+      var card = scroller.querySelector(".feat-card");
+      if (!card) return scroller.clientWidth * 0.8;
+      var gap = parseInt(getComputedStyle(scroller).columnGap || getComputedStyle(scroller).gap) || 20;
+      return card.offsetWidth + gap;
+    };
+    var updateArrows = function () {
+      var maxScroll = scroller.scrollWidth - scroller.clientWidth - 1;
+      arrows.forEach(function (btn) {
+        var isPrev = btn.getAttribute("data-scroll") === "prev";
+        btn.disabled = isPrev ? scroller.scrollLeft <= 0 : scroller.scrollLeft >= maxScroll;
+      });
+    };
+    arrows.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var dir = btn.getAttribute("data-scroll") === "prev" ? -1 : 1;
+        scroller.scrollBy({ left: dir * stepFor(), behavior: reduceMotion ? "auto" : "smooth" });
+      });
+    });
+    scroller.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows, { passive: true });
+    updateArrows();
+  }
+
+  /* ---- Nav link highlighting on scroll ---- */
+  var sections = document.querySelectorAll("section[id]");
+  var navLinks = document.querySelectorAll(".nav__links a");
+  if (sections.length && navLinks.length && "IntersectionObserver" in window) {
+    var navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute("id");
+          navLinks.forEach(function (link) {
+            var href = link.getAttribute("href");
+            link.classList.toggle("is-active", href === "#" + id);
+          });
+        }
+      });
+    }, { threshold: 0.25, rootMargin: "-20% 0px -50% 0px" });
+    sections.forEach(function (section) { navObserver.observe(section); });
+  }
+
 })();
