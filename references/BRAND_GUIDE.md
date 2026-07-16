@@ -1,8 +1,8 @@
 # FlowJoe Brand Guide
 
 A working reference for building the website, distilled from
-`FlowJoe_Visual_Intelligence2.0.pdf` (visual language) and
-`FlowJoe_Brand_Voice_Update.md` (tone). Slide renders live in `/pdf-pages`.
+`references/FlowJoe_Visual_Intelligence2.0.pdf` (visual language) and
+`references/FlowJoe_Brand_Voice_Update.md` (tone). Slide renders live in `references/pdf-pages/`.
 
 > **The one-line brief:** Premium software with a pulse. It should feel powerful *and*
 > like it was made by real people. FlowJoe is the thoughtful guide; the user is the hero.
@@ -32,7 +32,7 @@ A working reference for building the website, distilled from
 
 **Voice formula:** 40% Expert · 30% Guide · 20% Creator · 10% Playful Human.
 
-**Never become:** Corporate · Salesy · Hyperactive · Meme-driven.
+**Never become:** Corporate · Sales-y · Hyperactive · Meme-driven.
 
 ---
 
@@ -65,7 +65,7 @@ A working reference for building the website, distilled from
 - Think visually. Build clearly.
 - Your ideas deserve better than organized chaos.
 
-**Subheadline**
+**Subheading**
 - Bring notes, files, AI conversations, research, and creative work together in one
   visual workspace — so you can spend less time searching and more time creating.
 
@@ -143,8 +143,7 @@ do the work.
 ## 8. Imagery & Iconography
 
 - Prefer product mockups and rich media over stock photography.
-- Placeholder media uses amber/cyan/violet gradients until real screenshots land
-  (`img/screenies-*` are currently empty).
+- Placeholder media uses amber/cyan/violet gradients until real screenshots (located in `img/screenies-group1/` and `img/screenies-group2/`) are integrated.
 - Icons: line style, thin weight (Lucide-compatible), tinted with accent colors.
 - Logo: `img/flowjoe-logo.svg` — give it clear space; never recolor the mark.
 

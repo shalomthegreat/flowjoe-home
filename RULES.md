@@ -1,0 +1,1 @@
+1. Whenever referencing a filename, do not use this format [#fullpath](#cci:4...) or anything like it, instead simply give a plaintext relative path such as "bk/img"

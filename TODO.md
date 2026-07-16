@@ -1,8 +1,8 @@
 # FlowJoe Website — Build TODO
 
 Section-by-section plan for the marketing site. Each section maps to a slide in
-`FlowJoe_Visual_Intelligence2.0.pdf` (see `/pdf-pages`) and uses the tone from
-`FlowJoe_Brand_Voice_Update.md`. See `BRAND_GUIDE.md` for tokens, voice, and rules.
+`references/FlowJoe_Visual_Intelligence2.0.pdf` (see `references/pdf-pages/`) and uses the tone from
+`references/FlowJoe_Brand_Voice_Update.md`. See `references/BRAND_GUIDE.md` for tokens, voice, and rules.
 
 Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 
@@ -115,6 +115,6 @@ Status legend: `[ ]` todo · `[~]` in progress · `[x]` done
 
 ## Open questions for the team
 
-- [ ] Real product screenshots to replace the CSS mockups? (`img/screenies-*` are empty)
+- [ ] Integrate real product screenshots (located in `img/screenies-group1/` and `img/screenies-group2/`) to replace/supplement the CSS mockups?
 - [ ] Final CTA destination (download, waitlist, or app link)?
 - [ ] Pricing section needed?
