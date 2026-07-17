@@ -1,1 +1,1 @@
-1. Whenever referencing a filename, do not use this format [#fullpath](#cci:4...) or anything like it, instead simply give a plaintext relative path such as "bk/img"
+1. Whenever referencing a filename, do not use this format <ref_file>/<ref_snippet> or anything like it that would generate a markdown link, they do not render properly in my IDE; instead simply give a plaintext relative path to the current folder

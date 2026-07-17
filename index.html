@@ -15,6 +15,21 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!--
+    ┌─ CONTENTS ────────────────────────────────
+    │  NAV
+    │  1. HERO                (.hero)
+    │  2. THE PROBLEM         (#problem)
+    │  3. THE BIG IDEA        (#hemispheres)
+    │  4. UI ARCHITECTURE     (#workspace)
+    │  5. CORE FEATURES GRID  (#features)
+    │  6. MEET JOE            (#joe)
+    │  7. TRADE-OFF MATRIX    (#compare)
+    │  8. ECOSYSTEM + CTA     (#ecosystem)
+    │  FOOTER
+    └───────────────────────────────────────────
+  -->
+
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
@@ -34,13 +49,13 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===================== 1. HERO ===================== -->
   <main>
     <section class="hero">
       <div class="container hero__grid">
         <!-- Copy (brand voice: warm, specific, guide) -->
         <div class="hero__copy">
-          <span class="eyebrow" data-reveal>creative workspace for the solopreneur</span>
+          <span class="eyebrow" data-reveal>One Workspace to Rule Them All</span>
           <h1 class="hero__title" data-reveal data-reveal-delay="1">
             Finally, a place where <span class="accent">everything connects.</span>
           </h1>
@@ -113,13 +128,16 @@
       </div>
     </section>
 
-    <!-- ===================== THE PROBLEM ===================== -->
+    <!-- ===================== 2. THE PROBLEM ===================== -->
     <section id="problem" class="section problem">
       <div class="container problem__grid">
         <!-- Visual panel (Chaos diagram with glowing fracture line) -->
         <div class="problem__visual" data-reveal>
           <div class="chaos-box">
-            <div class="chaos-box__line"></div>
+            <svg class="chaos-box__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M22,22 C40,10 70,20 78,28 C90,45 10,65 25,80 C40,95 65,85 77,73" />
+
+            </svg>
             
             <div class="chaos-item chaos-item--notes" data-float="1">
               <span class="chaos-icon">📝</span>
@@ -173,13 +191,13 @@
             We keep trying to solve workflow overwhelm by adding yet another app. But more tools just means more tab-hopping. You become the manual connector, chasing ideas across folder mazes and browser history.
           </p>
           <div class="problem__quote" data-reveal data-reveal-delay="3">
-            <span class="quote-text">&ldquo;No judgment. We've all been there.&rdquo;</span>
+            <span class="quote-text">No judgment, we've all done it.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== THE BIG IDEA ===================== -->
+    <!-- ===================== 3. THE BIG IDEA ===================== -->
     <section id="hemispheres" class="section hemispheres">
       <div class="container">
         <div class="hemispheres__header text-center">
@@ -262,7 +280,7 @@
       </div>
     </section>
 
-    <!-- ===================== UI ARCHITECTURE ===================== -->
+    <!-- ===================== 4. UI ARCHITECTURE ===================== -->
     <section id="workspace" class="section architecture">
       <div class="container">
         <div class="architecture__header text-center">
@@ -348,7 +366,7 @@
       </div>
     </section>
 
-    <!-- ===================== CORE FEATURES GRID ===================== -->
+    <!-- ===================== 5. CORE FEATURES GRID ===================== -->
     <section id="features" class="section features">
       <div class="container">
         <div class="features__header text-center">
@@ -501,7 +519,7 @@
       </div>
     </section>
 
-    <!-- ===================== MEET JOE (AI COLLABORATOR) ===================== -->
+    <!-- ===================== 6. MEET JOE (AI COLLABORATOR) ===================== -->
     <section id="joe" class="section ai-collaboration">
       <!-- Glow backgrounds specific to this section -->
       <div class="ai-glow" aria-hidden="true"></div>
@@ -605,7 +623,7 @@
       </div>
     </section>
 
-    <!-- ===================== TRADE-OFF REFUSAL MATRIX ===================== -->
+    <!-- ===================== 7. TRADE-OFF REFUSAL MATRIX ===================== -->
     <section id="compare" class="section matrix-compare">
       <div class="container">
         <div class="matrix-compare__header text-center">
@@ -680,35 +698,10 @@
       </div>
     </section>
 
-    <!-- ===================== ECOSYSTEM & FINAL CTA ===================== -->
+    <!-- ===================== 8. ECOSYSTEM & FINAL CTA ===================== -->
     <section id="ecosystem" class="section ecosystem">
       <div class="container ecosystem__grid">
-        <!-- Left: Concentric Rings Visual (Slide 15) -->
-        <div class="ecosystem__visual" data-reveal>
-          <div class="rings-container">
-            <!-- Outermost Ring: Custom Models -->
-            <div class="ring ring--4">
-              <span class="ring-label ring-label--4 mono">CUSTOM AI MODELS</span>
-              <!-- Mid-outer Ring: Team Sync -->
-              <div class="ring ring--3">
-                <span class="ring-label ring-label--3 mono">MULTIPLAYER SYNC</span>
-                <!-- Mid-inner Ring: Plugins -->
-                <div class="ring ring--2">
-                  <span class="ring-label ring-label--2 mono">PLUGINS</span>
-                  <!-- Innermost Ring: Local Core -->
-                  <div class="ring ring--1">
-                    <span class="ring-label ring-label--1 mono">LOCAL CORE</span>
-                    <div class="ring-logo">
-                      <img src="img/flowjoe-logo.svg" alt="FlowJoe" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Final CTA (Brand voice: Expert, Guide, Playful human) -->
+        <!-- Left: Final CTA (Brand voice: Expert, Guide, Playful human) -->
         <div class="ecosystem__cta">
           <span class="eyebrow" data-reveal>The Ecosystem</span>
           <h2 class="section-title" data-reveal data-reveal-delay="1">
@@ -717,7 +710,53 @@
           <p class="section-lead" data-reveal data-reveal-delay="2">
             The hard part is already shipping today. FlowJoe is built on an open, extensible architecture designed to adapt to your unique creative and technical workflow.
           </p>
-          
+        </div>
+
+        <!-- Right: Ecosystem tech stack (layers built on a local core) -->
+        <div class="ecosystem__visual" data-reveal data-reveal-delay="2">
+          <div class="stack">
+            <div class="stack__layer stack__layer--cyan">
+              <span class="stack__icon">🧠</span>
+              <div class="stack__meta">
+                <span class="stack__title">Custom AI Models</span>
+                <span class="stack__text">Bring your own models — local or hosted.</span>
+              </div>
+              <span class="stack__tag mono">EXTEND</span>
+            </div>
+
+            <!-- Hidden for now — Multiplayer Sync
+            <div class="stack__layer stack__layer--cyan">
+              <span class="stack__icon">🔄</span>
+              <div class="stack__meta">
+                <span class="stack__title">Multiplayer Sync</span>
+                <span class="stack__text">Real-time collaboration, only when you choose.</span>
+              </div>
+              <span class="stack__tag mono">EXTEND</span>
+            </div>
+            -->
+
+            <div class="stack__layer stack__layer--cyan">
+              <span class="stack__icon">🧩</span>
+              <div class="stack__meta">
+                <span class="stack__title">Plugins</span>
+                <span class="stack__text">Snap community &amp; custom tools into the canvas.</span>
+              </div>
+              <span class="stack__tag mono">EXTEND</span>
+            </div>
+
+            <div class="stack__layer stack__layer--core">
+              <span class="stack__icon">🔒</span>
+              <div class="stack__meta">
+                <span class="stack__title">Local Core</span>
+                <span class="stack__text">Private, offline-first foundation on your machine.</span>
+              </div>
+              <span class="stack__tag mono">FOUNDATION</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-width final CTA -->
+        <div class="ecosystem__cta-row">
           <div class="cta-box" data-reveal data-reveal-delay="3">
             <h3 class="cta-box__title serif">Think visually. Build clearly.</h3>
             <p class="cta-box__text text-muted">
@@ -730,6 +769,7 @@
             <p class="cta-box__note mono">Local-first. Private. Start creating today.</p>
           </div>
         </div>
+
       </div>
     </section>
   </main>

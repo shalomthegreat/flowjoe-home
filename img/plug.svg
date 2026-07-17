@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+  <!-- plug body (extended halfway down the prongs; widened 1/5 each side) -->
+  <rect x="2.4" y="0" width="25.2" height="16.5" rx="3.5" fill="#ffab5e"/>
+  <rect x="3.1" y="0.7" width="23.8" height="15.1" rx="3" fill="#ff8a2b" opacity="0.35"/>
+  <!-- prongs (spread wide, 4 from each body edge) -->
+  <rect x="6.4" y="13" width="3.2" height="11" rx="1.6" fill="#ffab5e"/>
+  <rect x="20.4" y="13" width="3.2" height="11" rx="1.6" fill="#ffab5e"/>
+</svg>
