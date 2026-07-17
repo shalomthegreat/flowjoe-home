@@ -493,7 +493,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 }
 .slider-widget__container {
   position: relative;
-  height: 280px;
+  height: var(--widget-height, 280px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--glass-border-strong);
   background: var(--bg-900);
@@ -510,7 +510,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 }
 .slider-widget__side--left {
   left: 0;
-  width: 50%; /* Adjusted dynamically by JS */
+  width: var(--slider-default); /* Adjusted dynamically by JS */
   background: rgba(254, 115, 12, 0.05);
   border-right: 1px solid rgba(254, 115, 12, 0.3);
   z-index: 2;
@@ -522,29 +522,33 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   z-index: 1;
 }
 
-/* Inside Left Outline Side */
-.widget-outline {
+/* Inside Left Tree Side */
+.widget-tree {
   padding: 30px;
-  width: 400px; /* fixed width for content alignment */
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.widget-outline__item {
+.widget-tree__item {
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-200);
+  white-space: nowrap;
 }
-.widget-outline__item .node {
-  width: 8px; height: 8px;
+.widget-tree__node {
+  width: 8px;
+  height: 8px;
   border-radius: 2px;
+  flex: none;
+  background: var(--amber-400);
+  animation: none;
+  transition: none;
 }
-.node--amber { background: var(--amber-400); }
-.widget-outline__item.indent { padding-left: 20px; }
-.widget-outline__item.indent2 { padding-left: 36px; }
+.widget-tree__item.indent { padding-left: 20px; }
+.widget-tree__item.indent2 { padding-left: 36px; }
 
 /* Inside Right Canvas Side */
 .widget-canvas {
@@ -554,26 +558,29 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 }
 .widget-card {
   position: absolute;
-  width: 110px; height: 110px;
+  width: var(--card-size, 110px);
+  height: var(--card-size, 110px);
   background: var(--glass-strong);
   border: 1px solid var(--glass-border-strong);
   border-radius: var(--radius);
   padding: 8px;
   box-shadow: var(--shadow-panel);
+  left: var(--card-left, 50%);
+  top: var(--card-top, 50%);
+  transform: rotate(var(--card-rotate, 0deg));
+  transition: left var(--card-transition) ease-out, top var(--card-transition) ease-out, transform var(--card-transition) ease-out, width var(--card-transition) ease-out, height var(--card-transition) ease-out;
+  will-change: left, top, transform, width, height;
 }
 .widget-card__thumb {
   height: 100%; width: 100%;
   border-radius: 6px;
 }
-.widget-card--1 { top: 30px; left: 420px; transform: rotate(-5deg); }
-.widget-card--2 { top: 70px; left: 560px; transform: rotate(4deg); }
-.widget-card--3 { top: 120px; left: 450px; transform: rotate(-2deg); }
 
 /* Slider Handle */
 .slider-widget__handle {
   position: absolute;
   top: 0; bottom: 0;
-  left: 50%; /* Adjusted dynamically by JS */
+  left: var(--slider-default); /* Adjusted dynamically by JS */
   width: 2px;
   background: linear-gradient(180deg, var(--amber-400), var(--cyan-400));
   z-index: 3;

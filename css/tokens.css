@@ -80,4 +80,9 @@
   /* ---- Motion ---- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 0.6s;
+
+  /* ---- Split-slider widget ---- */
+  --widget-height: 280px;
+  --slider-default: 38%;      /* default handle position on load (JS reads this too) */
+  --card-transition: 0.18s;   /* card move/resize easing duration */
 }
