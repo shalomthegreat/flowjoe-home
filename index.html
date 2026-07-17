@@ -16,18 +16,18 @@
 </head>
 <body>
   <!--
-    ┌─ CONTENTS ────────────────────────────────
+    ┌─ CONTENTS ───────────────────────────────────────────
     │  NAV
     │  1. HERO                (.hero)
     │  2. THE PROBLEM         (#problem)
     │  3. THE BIG IDEA        (#hemispheres)
-    │  4. UI ARCHITECTURE     (#workspace)
+    │    4. UI ARCHITECTURE     (#workspace)  [hidden — rework]
     │  5. CORE FEATURES GRID  (#features)
     │  6. MEET JOE            (#joe)
     │  7. TRADE-OFF MATRIX    (#compare)
     │  8. ECOSYSTEM + CTA     (#ecosystem)
     │  FOOTER
-    └───────────────────────────────────────────
+    └──────────────────────────────────────────
   -->
 
   <!-- ===================== NAV ===================== -->
@@ -37,14 +37,14 @@
         <img src="img/flowjoe-logo.svg" alt="FlowJoe" />
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#problem">The problem</a>
-        <a href="#workspace">The workspace</a>
+        <!-- <a href="#problem">The problem</a> -->
+        <a href="#hemispheres">The big idea</a>
         <a href="#joe">Meet Joe</a>
-        <a href="#compare">Why FlowJoe</a>
+        <a href="#features">Why FlowJoe</a>
       </nav>
       <div class="nav__right">
         <a href="#" class="btn btn--sm btn--ghost">Sign in</a>
-        <a href="#" class="btn btn--sm btn--primary">Get FlowJoe</a>
+        <a href="#ecosystem" class="btn btn--sm btn--primary">Get FlowJoe</a>
       </div>
     </div>
   </header>
@@ -64,8 +64,8 @@
             visual workspace &mdash; so you can <strong>spend less time searching and more time creating.</strong>
           </p>
           <div class="hero__cta" data-reveal data-reveal-delay="3">
-            <a href="#" class="btn btn--primary">Get FlowJoe &rarr;</a>
-            <a href="#workspace" class="btn btn--ghost">See how it works</a>
+            <a href="#ecosystem" class="btn btn--primary">Get FlowJoe &rarr;</a>
+            <a href="#problem" class="btn btn--ghost">See how it works</a>
           </div>
           <p class="hero__note" data-reveal data-reveal-delay="3">
             Local-first. Private by default. Your files stay on your machine. 
@@ -74,14 +74,14 @@
 
         <!-- 3D workspace mockup with glowing callouts (recreates deck page 1) -->
         <div class="hero__stage" data-reveal data-reveal-delay="2">
-          <div class="workspace" id="workspace">
-            <div class="workspace__bar">
+          <div class="app" id="app">
+            <div class="app__bar">
               <span class="dot dot--r"></span>
               <span class="dot dot--y"></span>
               <span class="dot dot--g"></span>
-              <span class="workspace__title mono">FlowJoe — Visual Intelligence Workspace</span>
+              <span class="app__title mono">FlowJoe — Visual Intelligence Workspace</span>
             </div>
-            <div class="workspace__body">
+            <div class="app__body">
               <!-- The Spine: structured tree -->
               <aside class="tree">
                 <div class="tree__head">Tree</div>
@@ -304,8 +304,8 @@
       </div>
     </section>
 
-    <!-- ===================== 4. UI ARCHITECTURE ===================== -->
-    <section id="workspace" class="section architecture">
+    <!-- ===================== 4. UI ARCHITECTURE (hidden) ===================== -->
+    <section id="workspace" class="section architecture" style="display: none;">
       <div class="container">
         <div class="architecture__header text-center">
           <span class="eyebrow" data-reveal>UI Architecture</span>
@@ -549,7 +549,7 @@
       <div class="ai-glow" aria-hidden="true"></div>
 
       <div class="container ai-grid">
-        <!-- Left: Interactive Chat / Seatbelt Loop Mockup -->
+        <!-- Interactive Chat / Seatbelt Loop Mockup -->
         <div class="ai-mockup" data-reveal>
           <div class="chat-panel">
             <div class="chat-panel__bar">
@@ -585,22 +585,35 @@
                     <span class="mono seatbelt-status">Gated Sandbox</span>
                   </div>
                   <ul class="seatbelt-steps">
-                    <li class="step is-completed"><span class="step-num">1</span> <strong>Analyze:</strong> Reading local files</li>
-                    <li class="step is-completed"><span class="step-num">2</span> <strong>Propose:</strong> Visual zoning &amp; summary nodes</li>
-                    <li class="step is-active"><span class="step-num">3</span> <strong>Preview:</strong> 3 files, 2 nodes to add</li>
-                    <li class="step"><span class="step-num">4</span> <strong>Approve:</strong> Awaiting your permission</li>
+                    <li class="step is-completed"><span class="step-num">1</span> <strong>Analyze:</strong> Read context</li>
+                    <li class="step is-active"><span class="step-num">2</span> <strong>Preview:</strong> 3 files to update</li>
+                    <li class="step"><span class="step-num">3</span> <strong>Approve:</strong> Awaiting permission</li>
                   </ul>
                   <div class="seatbelt-actions">
-                    <button class="btn btn--sm btn--primary">Approve &amp; Apply</button>
-                    <button class="btn btn--sm btn--ghost">Reject / Undo</button>
+                    <button type="button" class="seatbelt-btn seatbelt-btn--primary">Preview</button>
+                    <button type="button" class="seatbelt-btn seatbelt-btn--secondary">Reject / Undo</button>
                   </div>
                 </div>
+                <p class="seatbelt-waiting">Joe is waiting for your approval to continue.</p>
               </div>
             </div>
           </div>
+            <div class="ai-mockup__note" data-reveal data-reveal-delay="3">
+              <div class="ai-mockup__note-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <div class="ai-mockup__note-content">
+                <p class="ai-mockup__note-text">
+                  <strong class="ai-mockup__note-highlight">No black boxes.</strong> See exactly what changes Joe is making before he applies them, with real-time token tracking.
+                </p>
+              </div>
+            </div>
         </div>
 
-        <!-- Right: AI Copy and Features -->
+        <!-- AI Copy and Features -->
         <div class="ai-copy">
           <span class="eyebrow" data-reveal>Embedded AI Collaborator</span>
           <h2 class="section-title" data-reveal data-reveal-delay="1">
@@ -611,19 +624,12 @@
           </p>
 
           <div class="ai-feature-list">
-            <!-- Feature 1 -->
-            <div class="ai-feat" data-reveal data-reveal-delay="3">
-              <h3 class="ai-feat__title"><span class="icon">🔍</span> Token Transparency Funnel</h3>
-              <p class="ai-feat__text">
-                No black boxes. See exactly what files, folders, and nodes Joe is reading before he answers, with real-time token tracking.
-              </p>
-            </div>
 
             <!-- Feature 2 -->
             <div class="ai-feat" data-reveal data-reveal-delay="3">
               <h3 class="ai-feat__title"><span class="icon">🛡️</span> The AI Seatbelt (Approval-Gated)</h3>
               <p class="ai-feat__text">
-                Joe works in an isolated sandbox. He analyzes, proposes, and lets you preview diffs of his changes. Accept them in one click, or instantly roll them back.
+                No automatic edits. Joe proposes updates in an isolated sandbox, letting you preview diffs before they are applied. Approve in one click, or instantly roll back.
               </p>
             </div>
 
@@ -781,14 +787,14 @@
 
         <!-- Full-width final CTA -->
         <div class="ecosystem__cta-row">
-          <div class="cta-box" data-reveal data-reveal-delay="3">
+          <div class="cta-box glass-card" data-reveal data-reveal-delay="3">
             <h3 class="cta-box__title serif">Think visually. Build clearly.</h3>
-            <p class="cta-box__text text-muted">
+            <p class="cta-box__text">
               Bring your scattered notes, files, AI chats, and creative assets together into a workspace that actually makes sense.
             </p>
             <div class="cta-box__buttons">
               <a href="#" class="btn btn--primary">Get FlowJoe &rarr;</a>
-              <a href="#workspace" class="btn btn--ghost">See Architecture</a>
+              <a href="#" class="btn btn--ghost">Sign Up</a>
             </div>
             <p class="cta-box__note mono">Local-first. Private. Start creating today.</p>
           </div>

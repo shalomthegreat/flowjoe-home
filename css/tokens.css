@@ -66,6 +66,7 @@
   --radius-xl: 30px;
 
   --border-thin: 1px solid var(--glass-border);
+  --gap-grid-lg: clamp(40px, 6vw, 80px);
 
   /* ---- Shadows / glows ---- */
   --shadow-panel: 0 24px 60px -20px rgba(0, 0, 0, 0.7);

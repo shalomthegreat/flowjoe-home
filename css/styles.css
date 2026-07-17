@@ -146,9 +146,9 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   letter-spacing: 0.02em;
 }
 
-/* ---- Hero mockup (3D perspective workspace) ---- */
+/* ---- Hero mockup (3D perspective app) ---- */
 .hero__stage { position: relative; perspective: 1600px; }
-.workspace {
+.app {
   position: relative;
   transform: rotateX(6deg) rotateY(-13deg) rotateZ(1.5deg);
   transform-style: preserve-3d;
@@ -160,7 +160,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   overflow: hidden;
   will-change: transform;
 }
-.workspace__bar {
+.app__bar {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -170,14 +170,14 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 }
 .dot { width: 11px; height: 11px; border-radius: 50%; }
 .dot--r { background: #ff5f57; } .dot--y { background: #febc2e; } .dot--g { background: #28c840; }
-.workspace__title {
+.app__title {
   margin-left: 12px;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--text-400);
   letter-spacing: 0.04em;
 }
-.workspace__body { display: grid; grid-template-columns: 168px 1fr; min-height: 340px; }
+.app__body { display: grid; grid-template-columns: 168px 1fr; min-height: 340px; }
 
 /* tree panel (the spine) */
 .tree { border-right: 1px solid var(--glass-border); padding: 12px 10px; background: rgba(0,0,0,0.18); }
@@ -243,6 +243,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 .section {
   padding-block: clamp(60px, 10vw, 140px);
   position: relative;
+  border-top: 1px solid var(--glass-border);
 }
 .section-title {
   font-family: var(--font-serif);
@@ -263,7 +264,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 .problem__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: clamp(40px, 6vw, 80px);
+  gap: var(--gap-grid-lg);
   align-items: center;
 }
 .problem__copy {
@@ -414,6 +415,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   background-clip: text;
   color: transparent;
 }
+.text-muted { color: var(--text-300); }
 
 .hemispheres__split {
   display: grid;
@@ -970,7 +972,6 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   background: radial-gradient(100% 70% at 20% 50%, rgba(254,115,12,0.035) 0%, transparent 100%);
   position: relative;
   overflow: hidden;
-  border-block: 1px solid var(--glass-border);
 }
 .ai-glow {
   position: absolute;
@@ -983,9 +984,8 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 }
 .ai-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: clamp(40px, 8vw, 96px);
-  padding-block: clamp(60px, 10vw, 140px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: var(--gap-grid-lg);
   align-items: center;
   position: relative;
   z-index: 2;
@@ -1089,26 +1089,23 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   line-height: 1.4;
 }
 .funnel-details code {
-  background: var(--bg-900);
-  padding: 1px 4px;
-  border-radius: 3px;
   color: var(--text-100);
 }
 
 /* AI Seatbelt Gated Loop Card */
 .seatbelt-card {
-  background: var(--bg-900);
-  border: 1px solid var(--glass-border-strong);
+  background: rgba(168, 85, 247, 0.035);
+  border: 1px solid rgba(168, 85, 247, 0.16);
   border-radius: var(--radius);
   padding: 16px;
   margin-top: 14px;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 .seatbelt-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
   padding-bottom: 10px;
   margin-bottom: 14px;
 }
@@ -1121,11 +1118,12 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   align-items: center;
   gap: 6px;
 }
-.seatbelt-title .icon { color: var(--ok); }
+.seatbelt-title .icon { color: #c084fc; }
 .seatbelt-status {
   font-size: 0.65rem;
-  color: var(--text-400);
-  background: rgba(255,255,255,0.03);
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.2);
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -1159,9 +1157,9 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   color: var(--text-200);
 }
 .seatbelt-steps .step.is-completed .step-num {
-  background: rgba(52, 209, 122, 0.15);
-  border-color: var(--ok);
-  color: var(--ok);
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.35);
+  color: #c084fc;
 }
 .seatbelt-steps .step.is-active {
   color: var(--text-100);
@@ -1176,6 +1174,47 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 .seatbelt-actions {
   display: flex;
   gap: 10px;
+}
+.seatbelt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: var(--bg-700);
+  color: var(--text-200);
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+.seatbelt-btn:hover {
+  background: var(--bg-600);
+}
+.seatbelt-btn--primary {
+  background: rgba(168, 85, 247, 0.14);
+  border-color: rgba(168, 85, 247, 0.35);
+  color: #c084fc;
+}
+.seatbelt-btn--primary:hover {
+  background: rgba(168, 85, 247, 0.22);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+.seatbelt-btn--secondary {
+  background: transparent;
+  border-color: var(--glass-border-strong);
+  color: var(--text-300);
+}
+.seatbelt-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.seatbelt-waiting {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-400);
+  text-align: center;
 }
 
 /* AI Feature Descriptions */
@@ -1204,6 +1243,46 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   font-size: 0.88rem;
   color: var(--text-300);
   line-height: 1.5;
+}
+
+/* Token Transparency caption that lives below the chat mockup */
+.ai-mockup__note {
+  max-width: 500px;
+  margin: 24px auto 0;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, rgba(254, 115, 12, 0.05) 0%, rgba(20, 26, 36, 0.6) 100%);
+  border: 1px solid rgba(254, 115, 12, 0.15);
+  border-left: 4px solid var(--amber-400);
+  box-shadow: var(--shadow-panel), 0 4px 20px rgba(254, 115, 12, 0.02);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.ai-mockup__note-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--amber-300);
+  margin-top: 1px;
+}
+.ai-mockup__note-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.ai-mockup__note-content {
+  flex: 1;
+}
+.ai-mockup__note-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-300);
+  line-height: 1.5;
+}
+.ai-mockup__note-highlight {
+  color: var(--text-100);
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -1323,9 +1402,6 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 /* ==========================================================================
    Section 8 — Ecosystem & Final CTA
    ========================================================================== */
-.ecosystem {
-  border-top: 1px solid var(--glass-border);
-}
 .ecosystem__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1369,10 +1445,10 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -18px;
+  bottom: -15px;
   transform: translateX(-50%);
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   pointer-events: none;
   background: url("../img/plug.svg") center/contain no-repeat;
   filter: hue-rotate(356deg);
@@ -1433,30 +1509,42 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 .stack__layer--core .stack__icon { color: var(--amber-300); background: var(--amber-glow-soft); border-color: rgba(254, 115, 12, 0.4); }
 .stack__layer--core .stack__tag { color: var(--amber-300); border-color: rgba(254, 115, 12, 0.35); }
 
-/* CTA Box */
-.cta-box {
-  background: linear-gradient(160deg, var(--glass-strong), rgba(12,16,22,0.95));
-  border: 1px solid var(--glass-border-strong);
+/* Reusable glass card with gradient border */
+.glass-card {
+  background: linear-gradient(160deg, var(--glass-strong), rgba(12,16,22,0.95)) padding-box,
+              linear-gradient(135deg, var(--amber-400), var(--cyan-400)) border-box;
+  border: 1px solid transparent;
   border-radius: var(--radius-xl);
   padding: 40px;
   box-shadow: var(--shadow-float);
+}
+
+/* CTA Box */
+.cta-box {
+  text-align: center;
   min-width: 0;
   max-width: 800px;
   margin: auto;
 }
 .cta-box__title {
   font-size: var(--fs-h2);
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   color: var(--text-100);
 }
 .cta-box__text {
-  font-size: 0.95rem;
+  font-size: var(--fs-lead);
+  color: var(--text-100);
+  line-height: 1.45;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 22px 26px;
   margin-bottom: 28px;
-  line-height: 1.5;
 }
 .cta-box__buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -1548,7 +1636,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   .hero__grid { grid-template-columns: 1fr; }
   .hero__copy { max-width: 620px; }
   .hero__stage { margin-top: 20px; perspective: none; }
-  .workspace { transform: none; will-change: auto; }
+  .app { transform: none; will-change: auto; }
   .callout { position: static; display: inline-block; margin: 6px 6px 0 0; max-width: none; }
   .callout-layer { display: flex; flex-wrap: wrap; margin-top: 16px; }
 
@@ -1566,6 +1654,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   /* ---- 6. Meet Joe (AI Collaborator) ---- */
   .ai-grid { grid-template-columns: 1fr; }
   .ai-mockup { order: 2; margin-top: 30px; }
+  .ai-mockup__note { width: 100%; margin-left: 0; margin-right: 0; }
 
   /* ---- 8. Ecosystem & Final CTA ---- */
   .ecosystem__grid { grid-template-columns: minmax(0, 1fr); }
@@ -1589,8 +1678,8 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   .widget-card { position: static; transform: none; }
 }
 @media (max-width: 600px) {
-  /* Hero workspace mockup: flat panel with a readable tree + compact 2-up gallery */
-  .workspace__body { grid-template-columns: 118px 1fr; min-height: 0; }
+  /* Hero app mockup: flat panel with a readable tree + compact 2-up gallery */
+  .app__body { grid-template-columns: 118px 1fr; min-height: 0; }
   .tree__row.indent2 { padding-left: 20px; }
   .gallery { grid-template-columns: repeat(2, 1fr); padding: 12px; gap: 10px; }
   .card__media { height: 84px; }
