@@ -95,9 +95,10 @@
       var canvasStart = (pct / 100) * containerWidth;
       var canvasWidth = containerWidth - canvasStart;
 
-      /* Clip the gallery at the slider boundary so cards don't bleed under the tree */
+      /* Fit the right container to the visible canvas area so cards stay on their side */
       if (sliderRight) {
-        sliderRight.style.clipPath = "inset(0 0 0 " + canvasStart + "px)";
+        sliderRight.style.left = canvasStart + "px";
+        sliderRight.style.width = canvasWidth + "px";
       }
 
       var crowdT = Math.pow(t, CROWD_EASE); /* exponential ease-in for the squeeze */
@@ -107,8 +108,8 @@
         if (!layout) return;
 
         var size = lerp(128, 92, t);
-        var spreadLeft = canvasStart + canvasWidth * layout.spreadX;
-        var crowdLeft = containerWidth - size - layout.crowdOffset;
+        var spreadLeft = canvasWidth * layout.spreadX;
+        var crowdLeft = canvasWidth - size - layout.crowdOffset;
         var left = lerp(spreadLeft, crowdLeft, crowdT);
 
         var spreadTop = containerHeight * layout.spreadY;
@@ -125,7 +126,7 @@
     };
 
     var updateSlider = function (clientX) {
-      if (window.innerWidth <= 940) return; // Disable dragging on mobile layout
+      if (window.innerWidth <= 760) return; // Disable dragging on mobile layout
       var rect = container.getBoundingClientRect();
       var x = clientX - rect.left;
       var pct = Math.max(10, Math.min(90, (x / rect.width) * 100));
@@ -135,10 +136,13 @@
     };
 
     var initSliderLayout = function () {
-      if (window.innerWidth <= 940) {
-        /* Clear any inline clip-path left over from desktop so the stacked
-           mobile layout (media query) isn't clipped after a resize. */
-        if (sliderRight) sliderRight.style.clipPath = "";
+      if (window.innerWidth <= 760) {
+        /* Clear any inline geometry left over from desktop so the stacked
+           mobile layout (media query) can take over after a resize. */
+        if (sliderRight) {
+          sliderRight.style.left = "";
+          sliderRight.style.width = "";
+        }
         return;
       }
       var rect = container.getBoundingClientRect();
@@ -163,7 +167,7 @@
     };
 
     var onStart = function (e) {
-      if (window.innerWidth <= 940) return;
+      if (window.innerWidth <= 760) return;
       isDragging = true;
       var clientX = e.touches ? e.touches[0].clientX : e.clientX;
       updateSlider(clientX);

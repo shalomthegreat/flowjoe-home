@@ -202,27 +202,82 @@
       <div class="container">
         <div class="hemispheres__header text-center">
           <span class="eyebrow" data-reveal>The Big Idea</span>
-          <h2 class="section-title" data-reveal data-reveal-delay="1">
+          <!-- <h2 class="section-title" data-reveal data-reveal-delay="1">
             Structure meets freedom. <span class="accent-amber-cyan">No trade-offs.</span>
+          </h2> -->
+          <h2 class="section-title" data-reveal data-reveal-delay="1">
+            Built for <span class="accent-amber">whole-brain thinking.</span>
           </h2>
           <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
-            Most productivity tools force a false choice: rigid hierarchy OR disorganized canvas. 
+            Most productivity tools force a rigid choice: hierarchical structure OR free-form thinking. 
             FlowJoe unites both sides of your brain in a single, fluid workspace.
           </p>
         </div>
 
-        <div class="hemispheres__split" data-reveal data-reveal-delay="2">
+        <!-- Interactive Split Slider Widget (framed as an app window) -->
+        <div class="slider-widget" id="hemiSlider" data-reveal data-reveal-delay="2">
+          <div class="app-mockup">
+            <div class="app-mockup__bar">
+              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+              <span class="app-mockup__title mono">FlowJoe — Structure meets Freedom</span>
+            </div>
+            <div class="slider-widget__container">
+              <!-- Left Side (Spine / Outline Mockup) -->
+              <div class="slider-widget__side slider-widget__side--left" id="sliderLeft">
+                <div class="widget-tree mockup-spine hot-zone hot-zone--spine">
+                  <div class="hot-zone__badge hot-zone__badge--spine">1</div>
+                  <div class="tree__head">Epic Project</div>
+                  <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> Project Scope</div>
+                  <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Research Brief</div>
+                  <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Design Direction</div>
+                  <div class="tree__row indent2"><span class="node" style="background:var(--cyan-400)"></span> Color Palette</div>
+                  <div class="tree__row indent2"><span class="node" style="background:var(--cyan-400)"></span> Typography</div>
+                  <div class="tree__row"><span class="node" style="background:#ff6bb0"></span> Implementation</div>
+                </div>
+              </div>
+
+              <!-- Right Side (Canvas / Gallery Mockup) -->
+              <div class="slider-widget__side slider-widget__side--right">
+                <div class="widget-canvas">
+                  <div class="hot-zone__badge hot-zone__badge--canvas">2</div>
+                  <div class="widget-card widget-card--1"><div class="widget-card__thumb swatch--amber"></div></div>
+                  <div class="widget-card widget-card--2"><div class="widget-card__thumb swatch--cyan"></div></div>
+                  <div class="widget-card widget-card--3"><div class="widget-card__thumb swatch--iris"></div></div>
+                </div>
+              </div>
+
+              <!-- Slider Handle -->
+              <div class="slider-widget__handle" id="sliderHandle">
+                <div class="slider-widget__button">
+                  <span class="slider-widget__arrow">&larr;</span>
+                  <span class="slider-widget__arrow">&rarr;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-widget__label">
+            <span class="mono">Drag the slider to balance Structure (The Spine) with Freedom (The Canvas)</span>
+          </div>
+        </div>
+
+        <div class="hemispheres__split" data-reveal data-reveal-delay="3">
           <!-- Left side: Structure & Logic (Amber) -->
           <div class="hemi-panel hemi-panel--left">
             <div class="hemi-panel__glow hemi-panel__glow--amber"></div>
             <div class="hemi-panel__content">
+              <div class="arch-card__badge arch-card__badge--spine">1</div>
               <span class="hemi-panel__eyebrow color-amber">THE LEFT HEMISPHERE</span>
               <h3 class="hemi-panel__title">Structure &amp; Logic</h3>
-              <ul class="hemi-panel__list">
-                <li><strong>Hierarchical outline:</strong> Infinite nested trees &amp; rigid nodes.</li>
-                <li><strong>The Good:</strong> Highly queryable, clean structure, quick navigation.</li>
-                <li><strong>The Bad:</strong> Suffocating. Rigid boxes don't match creative flow.</li>
-              </ul>
+              <p class="hemi-panel__lead color-amber">An infinite-depth hierarchical tree forms the spine of your project. Perfect for structure, categorization, and outlining complex ideas as they take shape.</p>
+              <div class="hemi-panel__callout">
+                <span class="hemi-panel__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18h6" /><path d="M10 22h4" />
+                    <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+                  </svg>
+                </span>
+                <p class="hemi-panel__callout-text">Highly queryable, clean structure, and quick navigation.</p>
+              </div>
             </div>
           </div>
 
@@ -230,51 +285,20 @@
           <div class="hemi-panel hemi-panel--right">
             <div class="hemi-panel__glow hemi-panel__glow--cyan"></div>
             <div class="hemi-panel__content">
+              <div class="arch-card__badge arch-card__badge--canvas">2</div>
               <span class="hemi-panel__eyebrow color-cyan">THE RIGHT HEMISPHERE</span>
               <h3 class="hemi-panel__title">Visual Freedom</h3>
-              <ul class="hemi-panel__list">
-                <li><strong>Spatial playground:</strong> Infinite whiteboards &amp; freeform cards.</li>
-                <li><strong>The Good:</strong> High media richness, relationships are visual.</li>
-                <li><strong>The Bad:</strong> Disorganized. Hard to scale without structure.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interactive Split Slider Widget -->
-        <div class="slider-widget" id="hemiSlider" data-reveal data-reveal-delay="3">
-          <div class="slider-widget__container">
-            <!-- Left Side (Spine / Outline Mockup) -->
-            <div class="slider-widget__side slider-widget__side--left" id="sliderLeft">
-              <div class="widget-tree">
-                <div class="widget-tree__item"><span class="widget-tree__node"></span> Project Scope</div>
-                <div class="widget-tree__item indent"><span class="widget-tree__node"></span> Research Brief</div>
-                <div class="widget-tree__item indent"><span class="widget-tree__node"></span> Design Direction</div>
-                <div class="widget-tree__item indent2"><span class="widget-tree__node"></span> Color Palette</div>
-                <div class="widget-tree__item indent2"><span class="widget-tree__node"></span> Typography</div>
-                <div class="widget-tree__item"><span class="widget-tree__node"></span> Implementation</div>
+              <p class="hemi-panel__lead color-cyan">An infinite visual board where you lay out rich media cards, important links and documents, and compare versions—forging ideas into reality.</p>
+              <div class="hemi-panel__callout">
+                <span class="hemi-panel__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18h6" /><path d="M10 22h4" />
+                    <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+                  </svg>
+                </span>
+                <p class="hemi-panel__callout-text">High media richness, with relationships you can see.</p>
               </div>
             </div>
-
-            <!-- Right Side (Canvas / Gallery Mockup) -->
-            <div class="slider-widget__side slider-widget__side--right">
-              <div class="widget-canvas">
-                <div class="widget-card widget-card--1"><div class="widget-card__thumb swatch--amber"></div></div>
-                <div class="widget-card widget-card--2"><div class="widget-card__thumb swatch--cyan"></div></div>
-                <div class="widget-card widget-card--3"><div class="widget-card__thumb swatch--iris"></div></div>
-              </div>
-            </div>
-
-            <!-- Slider Handle -->
-            <div class="slider-widget__handle" id="sliderHandle">
-              <div class="slider-widget__button">
-                <span class="slider-widget__arrow">&larr;</span>
-                <span class="slider-widget__arrow">&rarr;</span>
-              </div>
-            </div>
-          </div>
-          <div class="slider-widget__label">
-            <span class="mono">Drag the slider to balance Structure (The Spine) and Freedom (The Canvas)</span>
           </div>
         </div>
       </div>
