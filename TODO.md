@@ -22,7 +22,15 @@ collapsed into one grid, and all AI/trust slides collapsed into the Joe section.
 - [x] Meet Joe — chat mockup + Token Transparency Funnel, AI Seatbelt loop, Multimodal/MCP, JSON Synthesis
 - [x] Trade-Off Refusal Matrix — comparison table vs note apps / cloud drives / canvases
 - [x] Ecosystem + Final CTA — "Beyond an App" + closing CTA
+- [x]  rework specific sections
+- [ ]  rework the UI section
+- [ ]  update the features section
+
+## global
+
 - [x] Nav (sticky, active-section highlight) + Footer
+- [x] unify the marketing message as a whole
+- [x] ensure every section operates smoothly on all screentypes
 
 ---
 
