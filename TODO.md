@@ -23,8 +23,8 @@ collapsed into one grid, and all AI/trust slides collapsed into the Joe section.
 - [x] Trade-Off Refusal Matrix — comparison table vs note apps / cloud drives / canvases
 - [x] Ecosystem + Final CTA — "Beyond an App" + closing CTA
 - [x]  rework specific sections
-- [ ]  rework the UI section
-- [ ]  update the features section
+- [x]  rework the UI section
+- [x]  update the features section
 
 ## global
 

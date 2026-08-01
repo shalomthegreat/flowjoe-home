@@ -20,8 +20,8 @@
     │  NAV
     │  1. HERO                (.hero)
     │  2. THE PROBLEM         (#problem)
-    │  3. THE BIG IDEA        (#hemispheres)
-    │    4. UI ARCHITECTURE     (#workspace)  [hidden — rework]
+    │  3. THE HOME-BASE       (#homebase)
+    │  4. THE BIG IDEA        (#hemispheres)
     │  5. CORE FEATURES GRID  (#features)
     │  6. MEET JOE            (#joe)
     │  7. TRADE-OFF MATRIX    (#compare)
@@ -55,7 +55,7 @@
       <div class="container hero__grid">
         <!-- Copy (brand voice: warm, specific, guide) -->
         <div class="hero__copy">
-          <span class="eyebrow" data-reveal>One Workspace to Rule Them All</span>
+          <span class="eyebrow" data-reveal>One App to Rule Them All</span>
           <h1 class="hero__title" data-reveal data-reveal-delay="1">
             Finally, a place where <span class="accent">everything connects.</span>
           </h1>
@@ -197,7 +197,117 @@
       </div>
     </section>
 
-    <!-- ===================== 3. THE BIG IDEA ===================== -->
+    <!-- ===================== 3. THE HOME-BASE ===================== -->
+    <section id="homebase" class="section homebase">
+      <div class="container">
+        <div class="homebase__header text-center">
+          <span class="eyebrow" data-reveal>The Modern Desktop</span>
+          <h2 class="section-title" data-reveal data-reveal-delay="1">
+            <span class="accent-amber">99% of work</span> happens on the web.
+          </h2>
+          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
+            Yet your desktop hasn't evolved to keep up. It's still a dumping ground of scattered
+            files, buried tabs, and forgotten logins &mdash; a starting point that slows you down
+            instead of launching you forward.
+          </p>
+        </div>
+
+        <div class="homebase__split" data-reveal data-reveal-delay="3">
+          <!-- Copy -->
+          <div class="homebase__copy">
+            <h3 class="homebase__title">FlowJoe is your central home-base.</h3>
+            <p class="homebase__lead">
+              A single place to access, manage, and orient yourself &mdash; so you always know
+              where everything lives and where to pick back up.
+            </p>
+            <ul class="homebase__list">
+              <li class="homebase__item">
+                <span class="homebase__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                  </svg>
+                </span>
+                <div class="homebase__item-body">
+                  <span class="homebase__item-title">Every link, one click away</span>
+                  <span class="homebase__item-text">All your relevant links live together &mdash; no more hunting through bookmarks and tabs.</span>
+                </div>
+              </li>
+              <li class="homebase__item">
+                <span class="homebase__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                    <path d="M14 2v6h6" /><path d="M8 13h8" /><path d="M8 17h6" />
+                  </svg>
+                </span>
+                <div class="homebase__item-body">
+                  <span class="homebase__item-title">Docs at your fingertips</span>
+                  <span class="homebase__item-text">Keep the documents you actually use close by, ready to open the moment you need them.</span>
+                </div>
+              </li>
+              <li class="homebase__item">
+                <span class="homebase__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" /><circle cx="12" cy="16" r="1" />
+                  </svg>
+                </span>
+                <div class="homebase__item-body">
+                  <span class="homebase__item-title">Access codes, secured</span>
+                  <span class="homebase__item-text">Store the keys and codes you reach for daily in one trusted place.</span>
+                </div>
+              </li>
+              <li class="homebase__item">
+                <span class="homebase__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4" /><path d="M12 18v4" /><path d="M4.9 4.9l2.8 2.8" /><path d="M16.3 16.3l2.8 2.8" />
+                    <path d="M2 12h4" /><path d="M18 12h4" /><path d="M4.9 19.1l2.8-2.8" /><path d="M16.3 7.7l2.8-2.8" />
+                  </svg>
+                </span>
+                <div class="homebase__item-body">
+                  <span class="homebase__item-title">Highly adaptable</span>
+                  <span class="homebase__item-text">Shape your home-base around how you actually work &mdash; it flexes to fit any workflow.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Visual: home-base mockup -->
+          <div class="homebase__visual">
+            <div class="app-mockup">
+              <div class="app-mockup__bar">
+                <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+                <span class="app-mockup__title mono">FlowJoe — Home Base</span>
+              </div>
+              <div class="homebase__grid">
+                <div class="homebase__tile homebase__tile--amber">
+                  <span class="homebase__tile-label mono">LINKS</span>
+                  <span class="homebase__tile-title">Quick Access</span>
+                  <span class="homebase__tile-sub">18 pinned</span>
+                </div>
+                <div class="homebase__tile homebase__tile--cyan">
+                  <span class="homebase__tile-label mono">DOCS</span>
+                  <span class="homebase__tile-title">Active Docs</span>
+                  <span class="homebase__tile-sub">7 open</span>
+                </div>
+                <div class="homebase__tile homebase__tile--iris">
+                  <span class="homebase__tile-label mono">ACCESS</span>
+                  <span class="homebase__tile-title">Vault</span>
+                  <span class="homebase__tile-sub">secured</span>
+                </div>
+                <div class="homebase__tile homebase__tile--mint">
+                  <span class="homebase__tile-label mono">RECENT</span>
+                  <span class="homebase__tile-title">Jump back in</span>
+                  <span class="homebase__tile-sub">3 sessions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. THE BIG IDEA ===================== -->
     <section id="hemispheres" class="section hemispheres">
       <div class="container">
         <div class="hemispheres__header text-center">
@@ -299,92 +409,6 @@
                 <p class="hemi-panel__callout-text">High media richness, with relationships you can see.</p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== 4. UI ARCHITECTURE (hidden) ===================== -->
-    <section id="workspace" class="section architecture" style="display: none;">
-      <div class="container">
-        <div class="architecture__header text-center">
-          <span class="eyebrow" data-reveal>UI Architecture</span>
-          <h2 class="section-title" data-reveal data-reveal-delay="1">
-            Built for <span class="accent-amber">whole-brain thinking.</span>
-          </h2>
-          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
-            No modal overlays, no lost context. A single, seamless workspace designed around three core architectural pillars.
-          </p>
-        </div>
-
-        <!-- Walkthrough App Mockup -->
-        <div class="architecture__mockup" data-reveal data-reveal-delay="2">
-          <div class="app-mockup">
-            <div class="app-mockup__bar">
-              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
-              <span class="app-mockup__title mono">FlowJoe — Core Architecture Walkthrough</span>
-            </div>
-            <div class="app-mockup__body">
-              <!-- Pillar 1: The Spine (Left, Highlighted with Amber) -->
-              <div class="mockup-spine hot-zone hot-zone--spine">
-                <div class="hot-zone__badge hot-zone__badge--spine">1</div>
-                <div class="tree__head">The Spine</div>
-                <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> Brand Strategy</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Vision Board</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Customer Journey</div>
-                <div class="tree__row indent2"><span class="node" style="background:var(--ok)"></span> Personas</div>
-                <div class="tree__row"><span class="node" style="background:#ff6bb0"></span> Creative Assets</div>
-              </div>
-
-              <!-- Pillar 2: The Resizer (Center) -->
-              <div class="mockup-resizer hot-zone hot-zone--resizer">
-                <div class="hot-zone__badge hot-zone__badge--resizer">2</div>
-                <div class="mockup-resizer__line"></div>
-              </div>
-
-              <!-- Pillar 3: The Canvas (Right) -->
-              <div class="mockup-canvas hot-zone hot-zone--canvas">
-                <div class="hot-zone__badge hot-zone__badge--canvas">3</div>
-                <div class="mockup-canvas__grid">
-                  <div class="mockup-card"><div class="mockup-card__header swatch--amber"></div><div class="mockup-card__body">Vision Brief</div></div>
-                  <div class="mockup-card"><div class="mockup-card__header swatch--cyan"></div><div class="mockup-card__body">Asset Stack</div></div>
-                  <div class="mockup-card"><div class="mockup-card__header swatch--indigo"></div><div class="mockup-card__body">Embed Frame</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interactive Walkthrough Cards -->
-        <div class="architecture__cards">
-          <!-- Card 1 -->
-          <div class="arch-card arch-card--spine" data-reveal data-reveal-delay="1">
-            <div class="arch-card__badge arch-card__badge--spine">1</div>
-            <h3 class="arch-card__title">The Spine</h3>
-            <span class="mono arch-card__subtitle">LOGICAL OUTLINE</span>
-            <p class="arch-card__text">
-              An infinite-depth hierarchical tree. Perfect for structure, categorization, and outlining complex ideas before you lay them out visually.
-            </p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="arch-card arch-card--resizer" data-reveal data-reveal-delay="2">
-            <div class="arch-card__badge arch-card__badge--resizer">2</div>
-            <h3 class="arch-card__title">The Corpus Callosum</h3>
-            <span class="mono arch-card__subtitle">SPLIT-SCREEN RESIZER</span>
-            <p class="arch-card__text">
-              The neural bridge. Drag the resizer left to immerse yourself in the creative canvas, or drag right to focus on your logical structure.
-            </p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="arch-card arch-card--canvas" data-reveal data-reveal-delay="3">
-            <div class="arch-card__badge arch-card__badge--canvas">3</div>
-            <h3 class="arch-card__title">The Canvas</h3>
-            <span class="mono arch-card__subtitle">SPATIAL PLAYGROUND</span>
-            <p class="arch-card__text">
-              An infinite visual board where you lay out rich media cards, drag and drop documents, and let ideas collide visually.
-            </p>
           </div>
         </div>
       </div>
@@ -530,7 +554,7 @@
               </div>
               <h3 class="feat-card__title">Built for audio</h3>
               <p class="feat-card__text">
-                Listen to music while you work, analyse your latest AI masterpiece, or plan your next song. Full auido intelligence built in.
+                Listen to music while you work, analyse your latest AI masterpiece, or plan your next song. Full audio intelligence built in.
               </p>
               <div class="feat-card__footer-tags">
                 <span class="feat-tag">Global Audio Player</span>
@@ -746,10 +770,10 @@
         <div class="ecosystem__visual" data-reveal data-reveal-delay="2">
           <div class="stack">
             <div class="stack__layer stack__layer--cyan">
-              <span class="stack__icon">🧠</span>
+              <span class="stack__icon">🧩</span>
               <div class="stack__meta">
-                <span class="stack__title">Custom AI Models</span>
-                <span class="stack__text">Bring your own models — local or hosted.</span>
+                <span class="stack__title">Plugins</span>
+                <span class="stack__text">Snap community tools and add-ons into the canvas.</span>
               </div>
               <span class="stack__tag mono">EXTEND</span>
             </div>
@@ -766,18 +790,18 @@
             -->
 
             <div class="stack__layer stack__layer--cyan">
-              <span class="stack__icon">🧩</span>
+              <span class="stack__icon">🧠</span>
               <div class="stack__meta">
-                <span class="stack__title">Plugins</span>
-                <span class="stack__text">Snap community &amp; custom tools into the canvas.</span>
+                <span class="stack__title">Custom AI Models</span>
+                <span class="stack__text">Bring your own brain — local or hosted.</span>
               </div>
               <span class="stack__tag mono">EXTEND</span>
             </div>
 
             <div class="stack__layer stack__layer--core">
-              <span class="stack__icon">🔒</span>
+              <span class="stack__icon">🖥️</span>
               <div class="stack__meta">
-                <span class="stack__title">Local Core</span>
+                <span class="stack__title">FlowJoe Core App</span>
                 <span class="stack__text">Private, offline-first foundation on your machine.</span>
               </div>
               <span class="stack__tag mono">FOUNDATION</span>
