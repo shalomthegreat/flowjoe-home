@@ -40,7 +40,7 @@ collapsed into one grid, and all AI/trust slides collapsed into the Joe section.
 - [x] Interactions (reveal, nav shadow, parallax tilt, resizer slider, features scroller)
 - [x] Mobile QA — sections reflow, callouts/cards stack
 - [x] Dark-only theme matching the slide deck
-- [ ] Favicon + OG/Twitter meta tags + social preview image (only `description` meta exists today)
+- [x] Favicon + OG/Twitter meta tags + social preview image (only `description` meta exists today)
 - [ ] Accessibility + performance pass (focus states, contrast, reduced-motion, font loading)
 
 ---
