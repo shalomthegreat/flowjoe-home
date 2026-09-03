@@ -52,7 +52,7 @@
     │  5. CORE FEATURES GRID  (#features)
     │  6. MEET JOE            (#joe)
     │  7. TRADE-OFF MATRIX    (#compare)
-    │  8. ECOSYSTEM + CTA     (#ecosystem)
+    │  8. ECOSYSTEM + CONNECT (#ecosystem)
     │  FOOTER
     └──────────────────────────────────────────
   -->
@@ -73,9 +73,10 @@
         <a href="#hemispheres">The big idea</a>
         <a href="#joe">Meet Joe</a>
         <a href="#features">Why FlowJoe</a>
+        <button type="button" class="nav__connect-btn" id="mobile-connect-trigger">Connect</button>
       </nav>
       <div class="nav__right">
-        <a href="#ecosystem" class="btn btn--sm btn--primary">Get FlowJoe</a>
+        <button type="button" class="btn btn--sm btn--primary" id="connect-modal-trigger" aria-haspopup="dialog">Connect</button>
       </div>
     </div>
   </header>
@@ -95,7 +96,7 @@
             visual workspace &mdash; so you can <strong>spend less time searching and more time doing.</strong>
           </p>
           <div class="hero__cta" data-reveal data-reveal-delay="3">
-            <a href="#ecosystem" class="btn btn--primary">Get FlowJoe &rarr;</a>
+            <button type="button" class="btn btn--primary" id="hero-connect-trigger">Connect with us &rarr;</button>
             <a href="#problem" class="btn btn--ghost">See how it works</a>
           </div>
           <p class="hero__note" data-reveal data-reveal-delay="3">
@@ -843,7 +844,56 @@
 
         <!-- Full-width final CTA -->
         <div class="ecosystem__cta-row">
-          <div class="cta-box glass-card" data-reveal data-reveal-delay="3">
+          <div class="cta-box glass-card" id="team-connect-content" data-reveal data-reveal-delay="3">
+            <h3 class="cta-box__title serif">Connect with the FlowJoe Team</h3>
+            <p class="cta-box__text">
+              We're building FlowJoe because we believe your workspace should work the way you think. Reach out if you'd like to connect or learn more.
+            </p>
+            
+            <div class="team-grid">
+              <a href="https://shalomr.dev" target="_blank" rel="noopener noreferrer" class="team-member team-member--link">
+                <div class="team-avatar">
+                  <span class="team-initials">SR</span>
+                </div>
+                <div class="team-info">
+                  <h4 class="team-name">Shalom</h4>
+                  <span class="team-link">
+                    shalomr.dev
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+              
+              <a href="https://dvotino.com" target="_blank" rel="noopener noreferrer" class="team-member team-member--link">
+                <div class="team-avatar">
+                  <span class="team-initials">DV</span>
+                </div>
+                <div class="team-info">
+                  <h4 class="team-name">Daniel</h4>
+                  <span class="team-link">
+                    dvotino.com
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </div>
+            
+            <p class="cta-box__note mono">Local-first. Private. Coming soon.</p>
+          </div>
+        </div>
+
+        <!-- 
+        ORIGINAL CTA VERSION - Uncomment this section to switch back to generic CTA
+        <div class="ecosystem__cta-row">
+          <div class="cta-box glass-card" id="team-connect-content" data-reveal data-reveal-delay="3">
             <h3 class="cta-box__title serif">Think visually. Build clearly.</h3>
             <p class="cta-box__text">
               Bring your scattered notes, files, AI chats, and creative assets together into a workspace that actually makes sense.
@@ -855,6 +905,7 @@
             <p class="cta-box__note mono">Local-first. Private. Start creating today.</p>
           </div>
         </div>
+        -->
 
       </div>
     </section>
@@ -904,6 +955,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- Connect Modal (content will be cloned from ecosystem section) -->
+  <div class="modal" id="connect-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+    <div class="modal__content glass-card">
+      <button type="button" class="modal__close" id="modal-close" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modal-content-target"></div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

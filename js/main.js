@@ -27,7 +27,7 @@
     navToggle.addEventListener("click", function () {
       setNavOpen(!navMenu.classList.contains("is-open"));
     });
-    navMenu.querySelectorAll("a").forEach(function (link) {
+    navMenu.querySelectorAll("a, .nav__connect-btn").forEach(function (link) {
       link.addEventListener("click", function () { setNavOpen(false); });
     });
     document.addEventListener("keydown", function (e) {
@@ -279,28 +279,48 @@
     updateArrows();
   }
 
-  /* ---- Nav link highlighting on scroll ---- */
-  var sections = document.querySelectorAll("section[id]");
-  var navLinks = document.querySelectorAll(".nav__links a");
-  if (sections.length && navLinks.length && "IntersectionObserver" in window) {
-    var navObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var id = entry.target.getAttribute("id");
-          navLinks.forEach(function (link) {
-            var href = link.getAttribute("href");
-            var isActive = href === "#" + id;
-            link.classList.toggle("is-active", isActive);
-            if (isActive) {
-              link.setAttribute("aria-current", "true");
-            } else {
-              link.removeAttribute("aria-current");
-            }
-          });
-        }
-      });
-    }, { threshold: 0.25, rootMargin: "-20% 0px -50% 0px" });
-    sections.forEach(function (section) { navObserver.observe(section); });
+  /* ---- Connect Modal ---- */
+  var modal = document.getElementById("connect-modal");
+  var modalBackdrop = document.getElementById("modal-backdrop");
+  var modalClose = document.getElementById("modal-close");
+  var modalContentTarget = document.getElementById("modal-content-target");
+  var modalTriggers = document.querySelectorAll("#connect-modal-trigger, #hero-connect-trigger, #mobile-connect-trigger");
+  var teamConnectContent = document.getElementById("team-connect-content");
+
+  if (modal && modalBackdrop && modalClose && modalTriggers.length && modalContentTarget && teamConnectContent) {
+    var openModal = function () {
+      // Clone the team connect content into the modal
+      modalContentTarget.innerHTML = "";
+      var clonedContent = teamConnectContent.cloneNode(true);
+      clonedContent.removeAttribute("id");
+      clonedContent.removeAttribute("data-reveal");
+      clonedContent.removeAttribute("data-reveal-delay");
+      clonedContent.classList.add("is-in");
+      modalContentTarget.appendChild(clonedContent);
+      
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      modalClose.focus();
+    };
+
+    var closeModal = function () {
+      modal.classList.remove("is-open");
+      document.body.style.overflow = "";
+      modalContentTarget.innerHTML = "";
+    };
+
+    modalTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", openModal);
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modalBackdrop.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
   }
 
 })();
