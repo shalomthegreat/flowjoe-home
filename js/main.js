@@ -15,6 +15,26 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* ---- Mobile nav toggle ---- */
+  var navMenu = document.getElementById("nav-menu");
+  var navToggle = document.querySelector(".nav__toggle");
+  if (navMenu && navToggle) {
+    var setNavOpen = function (open) {
+      navMenu.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    navToggle.addEventListener("click", function () {
+      setNavOpen(!navMenu.classList.contains("is-open"));
+    });
+    navMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setNavOpen(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setNavOpen(false);
+    });
+  }
+
   /* ---- Scroll reveal via IntersectionObserver ---- */
   var revealEls = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && !reduceMotion) {
@@ -94,6 +114,8 @@
       var t = (pct - 10) / 80; /* 0 = slider left (canvas wide), 1 = slider right (canvas narrow) */
       var canvasStart = (pct / 100) * containerWidth;
       var canvasWidth = containerWidth - canvasStart;
+
+      sliderHandle.setAttribute("aria-valuenow", Math.round(pct));
 
       /* Fit the right container to the visible canvas area so cards stay on their side */
       if (sliderRight) {
@@ -188,6 +210,30 @@
     sliderHandle.addEventListener("mousedown", onStart);
     sliderHandle.addEventListener("touchstart", onStart);
 
+    sliderHandle.addEventListener("keydown", function (e) {
+      if (window.innerWidth <= 760) return;
+      var rect = container.getBoundingClientRect();
+      var current =
+        parseFloat(sliderHandle.style.left) ||
+        parseFloat(sliderLeft.style.width) ||
+        parseFloat(getComputedStyle(hemiSlider).getPropertyValue("--slider-default")) ||
+        38;
+      var step = e.shiftKey ? 10 : 4;
+      if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
+        e.preventDefault();
+        updateSlider(rect.left + ((Math.max(10, current - step) / 100) * rect.width));
+      } else if (e.key === "ArrowRight" || e.key === "ArrowUp") {
+        e.preventDefault();
+        updateSlider(rect.left + ((Math.min(90, current + step) / 100) * rect.width));
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        updateSlider(rect.left + (0.1 * rect.width));
+      } else if (e.key === "End") {
+        e.preventDefault();
+        updateSlider(rect.left + (0.9 * rect.width));
+      }
+    });
+
     // Click anywhere on container to move
     container.addEventListener("mousedown", function (e) {
       if (e.target !== sliderHandle && !sliderHandle.contains(e.target)) {
@@ -220,6 +266,15 @@
       });
     });
     scroller.addEventListener("scroll", updateArrows, { passive: true });
+    scroller.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        scroller.scrollBy({ left: -stepFor(), behavior: reduceMotion ? "auto" : "smooth" });
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        scroller.scrollBy({ left: stepFor(), behavior: reduceMotion ? "auto" : "smooth" });
+      }
+    });
     window.addEventListener("resize", updateArrows, { passive: true });
     updateArrows();
   }
@@ -234,7 +289,13 @@
           var id = entry.target.getAttribute("id");
           navLinks.forEach(function (link) {
             var href = link.getAttribute("href");
-            link.classList.toggle("is-active", href === "#" + id);
+            var isActive = href === "#" + id;
+            link.classList.toggle("is-active", isActive);
+            if (isActive) {
+              link.setAttribute("aria-current", "true");
+            } else {
+              link.removeAttribute("aria-current");
+            }
           });
         }
       });

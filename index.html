@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <!--
     ┌─ CONTENTS ───────────────────────────────────────────
     │  NAV
@@ -60,9 +61,14 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a class="nav__logo" href="#" aria-label="FlowJoe home">
-        <img src="img/flowjoe-logo.svg" alt="FlowJoe" />
+        <img src="img/flowjoe-logo.svg" alt="" width="120" height="26" />
       </a>
-      <nav class="nav__links" aria-label="Primary">
+      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <nav class="nav__links" id="nav-menu" aria-label="Primary">
         <!-- <a href="#problem">The problem</a> -->
         <a href="#hemispheres">The big idea</a>
         <a href="#joe">Meet Joe</a>
@@ -76,7 +82,7 @@
   </header>
 
   <!-- ===================== 1. HERO ===================== -->
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="container hero__grid">
         <!-- Copy (brand voice: warm, specific, guide) -->
@@ -99,7 +105,7 @@
         </div>
 
         <!-- 3D workspace mockup with glowing callouts (recreates deck page 1) -->
-        <div class="hero__stage" data-reveal data-reveal-delay="2">
+        <div class="hero__stage" data-reveal data-reveal-delay="2" aria-hidden="true">
           <div class="app" id="app">
             <div class="app__bar">
               <span class="dot dot--r"></span>
@@ -158,7 +164,7 @@
     <section id="problem" class="section problem">
       <div class="container problem__grid">
         <!-- Visual panel (Chaos diagram with glowing fracture line) -->
-        <div class="problem__visual" data-reveal>
+        <div class="problem__visual" data-reveal aria-hidden="true">
           <div class="chaos-box">
             <svg class="chaos-box__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                             <path d="M22,22 C40,10 70,20 78,28 C90,45 10,65 25,80 C40,95 65,85 77,73" />
@@ -299,7 +305,7 @@
           </div>
 
           <!-- Visual: home-base mockup -->
-          <div class="homebase__visual">
+          <div class="homebase__visual" aria-hidden="true">
             <div class="app-mockup">
               <div class="app-mockup__bar">
                 <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
@@ -351,7 +357,7 @@
         </div>
 
         <!-- Interactive Split Slider Widget (framed as an app window) -->
-        <div class="slider-widget" id="hemiSlider" data-reveal data-reveal-delay="2">
+        <div class="slider-widget" id="hemiSlider" data-reveal data-reveal-delay="2" role="group" aria-label="Structure and freedom balance demo">
           <div class="app-mockup">
             <div class="app-mockup__bar">
               <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
@@ -383,8 +389,8 @@
               </div>
 
               <!-- Slider Handle -->
-              <div class="slider-widget__handle" id="sliderHandle">
-                <div class="slider-widget__button">
+              <div class="slider-widget__handle" id="sliderHandle" role="slider" tabindex="0" aria-valuemin="10" aria-valuemax="90" aria-valuenow="38" aria-label="Balance structure and freedom">
+                <div class="slider-widget__button" aria-hidden="true">
                   <span class="slider-widget__arrow">&larr;</span>
                   <span class="slider-widget__arrow">&rarr;</span>
                 </div>
@@ -465,7 +471,7 @@
           </div>
         </div>
 
-        <div class="features__grid" id="featuresScroller">
+        <div class="features__grid" id="featuresScroller" role="region" aria-label="Core features" tabindex="0">
           <!-- Card 1: The Spine — amber (left brain / structure) -->
           <div class="feat-card feat-card--amber" data-reveal data-reveal-delay="1">
             <div class="feat-card__content">
@@ -601,7 +607,7 @@
       <div class="container ai-grid">
         <!-- Interactive Chat / Seatbelt Loop Mockup -->
         <div class="ai-mockup" data-reveal>
-          <div class="chat-panel">
+          <div class="chat-panel" aria-hidden="true">
             <div class="chat-panel__bar">
               <span class="chat-avatar">🤖</span>
               <div class="chat-meta">
@@ -640,8 +646,8 @@
                     <li class="step"><span class="step-num">3</span> <strong>Approve:</strong> Awaiting permission</li>
                   </ul>
                   <div class="seatbelt-actions">
-                    <button type="button" class="seatbelt-btn seatbelt-btn--primary">Preview</button>
-                    <button type="button" class="seatbelt-btn seatbelt-btn--secondary">Reject / Undo</button>
+                    <button type="button" class="seatbelt-btn seatbelt-btn--primary" disabled>Preview</button>
+                    <button type="button" class="seatbelt-btn seatbelt-btn--secondary" disabled>Reject / Undo</button>
                   </div>
                 </div>
                 <p class="seatbelt-waiting">Joe is waiting for your approval to continue.</p>
@@ -718,22 +724,23 @@
 
         <div class="matrix-container" data-reveal data-reveal-delay="2">
           <table class="compare-table">
+            <caption class="sr-only">Feature comparison across note apps, cloud drives, freeform canvases, and FlowJoe</caption>
             <thead>
               <tr>
-                <th class="col-feature">Capability</th>
-                <th>Note Apps</th>
-                <th>Cloud Drives</th>
-                <th>Freeform Canvases</th>
-                <th class="col-flowjoe">FlowJoe</th>
+                <th scope="col" class="col-feature">Capability</th>
+                <th scope="col">Note Apps</th>
+                <th scope="col">Cloud Drives</th>
+                <th scope="col">Freeform Canvases</th>
+                <th scope="col" class="col-flowjoe">FlowJoe</th>
               </tr>
             </thead>
             <tbody>
               <!-- Row 1 -->
               <tr>
-                <td class="row-feature">
+                <th scope="row" class="row-feature">
                   <strong>Logical Structure</strong>
                   <span class="row-sub text-muted">Hierarchical trees and structured outlines</span>
-                </td>
+                </th>
                 <td class="cell-ok"><span class="badge badge--ok">Partial</span></td>
                 <td class="cell-ok"><span class="badge badge--ok">Yes</span></td>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
@@ -741,10 +748,10 @@
               </tr>
               <!-- Row 2 -->
               <tr>
-                <td class="row-feature">
+                <th scope="row" class="row-feature">
                   <strong>Media Richness</strong>
                   <span class="row-sub text-muted">Inline rendering of PDFs, Figma, videos, spreadsheets</span>
-                </td>
+                </th>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
                 <td class="cell-ok"><span class="badge badge--ok">Yes</span></td>
@@ -752,10 +759,10 @@
               </tr>
               <!-- Row 3 -->
               <tr>
-                <td class="row-feature">
+                <th scope="row" class="row-feature">
                   <strong>AI Collaboration</strong>
                   <span class="row-sub text-muted">Local, sandboxed collaborator with transparent context</span>
-                </td>
+                </th>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
@@ -763,10 +770,10 @@
               </tr>
               <!-- Row 4 -->
               <tr>
-                <td class="row-feature">
+                <th scope="row" class="row-feature">
                   <strong>Local-First &amp; Private</strong>
                   <span class="row-sub text-muted">Data stays on your machine, fully offline capable</span>
-                </td>
+                </th>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
                 <td class="cell-no"><span class="badge badge--no">No</span></td>
@@ -793,7 +800,7 @@
         </div>
 
         <!-- Right: Ecosystem tech stack (layers built on a local core) -->
-        <div class="ecosystem__visual" data-reveal data-reveal-delay="2">
+        <div class="ecosystem__visual" data-reveal data-reveal-delay="2" aria-hidden="true">
           <div class="stack">
             <div class="stack__layer stack__layer--cyan">
               <span class="stack__icon">🧩</span>
@@ -858,13 +865,13 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <img src="img/flowjoe-logo.svg" alt="FlowJoe Logo" class="footer__logo" />
+        <img src="img/flowjoe-logo.svg" alt="" class="footer__logo" width="96" height="24" />
         <p class="footer__desc">
           A local-first visual workspace that unites notes, files, AI chats, and creative work. Premium software with a pulse.
         </p>
         <p class="footer__copyright mono">
           &copy; 2026 FlowJoe. All rights reserved.<br />
-          Generated with <a href="https://devin.ai" target="_blank" rel="noopener">Devin</a>
+          Generated with <a href="https://devin.ai" target="_blank" rel="noopener noreferrer">Devin<span class="sr-only"> (opens in new tab)</span></a>
         </p>
       </div>
       
@@ -873,7 +880,7 @@
         <div class="footer__col">
           <h4 class="footer__title mono">Product</h4>
           <a href="#problem">The Problem</a>
-          <a href="#workspace">The Workspace</a>
+          <a href="#homebase">The Workspace</a>
           <a href="#joe">Meet Joe</a>
           <a href="#compare">Why FlowJoe</a>
         </div>
