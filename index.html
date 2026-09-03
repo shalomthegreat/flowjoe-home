@@ -60,7 +60,7 @@
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a class="nav__logo" href="#" aria-label="FlowJoe home">
+      <a class="nav__logo" href="#main-content" aria-label="FlowJoe home">
         <img src="img/flowjoe-logo.svg" alt="" width="120" height="26" />
       </a>
       <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
@@ -75,7 +75,6 @@
         <a href="#features">Why FlowJoe</a>
       </nav>
       <div class="nav__right">
-        <a href="#" class="btn btn--sm btn--ghost">Sign in</a>
         <a href="#ecosystem" class="btn btn--sm btn--primary">Get FlowJoe</a>
       </div>
     </div>
@@ -850,8 +849,8 @@
               Bring your scattered notes, files, AI chats, and creative assets together into a workspace that actually makes sense.
             </p>
             <div class="cta-box__buttons">
-              <a href="#" class="btn btn--primary">Get FlowJoe &rarr;</a>
-              <a href="#" class="btn btn--ghost">Sign Up</a>
+              <a class="btn btn--primary is-disabled" aria-disabled="true" tabindex="-1">Get FlowJoe &rarr;</a>
+              <a class="btn btn--ghost is-disabled" aria-disabled="true" tabindex="-1">Sign Up</a>
             </div>
             <p class="cta-box__note mono">Local-first. Private. Start creating today.</p>
           </div>
@@ -890,17 +889,17 @@
           <h4 class="footer__title mono">Ecosystem</h4>
           <a href="#features">Core Features</a>
           <a href="#ecosystem">Plugins</a>
-          <a href="#">Developer API</a>
-          <a href="#">Model Registry</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Developer API</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Model Registry</a>
         </div>
 
         <!-- Col 3 -->
         <div class="footer__col">
           <h4 class="footer__title mono">Community</h4>
-          <a href="#">Discord</a>
-          <a href="#">GitHub</a>
-          <a href="#">Twitter</a>
-          <a href="#">Newsletter</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Discord</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">GitHub</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Twitter</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Newsletter</a>
         </div>
       </div>
     </div>
