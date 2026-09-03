@@ -227,107 +227,106 @@
     <section id="homebase" class="section homebase">
       <div class="container">
         <div class="homebase__header text-center">
-          <span class="eyebrow" data-reveal>The Modern Desktop</span>
+          <span class="eyebrow" data-reveal>The Key</span>
           <h2 class="section-title" data-reveal data-reveal-delay="1">
-            <span class="accent-amber">99% of work</span> happens on the web.
+            The desktop was never built for <span class="accent-amber">how you actually work.</span>
           </h2>
-          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
-            Yet your desktop hasn't evolved to keep up. It's still a dumping ground of scattered
-            files, buried tabs, and forgotten logins &mdash; a starting point that slows you down
-            instead of launching you forward.
-          </p>
+          <div class="homebase__split mx-auto" data-reveal data-reveal-delay="2">
+            <div class="homebase__col homebase__col--problem">
+              <span class="homebase__col-label">The problem</span>
+              <p class="section-lead">
+                Your browser just stacks tabs. Your desktop just stores files. Neither was built to
+                hold your thinking &mdash; so <em>you</em> become the one juggling context between
+                them, all day long.
+              </p>
+            </div>
+            <div class="homebase__col homebase__col--solution">
+              <span class="homebase__col-label">The solution</span>
+              <p class="section-lead">
+                FlowJoe becomes the one home base where your ideas, your files, and your projects
+                finally live together in a way that <em>makes sense</em>, preserving the context.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="homebase__split" data-reveal data-reveal-delay="3">
-          <!-- Copy -->
-          <div class="homebase__copy">
-            <h3 class="homebase__title">FlowJoe is your central home-base.</h3>
-            <p class="homebase__lead">
-              A single place to access, manage, and orient yourself &mdash; so you always know
-              where everything lives and where to pick back up.
-            </p>
-            <ul class="homebase__list">
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                    <path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Every link, one click away</span>
-                  <span class="homebase__item-text">All your relevant links live together &mdash; no more hunting through bookmarks and tabs.</span>
-                </div>
-              </li>
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-                    <path d="M14 2v6h6" /><path d="M8 13h8" /><path d="M8 17h6" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Docs at your fingertips</span>
-                  <span class="homebase__item-text">Keep the documents you actually use close by, ready to open the moment you need them.</span>
-                </div>
-              </li>
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" /><circle cx="12" cy="16" r="1" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Access codes, secured</span>
-                  <span class="homebase__item-text">Store the keys and codes you reach for daily in one trusted place.</span>
-                </div>
-              </li>
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2v4" /><path d="M12 18v4" /><path d="M4.9 4.9l2.8 2.8" /><path d="M16.3 16.3l2.8 2.8" />
-                    <path d="M2 12h4" /><path d="M18 12h4" /><path d="M4.9 19.1l2.8-2.8" /><path d="M16.3 7.7l2.8-2.8" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Highly adaptable</span>
-                  <span class="homebase__item-text">Shape your home-base around how you actually work &mdash; it flexes to fit any workflow.</span>
-                </div>
-              </li>
-            </ul>
+        <p class="homebase__subhead" data-reveal data-reveal-delay="3">
+          One space that <span class="accent-amber">thinks</span>,
+          <span class="accent-cyan">organizes</span>, and
+          <span class="accent-iris">gets it done</span>.
+        </p>
+
+        <!-- Gravity well: everything settles around one home base
+             (the deliberate counterpart to the chaos-box above) -->
+        <div class="flowbox" id="flowbox" data-reveal data-reveal-delay="3">
+          <!-- Concentric rings emanate from the core; colors cycle -->
+          <div class="flowbox__rings" aria-hidden="true">
+            <span class="flowbox__ring"></span>
+            <span class="flowbox__ring"></span>
+            <span class="flowbox__ring"></span>
           </div>
 
-          <!-- Visual: home-base mockup -->
-          <div class="homebase__visual">
-            <div class="app-mockup">
-              <div class="app-mockup__bar">
-                <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
-                <span class="app-mockup__title mono">FlowJoe — Home Base</span>
-              </div>
-              <div class="homebase__grid">
-                <div class="homebase__tile homebase__tile--amber">
-                  <span class="homebase__tile-label mono">LINKS</span>
-                  <span class="homebase__tile-title">Quick Access</span>
-                  <span class="homebase__tile-sub">18 pinned</span>
-                </div>
-                <div class="homebase__tile homebase__tile--cyan">
-                  <span class="homebase__tile-label mono">DOCS</span>
-                  <span class="homebase__tile-title">Active Docs</span>
-                  <span class="homebase__tile-sub">7 open</span>
-                </div>
-                <div class="homebase__tile homebase__tile--iris">
-                  <span class="homebase__tile-label mono">ACCESS</span>
-                  <span class="homebase__tile-title">Vault</span>
-                  <span class="homebase__tile-sub">secured</span>
-                </div>
-                <div class="homebase__tile homebase__tile--mint">
-                  <span class="homebase__tile-label mono">RECENT</span>
-                  <span class="homebase__tile-title">Jump back in</span>
-                  <span class="homebase__tile-sub">3 sessions</span>
-                </div>
-              </div>
-            </div>
+          <!-- Center: the home base itself -->
+          <div class="flowbox__core">
+            <span class="flowbox__core-mark mono">FJ</span>
+            <span class="flowbox__core-label">Home Base</span>
+          </div>
+
+          <!-- Four supporting points, always visible, orbiting the core -->
+          <div class="flowbox__item flowbox__item--amber flowbox__item--tl">
+            <span class="flowbox__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.6" />
+                <rect x="14" y="3" width="7" height="7" rx="1.6" />
+                <rect x="14" y="14" width="7" height="7" rx="1.6" />
+                <rect x="3" y="14" width="7" height="7" rx="1.6" />
+              </svg>
+            </span>
+            <span class="flowbox__meta">
+              <span class="flowbox__label">Everything within reach</span>
+              <span class="flowbox__text">Links, tools, and tabs together &mdash; no more hunting through bookmarks or history.</span>
+            </span>
+          </div>
+
+          <div class="flowbox__item flowbox__item--cyan flowbox__item--tr">
+            <span class="flowbox__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg>
+            </span>
+            <span class="flowbox__meta">
+              <span class="flowbox__label">Pick up where you left off</span>
+              <span class="flowbox__text">The notes and files you actually use, grouped together, with quick access.</span>
+            </span>
+          </div>
+
+          <div class="flowbox__item flowbox__item--iris flowbox__item--bl">
+            <span class="flowbox__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" /><circle cx="12" cy="16" r="1" />
+              </svg>
+            </span>
+            <span class="flowbox__meta">
+              <span class="flowbox__label">Keys ready, focus intact</span>
+              <span class="flowbox__text">The logins and codes you reach for daily, in one trusted place.</span>
+            </span>
+          </div>
+
+          <div class="flowbox__item flowbox__item--mint flowbox__item--br">
+            <span class="flowbox__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" />
+                <line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" />
+                <line x1="1.5" y1="14" x2="6.5" y2="14" /><line x1="9.5" y1="8" x2="14.5" y2="8" /><line x1="17.5" y1="16" x2="22.5" y2="16" />
+              </svg>
+            </span>
+            <span class="flowbox__meta">
+              <span class="flowbox__label">Shaped around you</span>
+              <span class="flowbox__text">Structure it for one project or your entire practice &mdash; it flexes to fit.</span>
+            </span>
           </div>
         </div>
       </div>
