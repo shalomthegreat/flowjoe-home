@@ -150,7 +150,7 @@
               <h3 class="dl-card__title">macOS</h3><span class="dl-card__yours" hidden>Your computer</span>
             </div>
             <div class="dl-files" data-files="mac">
-            <div class="dl-file"><div><div class="dl-file__name">Apple Silicon</div><div class="dl-file__meta">macOS 13 Ventura or later &middot; 290 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg" download>Download</a></div>
+            <div class="dl-file"><div><div class="dl-file__name">Apple Silicon</div><div class="dl-file__meta">macOS 14 Sonoma or later &middot; 290 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg" download>Download</a></div>
             <div class="dl-soon" id="mac-intel">Intel Macs &middot; macOS 14 Sonoma or newer &mdash; coming soon</div>
             </div>
           </article>
@@ -286,7 +286,7 @@ async function isIntelMac() {
 // data (fetch, allowed for flowjoe.app only), never run as code, and every entry is checked before use. If the list
 // cannot load, the page keeps the content written above, which is the latest release at the time of writing.
 const ROWS = {
-  mac: [{arch: "arm64", kind: "dmg", title: "Apple Silicon", meta: "macOS 13 Ventura or later", sum: "macOS · Apple Silicon (.dmg)"}, {arch: "x64", kind: "dmg", title: "Intel", meta: "macOS 14 Sonoma or newer", sum: "macOS · Intel (.dmg)", soon: "Intel Macs · macOS 14 Sonoma or newer — coming soon", pending: "Listed here when the Intel download is released."}],
+  mac: [{arch: "arm64", kind: "dmg", title: "Apple Silicon", meta: "macOS 14 Sonoma or later", sum: "macOS · Apple Silicon (.dmg)"}, {arch: "x64", kind: "dmg", title: "Intel", meta: "macOS 14 Sonoma or newer", sum: "macOS · Intel (.dmg)", soon: "Intel Macs · macOS 14 Sonoma or newer — coming soon", pending: "Listed here when the Intel download is released."}],
   win: [{kind: "exe", title: "64-bit installer", meta: "Windows 10 or 11 · .exe", sum: "Windows · 64-bit (.exe)"}],
   linux: [{kind: "appimage", title: "AppImage", meta: "Any distribution", sum: "Linux · AppImage"}, {kind: "deb", title: "Debian / Ubuntu", meta: ".deb", sum: "Linux · Debian / Ubuntu (.deb)", soon: "Debian / Ubuntu (.deb) — coming soon"}]
 };
