@@ -81,7 +81,7 @@
             <a class="btn btn--primary" id="primary" href="#mac">Download for Mac &darr;</a>
             <a class="btn btn--ghost" id="secondary" href="#all">Other systems</a>
           </div>
-          <p class="hero__note" id="primary-meta">Apple Silicon (M1 or later) &middot; 551 MB &middot; macOS 12 or later</p>
+          <p class="hero__note" id="primary-meta">For Apple Silicon Macs &middot; 551 MB &middot; Intel Mac version coming soon</p>
         </div>
         <div class="hero__stage" aria-hidden="true">
           <div class="app" id="app">
@@ -240,7 +240,7 @@
 const MAC_INTEL = {href: null, meta: "", sha256: ""};
 const COPY = {
   macIntel: {label: "Download for Mac ↓", meta: "Intel Mac download coming soon", href: "#mac"},
-  mac: {label: "Download for Mac ↓", meta: "Apple Silicon (M1 or later) · macOS 12 Monterey or later · 551 MB", href: "#mac"},
+  mac: {label: "Download for Mac ↓", meta: "For Apple Silicon Macs · 551 MB · Intel Mac version coming soon", href: "#mac"},
   win: {label: "Download for Windows ↓", meta: "64-bit · 534 MB · Windows 10 or 11", href: "#win"},
   linux: {label: "Download for Linux ↓", meta: "AppImage · 724 MB · 64-bit", href: "#linux"},
   other: {label: "See all downloads ↓", meta: "FlowJoe runs on Mac, Windows and Linux computers", href: "#all"}
@@ -262,6 +262,7 @@ if (MAC_INTEL.href) {
   row.outerHTML = `<div class="dl-file" id="mac-intel"><div><div class="dl-file__name">Intel</div><div class="dl-file__meta">macOS 14 Sonoma or newer · ${MAC_INTEL.meta}</div></div><a class="btn btn--sm btn--primary" href="${MAC_INTEL.href}" download>Download</a></div>`;
   const h = document.querySelector("#hash-mac-intel .dl-sum__row");
   h.innerHTML = `<code class="dl-hash">${MAC_INTEL.sha256}</code><button type="button" class="dl-copy" data-copy aria-label="Copy macOS Intel fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>`;
+  COPY.mac.meta = "For Apple Silicon Macs · 551 MB · Intel Macs: see below";
   COPY.macIntel = {label: "Download for Mac ↓", meta: "Intel · " + MAC_INTEL.meta + " · macOS 14 Sonoma or newer", href: "#mac"};
 }
 function show(os) {
