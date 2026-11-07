@@ -31,9 +31,4 @@
 .nav__links a[aria-current] { color: var(--text-100); }
 @media (max-width: 960px) { .dl-grid, .dl-help { grid-template-columns: 1fr; } .dl-steps li { grid-template-columns: 1fr; gap: 2px; } }
 .dl-panel p a { color: var(--amber-300); text-decoration: underline; text-underline-offset: 3px; }
-.dl-file__soon { margin-left: auto; white-space: nowrap; font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-400); }
-.dl-file__meta, .dl-file__name { white-space: nowrap; }
-/* Every file row reads the same: name and details on top, the button (or "Coming soon") underneath. */
-.dl-file { flex-direction: column; align-items: flex-start; gap: 12px; }
-.dl-file .btn, .dl-file__soon { margin-left: 0; }
 .dl-code { white-space: nowrap; }
