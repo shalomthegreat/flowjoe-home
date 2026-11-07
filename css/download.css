@@ -32,7 +32,6 @@
 .dl-panel .dl-steps li { grid-template-columns: 76px 1fr; }
 .dl-snip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; }
 .dl-sum { border-top: 1px solid var(--glass-border); padding: 12px 0; }
-.dl-steps + .dl-sum { margin-top: 16px; }
 .dl-sum__label { color: var(--text-100); margin-bottom: 6px; }
 .dl-sum__row { display: flex; align-items: center; gap: 8px; }
 .dl-sum__row .dl-hash { margin-top: 0; flex: 1; min-width: 0; }
@@ -40,3 +39,7 @@
 .dl-copy { flex: none; display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--glass-border); background: var(--glass); color: var(--text-300); cursor: pointer; transition: color .2s ease, border-color .2s ease; }
 .dl-copy:hover { color: var(--text-100); border-color: var(--glass-border-strong); }
 .dl-copy.is-copied { color: var(--amber-300); border-color: rgba(254,115,12,.45); }
+.dl-sum:first-of-type { border-top: 0; padding-top: 0; }
+.dl-how { border-top: 1px solid var(--glass-border); padding-top: 12px; }
+.dl-how summary { cursor: pointer; color: var(--text-100); }
+.dl-how .dl-steps { margin-top: 14px; }
