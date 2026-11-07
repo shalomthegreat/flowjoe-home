@@ -77,11 +77,12 @@
   </header>
   <iframe class="docs-frame" id="docs-frame" title="FlowJoe Docs" src="https://docs.flowjoe.app/"></iframe>
   <script>
-// flowjoe.app/docs/#getting-started/install opens that docs page under the site header.
+// flowjoe.app/docs/#getting-started/install opens that docs page under the site header;
+// flowjoe.app/docs/#changelog#0-9-69-alpha also jumps to a heading on it.
 (function () {
   var frame = document.getElementById("docs-frame");
-  var path = location.hash.replace(/^#\/?/, "");
-  if (/^[a-z0-9/_-]+$/i.test(path)) frame.src = "https://docs.flowjoe.app/" + path;
+  var m = /^#\/?([a-z0-9/_-]+)(?:#([a-z0-9-]+))?$/i.exec(location.hash);
+  if (m) frame.src = "https://docs.flowjoe.app/" + m[1] + (m[2] ? "#" + m[2] : "");
 })();
   </script>
   <script src="/js/main.js"></script>
