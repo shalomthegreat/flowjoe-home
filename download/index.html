@@ -74,15 +74,15 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <span class="eyebrow" id="latest-label">Latest version 0.9.69 alpha</span>
+          <span class="eyebrow" id="latest-label"><!--r:latest-label-->Latest version 0.9.69 alpha<!--/r:latest-label--></span>
           <h1 class="hero__title">Download <span class="accent">FlowJoe.</span></h1>
           <p class="hero__lead">Your notes, files, pictures and AI work in one visual workspace &mdash; <strong>free to download, and everything stays on your computer.</strong></p>
           <div class="hero__cta">
             <a class="btn btn--primary" id="primary" href="#mac">Download for Mac &darr;</a>
             <a class="btn btn--ghost" id="secondary" href="#all">Other systems</a>
           </div>
-          <p class="hero__note" id="primary-meta">For Apple Silicon Macs &middot; 290 MB &middot; Intel Mac version coming soon</p>
-          <p class="hero__note"><a class="dl-whatsnew" id="whatsnew" href="/docs/#changelog#0-9-69-alpha">What&rsquo;s new in 0.9.69 &rarr;</a></p>
+          <p class="hero__note" id="primary-meta"><!--r:primary-meta-->For Apple Silicon Macs · 290 MB · Intel Mac version coming soon<!--/r:primary-meta--></p>
+          <p class="hero__note"><!--r:whatsnew--><a class="dl-whatsnew" id="whatsnew" href="/docs/#changelog#0-9-69-alpha">What’s new in 0.9.69 →</a><!--/r:whatsnew--></p>
         </div>
         <div class="hero__stage" aria-hidden="true">
           <div class="app" id="app">
@@ -150,8 +150,7 @@
               <h3 class="dl-card__title">macOS</h3><span class="dl-card__yours" hidden>Your computer</span>
             </div>
             <div class="dl-files" data-files="mac">
-            <div class="dl-file"><div><div class="dl-file__name">Apple Silicon</div><div class="dl-file__meta">macOS 14 Sonoma or later &middot; 290 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg" download>Download</a></div>
-            <div class="dl-soon" id="mac-intel">Intel Macs &middot; macOS 14 Sonoma or newer &mdash; coming soon</div>
+            <!--r:files-mac--><div class="dl-file"><div><div class="dl-file__name">Apple Silicon</div><div class="dl-file__meta">macOS 14 Sonoma or later &middot; 290 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg" download>Download</a></div><div class="dl-soon" id="mac-intel">Intel Macs · macOS 14 Sonoma or newer — coming soon</div><!--/r:files-mac-->
             </div>
           </article>
           <article class="dl-card" data-os="win" id="win">
@@ -160,7 +159,7 @@
               <h3 class="dl-card__title">Windows</h3><span class="dl-card__yours" hidden>Your computer</span>
             </div>
             <div class="dl-files" data-files="win">
-            <div class="dl-file"><div><div class="dl-file__name">64-bit installer</div><div class="dl-file__meta">Windows 10 or 11 &middot; .exe &middot; 289 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-Setup-0.9.69-alpha.exe" download>Download</a></div>
+            <!--r:files-win--><div class="dl-file"><div><div class="dl-file__name">64-bit installer</div><div class="dl-file__meta">Windows 10 or 11 · .exe &middot; 289 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-Setup-0.9.69-alpha.exe" download>Download</a></div><!--/r:files-win-->
             </div>
             <p class="dl-note">Installs just for you &mdash; no administrator password needed.</p>
           </article>
@@ -170,8 +169,7 @@
               <h3 class="dl-card__title">Linux</h3><span class="dl-card__yours" hidden>Your computer</span>
             </div>
             <div class="dl-files" data-files="linux">
-            <div class="dl-file"><div><div class="dl-file__name">AppImage</div><div class="dl-file__meta">Any distribution &middot; 316 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-x86_64.AppImage" download>Download</a></div>
-            <div class="dl-file"><div><div class="dl-file__name">Debian / Ubuntu</div><div class="dl-file__meta">.deb &middot; 274 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/flowjoe_0.9.69-alpha_amd64.deb" download>Download</a></div>
+            <!--r:files-linux--><div class="dl-file"><div><div class="dl-file__name">AppImage</div><div class="dl-file__meta">Any distribution &middot; 316 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-x86_64.AppImage" download>Download</a></div><div class="dl-file"><div><div class="dl-file__name">Debian / Ubuntu</div><div class="dl-file__meta">.deb &middot; 274 MB</div></div><a class="btn btn--sm btn--primary" href="https://files.flowjoe.app/releases/0.9.69-alpha/flowjoe_0.9.69-alpha_amd64.deb" download>Download</a></div><!--/r:files-linux-->
             </div>
             <p class="dl-note">64-bit (x86-64).</p>
           </article>
@@ -186,8 +184,7 @@
         <div class="dl-panel dl-versions">
           <div class="dl-vrow dl-vrow--head"><span>Version</span><span>Released</span><span>Downloads</span><span></span></div>
           <div id="versions-list">
-            <div class="dl-vrow"><span class="dl-vname">0.9.69-alpha <span class="dl-latest">Latest</span></span><span>Nov 6, 2026</span><span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg" title="SHA-256 18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0" aria-label="Mac, SHA-256 18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0">Mac</a><span class="dl-dot">&middot;</span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-Setup-0.9.69-alpha.exe" title="SHA-256 d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d" aria-label="Windows, SHA-256 d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d">Windows</a><span class="dl-dot">&middot;</span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-x86_64.AppImage" title="SHA-256 afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063" aria-label="Linux, SHA-256 afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063">Linux</a><span class="dl-dot">&middot;</span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/flowjoe_0.9.69-alpha_amd64.deb" title="SHA-256 4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1" aria-label=".deb, SHA-256 4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1">.deb</a></span><a class="dl-vnotes" href="/docs/#changelog#0-9-69-alpha">What changed &rarr;</a></div>
-            <div class="dl-vrow"><span class="dl-vname">0.9.67-alpha</span><span>Oct 15, 2026</span><span><a href="https://files.flowjoe.app/releases/0.9.67-alpha/FlowJoe-0.9.67-alpha-arm64.dmg" title="SHA-256 f5e633464dd80d0e88c766b640070c9dc94c36992e50cc232d6bfc405a0acc47" aria-label="Mac, SHA-256 f5e633464dd80d0e88c766b640070c9dc94c36992e50cc232d6bfc405a0acc47">Mac</a></span><a class="dl-vnotes" href="/docs/#changelog#0-9-67-alpha">What changed &rarr;</a></div>
+            <!--r:versions--><div class="dl-vrow"><span class="dl-vname">0.9.69-alpha <span class="dl-latest">Latest</span></span><span>Nov 6, 2026</span><span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg" title="SHA-256 18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0" aria-label="Mac, SHA-256 18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0">Mac</a><span class="dl-dot">&middot;</span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-Setup-0.9.69-alpha.exe" title="SHA-256 d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d" aria-label="Windows, SHA-256 d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d">Windows</a><span class="dl-dot">&middot;</span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-x86_64.AppImage" title="SHA-256 afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063" aria-label="Linux, SHA-256 afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063">Linux</a><span class="dl-dot">&middot;</span><a href="https://files.flowjoe.app/releases/0.9.69-alpha/flowjoe_0.9.69-alpha_amd64.deb" title="SHA-256 4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1" aria-label=".deb, SHA-256 4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1">.deb</a></span><a class="dl-vnotes" href="/docs/#changelog#0-9-69-alpha">What changed &rarr;</a></div><div class="dl-vrow"><span class="dl-vname">0.9.67-alpha</span><span>Oct 15, 2026</span><span><a href="https://files.flowjoe.app/releases/0.9.67-alpha/FlowJoe-0.9.67-alpha-arm64.dmg" title="SHA-256 f5e633464dd80d0e88c766b640070c9dc94c36992e50cc232d6bfc405a0acc47" aria-label="Mac, SHA-256 f5e633464dd80d0e88c766b640070c9dc94c36992e50cc232d6bfc405a0acc47">Mac</a></span><a class="dl-vnotes" href="/docs/#changelog#0-9-67-alpha">What changed &rarr;</a></div><!--/r:versions-->
           </div>
           <p class="dl-vfoot">Each version&rsquo;s fingerprints are listed with its downloads. Full history: <a href="/docs/#changelog">Changelog</a>.</p>
         </div>
@@ -212,11 +209,7 @@
             <h3>Check your download</h3>
             <p>Optional: compare your file&rsquo;s SHA-256 fingerprint with the one listed here.</p>
             <div id="sums">
-            <div class="dl-sum"><div class="dl-sum__label">macOS · Apple Silicon (.dmg)</div><div class="dl-sum__row"><code class="dl-hash">18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0</code><button type="button" class="dl-copy" data-copy aria-label="Copy macOS · Apple Silicon (.dmg) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
-            <div class="dl-sum" id="hash-mac-intel"><div class="dl-sum__label">macOS · Intel (.dmg)</div><div class="dl-sum__row"><code class="dl-hash dl-hash--none">Listed here when the Intel download is released.</code></div></div>
-            <div class="dl-sum"><div class="dl-sum__label">Windows · 64-bit (.exe)</div><div class="dl-sum__row"><code class="dl-hash">d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d</code><button type="button" class="dl-copy" data-copy aria-label="Copy Windows · 64-bit (.exe) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
-            <div class="dl-sum"><div class="dl-sum__label">Linux · AppImage</div><div class="dl-sum__row"><code class="dl-hash">afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063</code><button type="button" class="dl-copy" data-copy aria-label="Copy Linux · AppImage fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
-            <div class="dl-sum"><div class="dl-sum__label">Linux · Debian / Ubuntu (.deb)</div><div class="dl-sum__row"><code class="dl-hash">4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1</code><button type="button" class="dl-copy" data-copy aria-label="Copy Linux · Debian / Ubuntu (.deb) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
+            <!--r:sums--><div class="dl-sum"><div class="dl-sum__label">macOS · Apple Silicon (.dmg)</div><div class="dl-sum__row"><code class="dl-hash">18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0</code><button type="button" class="dl-copy" data-copy aria-label="Copy macOS · Apple Silicon (.dmg) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div><div class="dl-sum"><div class="dl-sum__label">macOS · Intel (.dmg)</div><div class="dl-sum__row"><code class="dl-hash dl-hash--none">Listed here when the Intel download is released.</code></div></div><div class="dl-sum"><div class="dl-sum__label">Windows · 64-bit (.exe)</div><div class="dl-sum__row"><code class="dl-hash">d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d</code><button type="button" class="dl-copy" data-copy aria-label="Copy Windows · 64-bit (.exe) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div><div class="dl-sum"><div class="dl-sum__label">Linux · AppImage</div><div class="dl-sum__row"><code class="dl-hash">afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063</code><button type="button" class="dl-copy" data-copy aria-label="Copy Linux · AppImage fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div><div class="dl-sum"><div class="dl-sum__label">Linux · Debian / Ubuntu (.deb)</div><div class="dl-sum__row"><code class="dl-hash">4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1</code><button type="button" class="dl-copy" data-copy aria-label="Copy Linux · Debian / Ubuntu (.deb) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div><!--/r:sums-->
             </div>
             <details class="dl-how"><summary>How to check a file</summary>
             <ol class="dl-steps">
@@ -259,13 +252,15 @@
     </div>
   </footer>
 
+  <!--r:built-in-list--><script type="application/json" id="release-list">{"releases":[{"version":"0.9.69-alpha","date":"2026-11-06","notes":"https://flowjoe.app/docs/#changelog#0-9-69-alpha","files":[{"os":"mac","arch":"arm64","kind":"dmg","name":"FlowJoe-0.9.69-alpha-arm64.dmg","url":"https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-arm64.dmg","size":290178950,"sha256":"18c6ca42cd0d64d37a34fc24de90d46398bb86ea163f8221214da00db7c991a0"},{"os":"win","arch":"x64","kind":"exe","name":"FlowJoe-Setup-0.9.69-alpha.exe","url":"https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-Setup-0.9.69-alpha.exe","size":289260419,"sha256":"d6cd9159a09e18db83fe2ba95f60b49e8eeb35754f6a74238ed048ac7e97304d"},{"os":"linux","arch":"x64","kind":"appimage","name":"FlowJoe-0.9.69-alpha-x86_64.AppImage","url":"https://files.flowjoe.app/releases/0.9.69-alpha/FlowJoe-0.9.69-alpha-x86_64.AppImage","size":316436003,"sha256":"afec5cae06fad31e9140e87b2efac5e4c5481a89e202b68d7490453b53ad3063"},{"os":"linux","arch":"x64","kind":"deb","name":"flowjoe_0.9.69-alpha_amd64.deb","url":"https://files.flowjoe.app/releases/0.9.69-alpha/flowjoe_0.9.69-alpha_amd64.deb","size":273871204,"sha256":"4e1906d06faf3a939671f5a53ed3e6e2707c6cbc27642ba4cb4d1da880b93cc1"}]},{"version":"0.9.67-alpha","date":"2026-10-15","notes":"https://flowjoe.app/docs/#changelog#0-9-67-alpha","files":[{"os":"mac","arch":"arm64","kind":"dmg","name":"FlowJoe-0.9.67-alpha-arm64.dmg","url":"https://files.flowjoe.app/releases/0.9.67-alpha/FlowJoe-0.9.67-alpha-arm64.dmg","size":267750764,"sha256":"f5e633464dd80d0e88c766b640070c9dc94c36992e50cc232d6bfc405a0acc47"}]}]}</script><!--/r:built-in-list-->
+  <script src="/js/download-releases.js"></script>
   <script>
 // The real page guesses the visitor's system and points the big button at it.
 const COPY = {
   macIntel: {label: "Download for Mac ↓", meta: "Intel Mac download coming soon", href: "#mac"},
-  mac: {label: "Download for Mac ↓", meta: "For Apple Silicon Macs · 290 MB · Intel Mac version coming soon", href: "#mac"},
-  win: {label: "Download for Windows ↓", meta: "64-bit · 289 MB · Windows 10 or 11", href: "#win"},
-  linux: {label: "Download for Linux ↓", meta: "AppImage · 316 MB · 64-bit", href: "#linux"},
+  mac: {label: "Download for Mac ↓", meta: "For Apple Silicon Macs · Intel Mac version coming soon", href: "#mac"},
+  win: {label: "Download for Windows ↓", meta: "64-bit · Windows 10 or 11", href: "#win"},
+  linux: {label: "Download for Linux ↓", meta: "AppImage · 64-bit", href: "#linux"},
   other: {label: "See all downloads ↓", meta: "FlowJoe runs on Mac, Windows and Linux computers", href: "#all"}
 };
 function guess() {
@@ -281,70 +276,29 @@ async function isIntelMac() {
   try { const v = await navigator.userAgentData?.getHighEntropyValues(["architecture"]); return v?.architecture === "x86"; } catch (_) { return false; }
 }
 
-// Releases come from https://files.flowjoe.app/releases.json, written by the release command (scripts/publish-release.cjs
-// in the FlowJoe repo) after every file is proven live. A new release therefore needs no edit here. The list is read as
-// data (fetch, allowed for flowjoe.app only), never run as code, and every entry is checked before use. If the list
-// cannot load, the page keeps the content written above, which is the latest release at the time of writing.
-const ROWS = {
-  mac: [{arch: "arm64", kind: "dmg", title: "Apple Silicon", meta: "macOS 14 Sonoma or later", sum: "macOS · Apple Silicon (.dmg)"}, {arch: "x64", kind: "dmg", title: "Intel", meta: "macOS 14 Sonoma or newer", sum: "macOS · Intel (.dmg)", soon: "Intel Macs · macOS 14 Sonoma or newer — coming soon", pending: "Listed here when the Intel download is released."}],
-  win: [{kind: "exe", title: "64-bit installer", meta: "Windows 10 or 11 · .exe", sum: "Windows · 64-bit (.exe)"}],
-  linux: [{kind: "appimage", title: "AppImage", meta: "Any distribution", sum: "Linux · AppImage"}, {kind: "deb", title: "Debian / Ubuntu", meta: ".deb", sum: "Linux · Debian / Ubuntu (.deb)", soon: "Debian / Ubuntu (.deb) — coming soon"}]
-};
-const SHORT = {"mac-arm64-dmg": "Mac", "mac-x64-dmg": "Mac (Intel)", "win-x64-exe": "Windows", "linux-x64-appimage": "Linux", "linux-x64-deb": ".deb"};
-const COPY_ICON = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
-const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"})[c]);
-const mb = (bytes) => `${Math.round(bytes / 1e6)} MB`;
-const pretty = (v) => v.replace(/-(alpha|beta)/, " $1");
-const when = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-US", {month: "short", day: "numeric", year: "numeric", timeZone: "UTC"});
-const fileFor = (rel, os, row) => rel.files.find((f) => f.os === os && f.kind === row.kind && (!row.arch || f.arch === row.arch));
-// Only addresses on our own download host are ever turned into links.
-const safeUrl = (u) => (/^https:\/\/files\.flowjoe\.app\/releases\/[A-Za-z0-9._\/-]+(?:\?sha256=[a-f0-9]{64})?$/.test(u) ? u : null);
-const safeNotes = (u) => (/^https:\/\/flowjoe\.app\/docs\/#[a-z0-9#-]+$/.test(u) ? u.replace("https://flowjoe.app", "") : "/docs/#changelog");
+// Releases come from https://files.flowjoe.app/releases.json, written by FlowJoe's release command
+// (scripts/publish-release.cjs) after every file is proven live. js/download-releases.js turns the list into page
+// content; the release command uses the same file to write that content into this page's own HTML (the <!--r:...-->
+// regions and the built-in list above), so the page is right without JavaScript and if the live list cannot load.
+const {cleanReleases, releaseView} = window.FlowJoeReleases;
 
 function renderReleases(data) {
-  const rel = data?.releases?.[0];
-  if (!rel || !Array.isArray(rel.files)) return;
-  document.getElementById("latest-label").textContent = `Latest version ${pretty(rel.version)}`;
+  const v = releaseView(data);
+  if (!v) return;
+  document.getElementById("latest-label").textContent = v.latestLabel;
   const whatsnew = document.getElementById("whatsnew");
-  whatsnew.textContent = `What’s new in ${rel.version.replace(/-(alpha|beta).*$/, "")} →`;
-  whatsnew.href = safeNotes(rel.notes);
-  let sums = "";
-  for (const [os, rows] of Object.entries(ROWS)) {
-    let html = "";
-    for (const row of rows) {
-      const f = fileFor(rel, os, row), url = f && safeUrl(f.url);
-      if (url) {
-        html += `<div class="dl-file"${row.arch === "x64" && os === "mac" ? ' id="mac-intel"' : ""}><div><div class="dl-file__name">${esc(row.title)}</div><div class="dl-file__meta">${esc(row.meta)} &middot; ${esc(mb(f.size))}</div></div><a class="btn btn--sm btn--primary" href="${esc(url)}" download>Download</a></div>`;
-        sums += `<div class="dl-sum"><div class="dl-sum__label">${esc(row.sum)}</div><div class="dl-sum__row"><code class="dl-hash">${esc(f.sha256)}</code><button type="button" class="dl-copy" data-copy aria-label="Copy ${esc(row.sum)} fingerprint" title="Copy">${COPY_ICON}</button></div></div>`;
-      } else if (row.soon) {
-        html += `<div class="dl-soon"${row.arch === "x64" && os === "mac" ? ' id="mac-intel"' : ""}>${esc(row.soon)}</div>`;
-        if (row.pending) sums += `<div class="dl-sum"><div class="dl-sum__label">${esc(row.sum)}</div><div class="dl-sum__row"><code class="dl-hash dl-hash--none">${esc(row.pending)}</code></div></div>`;
-      }
-    }
-    document.querySelector(`[data-files="${os}"]`).innerHTML = html || `<div class="dl-soon">Not in ${esc(rel.version)}; see Previous versions below.</div>`;
-  }
-  document.getElementById("sums").innerHTML = sums;
-  const arm = fileFor(rel, "mac", ROWS.mac[0]), intel = fileFor(rel, "mac", ROWS.mac[1]), win = fileFor(rel, "win", ROWS.win[0]), app = fileFor(rel, "linux", ROWS.linux[0]);
-  if (arm) COPY.mac.meta = `For Apple Silicon Macs · ${mb(arm.size)} · ${intel ? "Intel Macs: see below" : "Intel Mac version coming soon"}`;
-  if (intel) COPY.macIntel.meta = `Intel · ${mb(intel.size)} · macOS 14 Sonoma or newer`;
-  if (win) COPY.win.meta = `64-bit · ${mb(win.size)} · Windows 10 or 11`;
-  if (app) COPY.linux.meta = `AppImage · ${mb(app.size)} · 64-bit`;
-  document.getElementById("versions-list").innerHTML = data.releases.map((r, i) => {
-    // Each download carries its SHA-256 fingerprint (shown on hover and read out by screen readers).
-    const links = (r.files || []).map((f) => [SHORT[`${f.os}-${f.arch}-${f.kind}`], safeUrl(f.url), f.sha256]).filter(([label, url]) => label && url).map(([label, url, sha]) => `<a href="${esc(url)}" title="SHA-256 ${esc(sha || "")}" aria-label="${esc(label)}, SHA-256 ${esc(sha || "")}">${esc(label)}</a>`).join('<span class="dl-dot">&middot;</span>');
-    return `<div class="dl-vrow"><span class="dl-vname">${esc(r.version)}${i === 0 ? ' <span class="dl-latest">Latest</span>' : ""}</span><span>${esc(when(r.date))}</span><span>${links}</span><a class="dl-vnotes" href="${esc(safeNotes(r.notes))}">What changed &rarr;</a></div>`;
-  }).join("");
+  whatsnew.textContent = v.whatsnewText;
+  whatsnew.href = v.whatsnewHref;
+  for (const [os, html] of Object.entries(v.files)) document.querySelector(`[data-files="${os}"]`).innerHTML = html;
+  document.getElementById("sums").innerHTML = v.sums;
+  for (const [key, meta] of Object.entries(v.meta)) COPY[key].meta = meta;
+  document.getElementById("versions-list").innerHTML = v.versions;
 }
-// Only well-formed entries are used: a version and date in the expected shape, 64-character fingerprints, real sizes,
-// and addresses on files.flowjoe.app. Anything else is dropped.
-function cleanReleases(data) {
-  const KINDS = new Set(Object.keys(SHORT));
-  const releases = (Array.isArray(data?.releases) ? data.releases : []).map((r) => ({
-    version: r?.version, date: r?.date, notes: r?.notes,
-    files: (Array.isArray(r?.files) ? r.files : []).filter((f) => f && KINDS.has(`${f.os}-${f.arch}-${f.kind}`) && safeUrl(f.url) && /^[0-9a-f]{64}$/.test(f.sha256) && Number.isFinite(f.size) && f.size > 0)
-  })).filter((r) => typeof r.version === "string" && /^\d+\.\d+\.\d+(-[0-9a-z.]+)?$/i.test(r.version) && /^\d{4}-\d{2}-\d{2}$/.test(r.date || "") && r.files.length);
-  return releases.length ? {releases} : null;
-}
+// The list written into this page at release time gives the button its sizes straight away, even offline.
+try {
+  const builtIn = cleanReleases(JSON.parse(document.getElementById("release-list").textContent));
+  if (builtIn) renderReleases(builtIn);
+} catch (_) {}
 const releasesReady = fetch("https://files.flowjoe.app/releases.json", {cache: "no-cache"}).then((r) => (r.ok ? r.json() : null)).then((data) => {
   const clean = cleanReleases(data);
   if (clean) renderReleases(clean);
