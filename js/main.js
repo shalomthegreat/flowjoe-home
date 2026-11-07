@@ -313,6 +313,12 @@
       trigger.addEventListener("click", openModal);
     });
 
+    // Connect buttons on other pages (e.g. /download) link to /#connect, which opens the same window here.
+    if (location.hash === "#connect") {
+      history.replaceState(null, "", location.pathname + location.search);
+      openModal();
+    }
+
     modalClose.addEventListener("click", closeModal);
     modalBackdrop.addEventListener("click", closeModal);
 

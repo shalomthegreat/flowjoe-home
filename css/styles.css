@@ -5,7 +5,7 @@
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 /* ---- Accessibility ---- */
 .sr-only {
@@ -61,7 +61,7 @@ body {
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip, not hidden: hidden turns the page into a scroll box and unpins the sticky header */
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -110,7 +110,10 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 }
 .nav.is-scrolled {
   border-bottom-color: var(--glass-border);
-  background: rgba(8,11,16,0.9);
+  /* Frosted glass: the page shows through, blurred, instead of a near-solid bar. */
+  background: rgba(8,11,16,0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .nav__logo { height: 26px; width: auto; }
@@ -138,6 +141,8 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   color: var(--amber-400);
 }
 .nav__right { display: flex; align-items: center; gap: 18px; }
+/* Log in sits in .nav__right on wide screens and inside the menu on phones. */
+.nav__links .nav__login-link { display: none; }
 .nav__toggle {
   display: none;
   align-items: center;
@@ -2057,10 +2062,12 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   .footer__links-group { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
-@media (max-width: 760px) {
+/* The header collapses into its menu below 900px: with Download, Docs and Log in it no longer fits a tablet held upright. */
+@media (max-width: 900px) {
   .nav__toggle { display: inline-flex; position: absolute; right: 16px; }
   .nav__right { display: none; }
   .nav__connect-btn { display: block; }
+  .nav__links .nav__login-link { display: block; }
   .nav__links {
     position: absolute;
     top: 50px;
@@ -2089,6 +2096,10 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   }
   .nav__links a:last-child, .nav__connect-btn { border-bottom: none; }
   .nav__inner { position: relative; }
+  .nav__links .nav__connect-btn { color: var(--amber-300); }
+}
+
+@media (max-width: 760px) {
 
     /* ---- 3. The Big Idea ---- */
   .hemispheres__split { grid-template-columns: 1fr; }
