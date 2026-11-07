@@ -188,11 +188,16 @@
           </div>
           <div class="dl-panel">
             <h3>Check your download</h3>
-            <p>Optional: compare the file&rsquo;s SHA-256 fingerprint with the one listed here.</p>
-            <details><summary>macOS &middot; Apple Silicon (.dmg)</summary><span class="dl-hash">22d15ab0602c3613c8a4f8c0f113d0b1b62f8bbd6683c8776bdeb048b5f531ce</span></details>
-            <details id="hash-mac-intel"><summary>macOS &middot; Intel (.dmg)</summary><span class="dl-hash">Listed here when the Intel download is released.</span></details>
-            <details><summary>Windows &middot; 64-bit (.exe)</summary><span class="dl-hash">5d058ce02c5cc5a3942c09476a94c60ab903de4839d15a4caec63ca4f0051e26</span></details>
-            <details><summary>Linux &middot; AppImage</summary><span class="dl-hash">727bc3e5d928e673971eab5594a4dbd42878c81e851142368ec6333af5d31612</span></details>
+            <p>Optional: run the command for your computer on the downloaded file, and check the long code it prints matches the one listed here.</p>
+            <ol class="dl-steps">
+              <li><b>Mac</b><span>In Terminal: <span class="dl-snip"><span class="dl-code">shasum -a 256 ~/Downloads/FlowJoe-*.dmg</span><button type="button" class="dl-copy" data-copy aria-label="Copy Mac command" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></span></span></li>
+              <li><b>Windows</b><span>In PowerShell: <span class="dl-snip"><span class="dl-code">Get-FileHash $HOME\Downloads\FlowJoe-Setup-*.exe</span><button type="button" class="dl-copy" data-copy aria-label="Copy Windows command" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></span></span></li>
+              <li><b>Linux</b><span>In a terminal: <span class="dl-snip"><span class="dl-code">sha256sum ~/Downloads/FlowJoe-*.AppImage</span><button type="button" class="dl-copy" data-copy aria-label="Copy Linux command" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></span></span></li>
+            </ol>
+            <div class="dl-sum"><div class="dl-sum__label">macOS · Apple Silicon (.dmg)</div><div class="dl-sum__row"><code class="dl-hash">22d15ab0602c3613c8a4f8c0f113d0b1b62f8bbd6683c8776bdeb048b5f531ce</code><button type="button" class="dl-copy" data-copy aria-label="Copy macOS · Apple Silicon (.dmg) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
+            <div class="dl-sum" id="hash-mac-intel"><div class="dl-sum__label">macOS · Intel (.dmg)</div><div class="dl-sum__row"><code class="dl-hash dl-hash--none">Listed here when the Intel download is released.</code></div></div>
+            <div class="dl-sum"><div class="dl-sum__label">Windows · 64-bit (.exe)</div><div class="dl-sum__row"><code class="dl-hash">5d058ce02c5cc5a3942c09476a94c60ab903de4839d15a4caec63ca4f0051e26</code><button type="button" class="dl-copy" data-copy aria-label="Copy Windows · 64-bit (.exe) fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
+            <div class="dl-sum"><div class="dl-sum__label">Linux · AppImage</div><div class="dl-sum__row"><code class="dl-hash">727bc3e5d928e673971eab5594a4dbd42878c81e851142368ec6333af5d31612</code><button type="button" class="dl-copy" data-copy aria-label="Copy Linux · AppImage fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div></div>
           </div>
         </div>
       </div>
@@ -253,7 +258,8 @@ async function isIntelMac() {
 if (MAC_INTEL.href) {
   const row = document.getElementById("mac-intel");
   row.outerHTML = `<div class="dl-file" id="mac-intel"><div><div class="dl-file__name">Intel</div><div class="dl-file__meta">macOS 14 Sonoma or newer · ${MAC_INTEL.meta}</div></div><a class="btn btn--sm btn--primary" href="${MAC_INTEL.href}" download>Download</a></div>`;
-  document.querySelector("#hash-mac-intel .dl-hash").textContent = MAC_INTEL.sha256;
+  const h = document.querySelector("#hash-mac-intel .dl-sum__row");
+  h.innerHTML = `<code class="dl-hash">${MAC_INTEL.sha256}</code><button type="button" class="dl-copy" data-copy aria-label="Copy macOS Intel fingerprint" title="Copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>`;
   COPY.macIntel = {label: "Download for Mac ↓", meta: "Intel · " + MAC_INTEL.meta + " · macOS 14 Sonoma or newer", href: "#mac"};
 }
 function show(os) {
@@ -265,6 +271,12 @@ function show(os) {
   document.querySelectorAll(".dl-card").forEach((card) => { const mine = card.dataset.os === (os === "macIntel" ? "mac" : os); card.classList.toggle("is-yours", mine); card.querySelector(".dl-card__yours").hidden = !mine; });
 }
 show(guess());
+// Copy buttons: copy the text beside them and confirm briefly.
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-copy]"); if (!b) return;
+  const text = b.previousElementSibling.textContent.trim();
+  try { await navigator.clipboard.writeText(text); b.classList.add("is-copied"); b.title = "Copied"; setTimeout(() => { b.classList.remove("is-copied"); b.title = "Copy"; }, 1500); } catch (_) {}
+});
 if (guess() === "mac") isIntelMac().then((intel) => { if (intel) show("macIntel"); });
 </script>
   <script src="/js/main.js"></script>
