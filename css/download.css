@@ -29,7 +29,7 @@
 @media (max-width: 960px) { .dl-grid, .dl-help { grid-template-columns: 1fr; } .dl-steps li { grid-template-columns: 1fr; gap: 2px; } }
 .dl-panel p a { color: var(--amber-300); text-decoration: underline; text-underline-offset: 3px; }
 .dl-code { white-space: nowrap; }
-.dl-panel .dl-steps li { grid-template-columns: 76px 1fr; }
+.dl-panel .dl-steps li { grid-template-columns: 112px 1fr; }
 .dl-snip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; }
 .dl-sum { border-top: 1px solid var(--glass-border); padding: 12px 0; }
 .dl-sum__label { color: var(--text-100); margin-bottom: 6px; }
@@ -43,3 +43,6 @@
 .dl-how { border-top: 1px solid var(--glass-border); padding-top: 12px; }
 .dl-how summary { cursor: pointer; color: var(--text-100); }
 .dl-how .dl-steps { margin-top: 14px; }
+.dl-steps b { display: inline-flex; align-items: flex-start; gap: 8px; }
+.dl-os { flex: none; display: inline-grid; place-items: center; width: 18px; height: 22px; color: var(--text-300); }
+.dl-os svg { width: 15px; height: 15px; }
