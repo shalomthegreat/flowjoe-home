@@ -298,7 +298,7 @@ const pretty = (v) => v.replace(/-(alpha|beta)/, " $1");
 const when = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-US", {month: "short", day: "numeric", year: "numeric", timeZone: "UTC"});
 const fileFor = (rel, os, row) => rel.files.find((f) => f.os === os && f.kind === row.kind && (!row.arch || f.arch === row.arch));
 // Only addresses on our own download host are ever turned into links.
-const safeUrl = (u) => (/^https:\/\/files\.flowjoe\.app\/releases\/[A-Za-z0-9._\/-]+$/.test(u) ? u : null);
+const safeUrl = (u) => (/^https:\/\/files\.flowjoe\.app\/releases\/[A-Za-z0-9._\/-]+(?:\?sha256=[a-f0-9]{64})?$/.test(u) ? u : null);
 const safeNotes = (u) => (/^https:\/\/flowjoe\.app\/docs\/#[a-z0-9#-]+$/.test(u) ? u.replace("https://flowjoe.app", "") : "/docs/#changelog");
 
 function renderReleases(data) {
