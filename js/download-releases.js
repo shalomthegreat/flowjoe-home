@@ -59,7 +59,7 @@
           url = f && safeUrl(f.url);
         const intelId = row.arch === "x64" && os === "mac" ? ' id="mac-intel"' : "";
         if (url) {
-          html += `<div class="dl-file"${intelId}><div><div class="dl-file__name">${esc(row.title)}</div><div class="dl-file__meta">${esc(row.meta)} &middot; ${esc(mb(f.size))}</div></div><a class="btn btn--sm btn--primary" href="${esc(url)}" download>Download</a></div>`;
+          html += `<div class="dl-file"${intelId}><div><div class="dl-file__name">${esc(row.title)}</div><div class="dl-file__meta">${esc(pretty(rel.version))} &middot; ${esc(row.meta)} &middot; ${esc(mb(f.size))}</div></div><a class="btn btn--sm btn--primary" href="${esc(url)}" download>Download</a></div>`;
           sums += `<div class="dl-sum"><div class="dl-sum__label">${esc(row.sum)}</div><div class="dl-sum__row"><code class="dl-hash">${esc(f.sha256)}</code><button type="button" class="dl-copy" data-copy aria-label="Copy ${esc(row.sum)} fingerprint" title="Copy">${COPY_ICON}</button></div></div>`;
         } else if (row.soon) {
           html += `<div class="dl-soon"${intelId}>${esc(row.soon)}</div>`;
