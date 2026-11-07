@@ -259,7 +259,6 @@
     </div>
   </footer>
 
-  <script src="https://files.flowjoe.app/releases.js"></script>
   <script>
 // The real page guesses the visitor's system and points the big button at it.
 const COPY = {
@@ -282,9 +281,10 @@ async function isIntelMac() {
   try { const v = await navigator.userAgentData?.getHighEntropyValues(["architecture"]); return v?.architecture === "x86"; } catch (_) { return false; }
 }
 
-// Releases come from https://files.flowjoe.app/releases.js, written by the release command (scripts/publish-release.cjs
-// in the FlowJoe repo) after every file is proven live. A new release therefore needs no edit here. If the list cannot
-// load, the page keeps the content written above, which is the latest release at the time of writing.
+// Releases come from https://files.flowjoe.app/releases.json, written by the release command (scripts/publish-release.cjs
+// in the FlowJoe repo) after every file is proven live. A new release therefore needs no edit here. The list is read as
+// data (fetch, allowed for flowjoe.app only), never run as code, and every entry is checked before use. If the list
+// cannot load, the page keeps the content written above, which is the latest release at the time of writing.
 const ROWS = {
   mac: [{arch: "arm64", kind: "dmg", title: "Apple Silicon", meta: "macOS 13 Ventura or later", sum: "macOS · Apple Silicon (.dmg)"}, {arch: "x64", kind: "dmg", title: "Intel", meta: "macOS 14 Sonoma or newer", sum: "macOS · Intel (.dmg)", soon: "Intel Macs · macOS 14 Sonoma or newer — coming soon", pending: "Listed here when the Intel download is released."}],
   win: [{kind: "exe", title: "64-bit installer", meta: "Windows 10 or 11 · .exe", sum: "Windows · 64-bit (.exe)"}],
@@ -335,7 +335,20 @@ function renderReleases(data) {
     return `<div class="dl-vrow"><span class="dl-vname">${esc(r.version)}${i === 0 ? ' <span class="dl-latest">Latest</span>' : ""}</span><span>${esc(when(r.date))}</span><span>${links}</span><a class="dl-vnotes" href="${esc(safeNotes(r.notes))}">What changed &rarr;</a></div>`;
   }).join("");
 }
-try { renderReleases(window.FLOWJOE_RELEASES); } catch (_) {}
+// Only well-formed entries are used: a version and date in the expected shape, 64-character fingerprints, real sizes,
+// and addresses on files.flowjoe.app. Anything else is dropped.
+function cleanReleases(data) {
+  const KINDS = new Set(Object.keys(SHORT));
+  const releases = (Array.isArray(data?.releases) ? data.releases : []).map((r) => ({
+    version: r?.version, date: r?.date, notes: r?.notes,
+    files: (Array.isArray(r?.files) ? r.files : []).filter((f) => f && KINDS.has(`${f.os}-${f.arch}-${f.kind}`) && safeUrl(f.url) && /^[0-9a-f]{64}$/.test(f.sha256) && Number.isFinite(f.size) && f.size > 0)
+  })).filter((r) => typeof r.version === "string" && /^\d+\.\d+\.\d+(-[0-9a-z.]+)?$/i.test(r.version) && /^\d{4}-\d{2}-\d{2}$/.test(r.date || "") && r.files.length);
+  return releases.length ? {releases} : null;
+}
+const releasesReady = fetch("https://files.flowjoe.app/releases.json", {cache: "no-cache"}).then((r) => (r.ok ? r.json() : null)).then((data) => {
+  const clean = cleanReleases(data);
+  if (clean) renderReleases(clean);
+}).catch(() => {});
 function show(os) {
   const c = COPY[os], primary = document.getElementById("primary");
   primary.textContent = c.label; primary.href = c.href;
@@ -351,7 +364,8 @@ document.addEventListener("click", async (e) => {
   const text = b.previousElementSibling.textContent.trim();
   try { await navigator.clipboard.writeText(text); b.classList.add("is-copied"); b.title = "Copied"; setTimeout(() => { b.classList.remove("is-copied"); b.title = "Copy"; }, 1500); } catch (_) {}
 });
-if (guess() === "mac") isIntelMac().then((intel) => { if (intel) show("macIntel"); });
+// After the release list (sizes) arrives: Chrome and Edge on an Intel Mac get the Intel wording.
+releasesReady.then(async () => { const os = guess(); show(os === "mac" && (await isIntelMac()) ? "macIntel" : os); });
 </script>
   <script src="/js/main.js"></script>
 </body>
