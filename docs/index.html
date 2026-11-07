@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowJoe Docs</title>
+  <meta name="description" content="Guides for FlowJoe: install it, organise your work in Flows, and work with Joe." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://flowjoe.app/docs/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/coffee-mug.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="180x180" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlowJoe" />
+  <meta property="og:url" content="https://flowjoe.app/docs/" />
+  <meta property="og:title" content="FlowJoe Docs" />
+  <meta property="og:description" content="Guides for FlowJoe: install it, organise your work in Flows, and work with Joe." />
+  <meta property="og:image" content="https://flowjoe.app/img/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FlowJoe — a place where everything connects" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlowJoe Docs" />
+  <meta name="twitter:description" content="Guides for FlowJoe: install it, organise your work in Flows, and work with Joe." />
+  <meta name="twitter:image" content="https://flowjoe.app/img/og-image.png" />
+  <meta name="twitter:image:alt" content="FlowJoe — a place where everything connects" />
+
+  <!-- Fonts: serif display + sans body + mono technical -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+    /* The docs fill the window under the site header; only the docs scroll. */
+    html, body { height: 100%; }
+    body { overflow: hidden; }
+    .docs-frame { display: block; width: 100%; height: calc(100dvh - var(--nav-h)); border: 0; background: var(--bg-800); }
+    .nav__links a[aria-current] { color: var(--text-100); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#docs-frame">Skip to the docs</a>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="/" aria-label="FlowJoe home">
+        <img src="/img/flowjoe-logo.svg" alt="" width="120" height="26" />
+      </a>
+      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <nav class="nav__links" id="nav-menu" aria-label="Primary">
+        <!-- <a href="#problem">The problem</a> -->
+        <a href="/#hemispheres">The big idea</a>
+        <a href="/#joe">Meet Joe</a>
+        <a href="/#features">Why FlowJoe</a>
+        <a href="/download/">Download</a>
+        <a href="/docs/" aria-current="page">Docs</a>
+        <a class="nav__login-link" href="https://account.flowjoe.app/account">Log in</a>
+        <a class="nav__connect-btn" href="/#connect">Connect</a>
+      </nav>
+      <div class="nav__right">
+        <a class="btn btn--sm btn--ghost" href="https://account.flowjoe.app/account">Log in</a>
+        <a class="btn btn--sm btn--primary" href="/#connect">Connect</a>
+      </div>
+    </div>
+  </header>
+  <iframe class="docs-frame" id="docs-frame" title="FlowJoe Docs" src="https://docs.flowjoe.app/"></iframe>
+  <script>
+// flowjoe.app/docs/#getting-started/install opens that docs page under the site header.
+(function () {
+  var frame = document.getElementById("docs-frame");
+  var path = location.hash.replace(/^#\/?/, "");
+  if (/^[a-z0-9/_-]+$/i.test(path)) frame.src = "https://docs.flowjoe.app/" + path;
+})();
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
