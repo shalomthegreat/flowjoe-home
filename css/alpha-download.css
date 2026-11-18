@@ -1,0 +1,128 @@
+.alpha-dialog {
+  width: calc(100% - 40px);
+  max-width: 500px;
+  max-height: calc(100dvh - 40px);
+  padding: 40px;
+  margin: auto;
+  overflow-y: auto;
+  background: var(--bg-600);
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  color: var(--text-100);
+}
+.alpha-dialog h2 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 12px 0 16px;
+}
+.alpha-intro {
+  color: var(--text-200);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.alpha-dialog label {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.alpha-dialog input {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-800);
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: var(--text-100);
+  font: 16px var(--font-mono);
+}
+.alpha-dialog input:focus {
+  outline: 2px solid var(--amber-400);
+  outline-offset: 2px;
+}
+.alpha-dialog input[aria-invalid="true"] {
+  border-color: var(--no);
+}
+.alpha-dialog .btn {
+  width: 100%;
+  margin-top: 16px;
+  justify-content: center;
+  cursor: pointer;
+}
+.alpha-help {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--glass-border);
+  font-size: var(--fs-small);
+  line-height: 1.8;
+  color: var(--text-300);
+}
+.alpha-help a {
+  color: var(--amber-300);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.alpha-status {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--no);
+  margin-top: 12px;
+}
+.alpha-status:empty {
+  display: none;
+}
+.alpha-status.success {
+  color: var(--ok);
+}
+
+.alpha-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+.alpha-dialog {
+  opacity: 0.01;
+  translate: 0 12px;
+  scale: 0.97;
+  transition:
+    opacity 0.12s ease,
+    translate 0.12s ease,
+    scale 0.12s ease,
+    overlay 0.12s allow-discrete,
+    display 0.12s allow-discrete;
+}
+.alpha-dialog[open] {
+  opacity: 1;
+  translate: 0;
+  scale: 1;
+  transition-duration: 0.2s;
+}
+@starting-style {
+  .alpha-dialog[open] {
+    opacity: 0.01;
+    translate: 0 12px;
+    scale: 0.97;
+  }
+}
+.alpha-dialog button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.alpha-dialog .btn {
+  font: inherit;
+}
+@media (max-width: 600px) {
+  .alpha-dialog {
+    padding: 28px 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .alpha-dialog,
+  .alpha-dialog[open] {
+    transition: none;
+    translate: none;
+    scale: 1;
+  }
+}

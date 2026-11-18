@@ -1,0 +1,1 @@
+module.exports = {testDir: __dirname, testMatch: "alpha-download.spec.cjs", timeout: 20000, workers: 1, reporter: "list", use: {baseURL: "http://127.0.0.1:8770", headless: true, acceptDownloads: true, reducedMotion: "reduce"}};

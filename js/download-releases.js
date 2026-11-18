@@ -59,7 +59,7 @@
           url = f && safeUrl(f.url);
         const intelId = row.arch === "x64" && os === "mac" ? ' id="mac-intel"' : "";
         if (url) {
-          html += `<div class="dl-file"${intelId}><div><div class="dl-file__name">${esc(row.title)}</div><div class="dl-file__meta">${esc(pretty(rel.version))} &middot; ${esc(row.meta)} &middot; ${esc(mb(f.size))}</div></div><a class="btn btn--sm btn--primary" href="${esc(url)}" download>Download</a></div>`;
+          html += `<div class="dl-file"${intelId}><div><div class="dl-file__name">${esc(row.title)}</div><div class="dl-file__meta">${esc(pretty(rel.version))} &middot; ${esc(row.meta)} &middot; ${esc(mb(f.size))}</div></div><a class="btn btn--sm btn--primary" href="#alpha-download" data-download-url="${esc(url)}">Download</a></div>`;
           sums += `<div class="dl-sum"><div class="dl-sum__label">${esc(row.sum)}</div><div class="dl-sum__row"><code class="dl-hash">${esc(f.sha256)}</code><button type="button" class="dl-copy" data-copy aria-label="Copy ${esc(row.sum)} fingerprint" title="Copy">${COPY_ICON}</button></div></div>`;
         } else if (row.soon) {
           html += `<div class="dl-soon"${intelId}>${esc(row.soon)}</div>`;
@@ -83,7 +83,7 @@
         const links = (r.files || [])
           .map((f) => [SHORT[`${f.os}-${f.arch}-${f.kind}`], safeUrl(f.url), f.sha256])
           .filter(([label, url]) => label && url)
-          .map(([label, url, sha]) => `<a href="${esc(url)}" title="SHA-256 ${esc(sha || "")}" aria-label="${esc(label)}, SHA-256 ${esc(sha || "")}">${esc(label)}</a>`)
+          .map(([label, url, sha]) => `<a href="#alpha-download" data-download-url="${esc(url)}" title="SHA-256 ${esc(sha || "")}" aria-label="${esc(label)}, SHA-256 ${esc(sha || "")}">${esc(label)}</a>`)
           .join('<span class="dl-dot">&middot;</span>');
         return `<div class="dl-vrow"><span class="dl-vname">${esc(r.version)}${i === 0 ? ' <span class="dl-latest">Latest</span>' : ""}</span><span>${esc(when(r.date))}</span><span>${links}</span><a class="dl-vnotes" href="${esc(safeNotes(r.notes))}">What changed &rarr;</a></div>`;
       })

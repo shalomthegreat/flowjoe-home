@@ -31,3 +31,8 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Local alpha-gate checks and Supabase CLI state
+test-results/
+playwright-report/
+supabase/.temp/
