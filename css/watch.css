@@ -4,9 +4,11 @@
 .w-hero .hero__lead { max-width: 620px; margin-bottom: 0; }
 
 .w-stage { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start; }
-.w-player { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--glass-border-strong); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-float); display: grid; place-items: center; }
-.w-player video { display: block; width: 100%; height: 100%; background: #000; }
-.w-player.is-tall video { width: auto; max-width: 100%; }
+.w-player { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--glass-border-strong); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-float); }
+/* The video fills the player box and always shows its whole picture and controls. */
+.w-player video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+/* Vertical: the player itself turns tall (9:16), no taller than the screen, centred in its column. */
+.w-player.is-tall { aspect-ratio: 9 / 16; width: min(100%, calc(min(78vh, 760px) * 9 / 16)); justify-self: center; }
 .w-info { display: flex; flex-direction: column; gap: 16px; }
 .w-info h2 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h2); line-height: 1.1; color: var(--text-100); text-wrap: balance; }
 .w-info p { color: var(--text-300); }
@@ -32,7 +34,7 @@
 .w-tile { text-align: left; font: inherit; color: inherit; background: transparent; border: 0; padding: 0; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .w-thumb { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--glass-border); background: var(--bg-700); transition: border-color .3s ease, box-shadow .3s ease, transform .35s var(--ease-out); }
 .w-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.w-dur { position: absolute; right: 10px; bottom: 10px; font-family: var(--font-mono); font-size: var(--fs-mono); color: var(--text-100); background: rgba(7,10,15,.78); padding: 3px 7px; border-radius: 6px; }
+.w-dur { position: absolute; right: 10px; top: 10px; font-family: var(--font-mono); font-size: var(--fs-mono); color: var(--text-100); background: rgba(7,10,15,.78); padding: 3px 7px; border-radius: 6px; }
 .w-now { position: absolute; left: 10px; top: 10px; font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: .12em; text-transform: uppercase; color: #1a0d02; background: var(--amber-400); padding: 3px 8px; border-radius: 6px; display: none; }
 .w-tile:hover .w-thumb { border-color: var(--glass-border-strong); transform: translateY(-2px); }
 .w-tile.is-playing .w-thumb { border-color: rgba(254,115,12,.55); box-shadow: var(--glow-amber); }
@@ -44,5 +46,5 @@
 .nav__links a[aria-current] { color: var(--text-100); }
 
 @media (max-width: 960px) { .w-stage { grid-template-columns: 1fr; } .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .w-grid { grid-template-columns: 1fr; } .w-player.is-tall { aspect-ratio: 9 / 16; max-height: 78vh; margin-inline: auto; } .w-player.is-tall video { width: 100%; } }
+@media (max-width: 560px) { .w-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .w-thumb { transition: none; } .w-tile:hover .w-thumb { transform: none; } }
