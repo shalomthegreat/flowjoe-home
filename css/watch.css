@@ -7,9 +7,28 @@
 .w-player { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--glass-border-strong); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-float); }
 /* The video fills the player box and always shows its whole picture and controls. */
 .w-player video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
-/* Vertical: the player itself turns tall (9:16), no taller than the screen, centred in its column. */
-.w-player.is-tall { aspect-ratio: 9 / 16; width: min(100%, calc(min(78vh, 760px) * 9 / 16)); justify-self: center; }
-.w-info { display: flex; flex-direction: column; gap: 16px; }
+/* Vertical is its own layout, not a tall film in the widescreen spot: the player is as tall as the screen
+   (9:16, under the menu), the details sit beside it, and the film tiles below turn tall too. */
+.w-tall { --w-tall-w: calc(min(100vh - var(--nav-h) - 48px, 920px) * 9 / 16); }
+.w-tall .w-stage { grid-template-columns: minmax(0, var(--w-tall-w)) 320px; justify-content: center; gap: 40px; }
+.w-player.is-tall { aspect-ratio: 9 / 16; width: min(100%, var(--w-tall-w)); justify-self: center; }
+.w-tall .w-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+.w-tall .w-thumb { aspect-ratio: 9 / 16; }
+/* Previous / next sit under the player and are exactly as wide as it. */
+.w-nav { grid-column: 1; display: flex; justify-content: space-between; gap: 12px; margin-top: -12px; }
+.w-tall .w-nav { width: min(100%, var(--w-tall-w)); justify-self: center; }
+.w-nav button { font: inherit; font-size: .88rem; color: var(--text-300); min-width: 0; padding: 9px 14px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-border); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: color .2s ease, border-color .2s ease; }
+.w-nav button:hover { color: var(--text-100); border-color: var(--glass-border-strong); }
+.w-nav button:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 2px; }
+/* Share sits beside Download. Its label keeps one width for "Share" and "Copied", so nothing shifts. */
+.w-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.w-actions .btn { padding-inline: 18px; white-space: nowrap; }
+.w-share { cursor: pointer; font-family: inherit; }
+.w-share svg { width: 16px; height: 16px; flex: none; }
+#film-share-label { display: inline-block; min-width: 6ch; text-align: left; }
+.w-nav svg { flex: none; width: 16px; height: 16px; }
+.w-nav span:not(.sr-only) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.w-info { grid-column: 2; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: 16px; }
 .w-info h2 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h2); line-height: 1.1; color: var(--text-100); text-wrap: balance; }
 .w-info p { color: var(--text-300); }
 .w-info .btn { align-self: flex-start; }
@@ -45,6 +64,8 @@
 .w-line { color: var(--text-300); font-size: var(--fs-small); }
 .nav__links a[aria-current] { color: var(--text-100); }
 
-@media (max-width: 960px) { .w-stage { grid-template-columns: 1fr; } .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .w-grid { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .w-stage, .w-tall .w-stage { grid-template-columns: minmax(0, 1fr); gap: 28px; } .w-info { grid-column: 1; grid-row: auto; } .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .w-tall .w-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .w-grid { grid-template-columns: 1fr; } .w-tall .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+/* Two tall tiles side by side on a small phone are too narrow for both labels on one edge. */
+@media (max-width: 400px) { .w-tall .w-now { top: auto; bottom: 10px; } }
 @media (prefers-reduced-motion: reduce) { .w-thumb { transition: none; } .w-tile:hover .w-thumb { transform: none; } }

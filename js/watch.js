@@ -4,7 +4,7 @@
 // is replaced under the same name. A category with no films is not shown.
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
-  const VERSION = "1";
+  const VERSION = "2";
   const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development"};
   const FILMS = [
     {id: "hero-one-flow", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
@@ -30,7 +30,7 @@
   const credit = document.getElementById("info-credit");
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   let shape = window.matchMedia("(max-width: 560px)").matches ? "tall" : "wide";
-  let current = FILMS[0];
+  let current = FILMS.find((f) => f.id === location.hash.slice(1)) || FILMS[0];
 
   const filters = document.getElementById("filters");
   function addFilter(key, label) {
@@ -51,8 +51,10 @@
     const cat = chip.dataset.cat;
     for (const c of filters.children) c.setAttribute("aria-pressed", String(c === chip));
     for (const tile of grid.children) tile.hidden = cat !== "all" && !tile.dataset.cats.split(" ").includes(cat);
+    nameNeighbours();
   });
 
+  const page = document.getElementById("main-content");
   for (const film of FILMS) {
     const tile = document.createElement("button");
     tile.type = "button";
@@ -84,10 +86,20 @@
   }
 
   function show(film) {
+    if (film !== current) history.replaceState(null, "", `#${film.id}`);
     current = film;
     player.src = url(film, shape, "mp4");
     player.poster = url(film, shape, "jpg");
     box.classList.toggle("is-tall", shape === "tall");
+    if (page.classList.contains("w-tall") !== (shape === "tall")) {
+      page.classList.toggle("w-tall", shape === "tall");
+      for (const tile of grid.children) {
+        const img = tile.querySelector("img");
+        img.src = url(FILMS.find((f) => f.id === tile.dataset.id), shape, "jpg");
+        img.width = shape === "tall" ? 720 : 1280;
+        img.height = shape === "tall" ? 1280 : 720;
+      }
+    }
     title.textContent = film.title;
     line.textContent = film.line;
     meta.textContent = `${film.dur} · ${shape === "wide" ? "Widescreen" : "Vertical"}`;
@@ -96,7 +108,55 @@
     btnWide.setAttribute("aria-pressed", String(shape === "wide"));
     btnTall.setAttribute("aria-pressed", String(shape === "tall"));
     for (const tile of grid.children) tile.classList.toggle("is-playing", tile.dataset.id === film.id);
+    nameNeighbours();
   }
+
+  // Previous / next step through the films the filter is showing, and wrap round at either end.
+  function neighbour(step) {
+    const shown = [...grid.children].filter((t) => !t.hidden).map((t) => FILMS.find((f) => f.id === t.dataset.id));
+    const list = shown.length ? shown : FILMS;
+    const at = list.indexOf(current);
+    return list[(at === -1 ? (step > 0 ? 0 : list.length - 1) : at + step + list.length) % list.length];
+  }
+  function nameNeighbours() {
+    document.getElementById("film-prev-name").textContent = neighbour(-1).title;
+    document.getElementById("film-next-name").textContent = neighbour(1).title;
+  }
+  function step(by) {
+    show(neighbour(by));
+    player.play().catch(() => {});
+  }
+  // Every film has its own link (flowjoe.app/watch/#<id>). Share hands that link to the phone's own
+  // share sheet where there is one, and otherwise copies it.
+  const shareLabel = document.getElementById("film-share-label");
+  const filmLink = (film) => `${location.origin}${location.pathname}#${film.id}`;
+  let shareTimer = 0;
+  function said(text) {
+    shareLabel.textContent = text;
+    clearTimeout(shareTimer);
+    shareTimer = setTimeout(() => { shareLabel.textContent = "Share"; }, 2200);
+  }
+  document.getElementById("film-share").addEventListener("click", async () => {
+    const link = filmLink(current);
+    if (navigator.share) {
+      try { await navigator.share({title: `${current.title} — FlowJoe`, url: link}); } catch (error) { /* closed without sharing */ }
+      return;
+    }
+    try { await navigator.clipboard.writeText(link); said("Copied"); } catch (error) { said("Failed"); }
+  });
+  window.addEventListener("hashchange", () => {
+    const film = FILMS.find((f) => f.id === location.hash.slice(1));
+    if (film && film !== current) show(film);
+  });
+
+  // When a film ends, the next one the filter shows starts by itself; after the last one it stops.
+  player.addEventListener("ended", () => {
+    const shown = [...grid.children].filter((t) => !t.hidden);
+    const last = shown.length ? shown[shown.length - 1].dataset.id : FILMS[FILMS.length - 1].id;
+    if (current.id !== last) step(1);
+  });
+  document.getElementById("film-prev").addEventListener("click", () => step(-1));
+  document.getElementById("film-next").addEventListener("click", () => step(1));
 
   grid.addEventListener("click", (event) => {
     const tile = event.target.closest(".w-tile");

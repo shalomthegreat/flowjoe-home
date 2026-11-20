@@ -84,6 +84,10 @@
         <div class="w-player" id="player-box">
           <video id="player" controls playsinline preload="metadata"></video>
         </div>
+        <div class="w-nav" role="group" aria-label="Other films">
+          <button type="button" id="film-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="sr-only">Previous film: </span><span id="film-prev-name"></span></button>
+          <button type="button" id="film-next"><span class="sr-only">Next film: </span><span id="film-next-name"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
         <div class="w-info">
           <div class="w-shape" role="group" aria-label="Video shape">
             <button type="button" id="shape-wide" aria-pressed="true"><svg viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="14" height="8" rx="1.5"/></svg>Widescreen</button>
@@ -93,7 +97,10 @@
           <p id="info-line">A short film in production, from first idea to final cut, kept in one flow.</p>
           <span class="w-meta" id="info-meta">0:35 · Widescreen</span>
           <span class="w-credit" id="info-credit" hidden></span>
-          <a class="btn btn--primary" href="/download/">Download FlowJoe</a>
+          <div class="w-actions">
+            <a class="btn btn--primary" href="/download/">Download FlowJoe</a>
+            <button type="button" id="film-share" class="btn btn--ghost w-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span id="film-share-label" aria-live="polite">Share</span></button>
+          </div>
         </div>
       </div>
     </section>
