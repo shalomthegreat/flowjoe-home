@@ -1,21 +1,22 @@
 // Watch page: one big player and a grid of films. To add a film, upload
 // <id>-wide.mp4, <id>-tall.mp4, <id>-wide.jpg and <id>-tall.jpg to files.flowjoe.app/watch/
 // and add one line to FILMS (a film may list several categories). Bump VERSION when a file
-// is replaced under the same name. A category with no films is not shown.
+// is replaced under the same name. A category with no films is not shown. Then run
+// `node scripts/build-watch-film-pages.mjs` so the film gets its own share page (watch/<id>/).
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
   const VERSION = "2";
   const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development"};
   const FILMS = [
     {id: "hero-one-flow", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
-    {id: "dungeon-master", title: "You’re a dungeon master", line: "Three weeks between sessions. Joe finds the promise the party made a ferryman.", dur: "1:05", cats: ["games"]},
-    {id: "the-bard", title: "You’re the bard", line: "Wren owes the innkeeper a song, so Joe writes one from her own motto.", dur: "0:55", cats: ["games", "writing"]},
     {id: "world-builder", title: "You’re a world builder", line: "A whole story bible, and Joe finds every name spelled two ways.", dur: "1:14", cats: ["writing", "games"], credit: "Fallenbrooke Rising, by JJ Silver."},
     {id: "graphic-novelist", title: "You’re a graphic novelist", line: "Scripts, sketches and pages side by side, for one book.", dur: "0:32", cats: ["writing"]},
+    {id: "dungeon-master", title: "You’re a dungeon master", line: "Three weeks between sessions. Joe finds the promise the party made a ferryman.", dur: "1:05", cats: ["games"]},
+    {id: "the-bard", title: "You’re the bard", line: "Wren owes the innkeeper a song, so Joe writes one from her own motto.", dur: "0:55", cats: ["games", "writing"]},
     {id: "card-game-designer", title: "You’re a card game designer", line: "Ninety-three cards, the rules and the playtests in one place.", dur: "0:50", cats: ["games"]},
     {id: "tabletop-game-designer", title: "You’re a tabletop game designer", line: "A board game from first prototype to the printed box.", dur: "1:41", cats: ["games"], credit: "Waypoint, by Waypoint Games."},
-    {id: "serial-entrepreneur", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]},
-    {id: "massage-therapist", title: "You’re a massage therapist", line: "Services, client notes and studio photos for a small practice.", dur: "0:43", cats: ["services"]}
+    {id: "massage-therapist", title: "You’re a massage therapist", line: "Services, client notes and studio photos for a small practice.", dur: "0:43", cats: ["services"]},
+    {id: "serial-entrepreneur", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]}
   ];
 
   const url = (film, shape, ext) => `${MEDIA}${film.id}-${shape}.${ext}?v=${VERSION}`;
@@ -30,7 +31,9 @@
   const credit = document.getElementById("info-credit");
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   let shape = window.matchMedia("(max-width: 560px)").matches ? "tall" : "wide";
-  let current = FILMS.find((f) => f.id === location.hash.slice(1)) || FILMS[0];
+  // A film's own page is /watch/<id>/; older links used /watch/#<id>.
+  const named = (location.pathname.match(/\/watch\/([^/]+)\/?$/) || [])[1] || location.hash.slice(1);
+  let current = FILMS.find((f) => f.id === named) || FILMS[0];
 
   const filters = document.getElementById("filters");
   function addFilter(key, label) {
@@ -86,7 +89,7 @@
   }
 
   function show(film) {
-    if (film !== current) history.replaceState(null, "", `#${film.id}`);
+    if (film !== current) history.replaceState(null, "", `/watch/${film.id}/`);
     current = film;
     player.src = url(film, shape, "mp4");
     player.poster = url(film, shape, "jpg");
@@ -101,6 +104,7 @@
       }
     }
     title.textContent = film.title;
+    document.getElementById("film-now").textContent = film.title;
     line.textContent = film.line;
     meta.textContent = `${film.dur} · ${shape === "wide" ? "Widescreen" : "Vertical"}`;
     credit.hidden = !film.credit;
@@ -126,10 +130,11 @@
     show(neighbour(by));
     player.play().catch(() => {});
   }
-  // Every film has its own link (flowjoe.app/watch/#<id>). Share hands that link to the phone's own
-  // share sheet where there is one, and otherwise copies it.
+  // Every film has its own page (flowjoe.app/watch/<id>/) whose link preview shows that film.
+  // Share hands that link to the phone's own share sheet where there
+  // is one, and otherwise copies it.
   const shareLabel = document.getElementById("film-share-label");
-  const filmLink = (film) => `${location.origin}${location.pathname}#${film.id}`;
+  const filmLink = (film) => `${location.origin}/watch/${film.id}/`;
   let shareTimer = 0;
   function said(text) {
     shareLabel.textContent = text;

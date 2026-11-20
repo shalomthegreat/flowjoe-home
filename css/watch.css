@@ -15,8 +15,14 @@
 .w-tall .w-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
 .w-tall .w-thumb { aspect-ratio: 9 / 16; }
 /* Previous / next sit under the player and are exactly as wide as it. */
-.w-nav { grid-column: 1; display: flex; justify-content: space-between; gap: 12px; margin-top: -12px; }
+.w-nav { grid-column: 1; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: -12px; }
+/* The film now playing is named in the middle, between Previous and Next. */
+.w-nav__now { flex: 1 1 0; min-width: 0; text-align: center; color: var(--text-100); font-weight: 500; }
+.w-nav button { flex: 0 1 auto; max-width: 34%; }
 .w-tall .w-nav { width: min(100%, var(--w-tall-w)); justify-self: center; }
+/* Under a tall player the row is narrow: Previous and Next become arrows (names stay for screen readers). */
+.w-tall .w-nav button span:not(.sr-only) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.w-tall .w-nav button { max-width: none; padding: 9px 12px; }
 .w-nav button { font: inherit; font-size: .88rem; color: var(--text-300); min-width: 0; padding: 9px 14px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-border); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: color .2s ease, border-color .2s ease; }
 .w-nav button:hover { color: var(--text-100); border-color: var(--glass-border-strong); }
 .w-nav button:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 2px; }
@@ -65,7 +71,7 @@
 .nav__links a[aria-current] { color: var(--text-100); }
 
 @media (max-width: 960px) { .w-stage, .w-tall .w-stage { grid-template-columns: minmax(0, 1fr); gap: 28px; } .w-info { grid-column: 1; grid-row: auto; } .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .w-tall .w-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .w-grid { grid-template-columns: 1fr; } .w-tall .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+@media (max-width: 560px) { .w-nav button span:not(.sr-only) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .w-nav button { max-width: none; padding: 9px 12px; } .w-grid { grid-template-columns: 1fr; } .w-tall .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
 /* Two tall tiles side by side on a small phone are too narrow for both labels on one edge. */
 @media (max-width: 400px) { .w-tall .w-now { top: auto; bottom: 10px; } }
 @media (prefers-reduced-motion: reduce) { .w-thumb { transition: none; } .w-tile:hover .w-thumb { transform: none; } }
