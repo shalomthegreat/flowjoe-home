@@ -2056,8 +2056,8 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   .footer__links-group { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
-/* The header collapses into its menu below 900px: with Download, Docs and Log in it no longer fits a tablet held upright. */
-@media (max-width: 900px) {
+/* The header collapses into its menu below 940px: with Watch, Download, Docs and Log in the links would wrap onto two lines just above 900px. */
+@media (max-width: 940px) {
   .nav__toggle { display: inline-flex; position: absolute; right: 16px; }
   .nav__right { display: none; }
   .nav__connect-btn { display: block; }
