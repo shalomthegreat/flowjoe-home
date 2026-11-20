@@ -5,7 +5,7 @@
 // `node scripts/build-watch-film-pages.mjs` so the film gets its own share page (watch/<id>/).
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
-  const VERSION = "2";
+  const VERSION = "3";
   const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development"};
   const FILMS = [
     {id: "hero-one-flow", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
