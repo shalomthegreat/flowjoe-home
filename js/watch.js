@@ -3,6 +3,8 @@
 // and add one line to FILMS (a film may list several categories). Bump VERSION when a file
 // is replaced under the same name. A category with no films is not shown. Then run
 // `node scripts/build-watch-film-pages.mjs` so the film gets its own share page (watch/<id>/).
+// New categories can be added to CATEGORIES at any time. The full how-to (web-copy settings, upload,
+// live checks) is docs/REFERENCE/WATCH_PAGE_PUBLISHING.md in the FlowJoe app repository.
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
   const VERSION = "4";
