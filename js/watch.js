@@ -16,10 +16,12 @@
     {id: "card-game-designer", title: "You’re a card game designer", line: "Ninety-three cards, the rules and the playtests in one place.", dur: "0:50", cats: ["games"]},
     {id: "tabletop-game-designer", title: "You’re a tabletop game designer", line: "A board game from first prototype to the printed box.", dur: "1:41", cats: ["games"], credit: "Waypoint, by Waypoint Games."},
     {id: "massage-therapist", title: "You’re a massage therapist", line: "Services, client notes and studio photos for a small practice.", dur: "0:43", cats: ["services"]},
-    {id: "serial-entrepreneur", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]}
+    {id: "serial-entrepreneur", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]},
+    {id: "app-builder", title: "You’re an app builder", line: "An app planned screen by screen, then built by an agent exactly as planned.", dur: "2:28", cats: ["development"], wideOnly: true}
   ];
 
-  const url = (film, shape, ext) => `${MEDIA}${film.id}-${shape}.${ext}?v=${VERSION}`;
+  // wideOnly: the film's vertical cut is not uploaded yet, so Vertical plays the widescreen file. Remove the flag when <id>-tall.mp4 is up.
+  const url = (film, shape, ext) => `${MEDIA}${film.id}-${ext === "mp4" && film.wideOnly ? "wide" : shape}.${ext}?v=${VERSION}`;
   const player = document.getElementById("player");
   const box = document.getElementById("player-box");
   const grid = document.getElementById("grid");
