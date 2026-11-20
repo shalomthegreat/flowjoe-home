@@ -7,6 +7,9 @@
 .w-player { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--glass-border-strong); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-float); }
 /* The video fills the player box and always shows its whole picture and controls. */
 .w-player video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+/* Controls show on hover only (see js/watch.js); while paused, a play mark sits on the picture (it stays on hover). */
+.w-player.is-hover-controls.is-paused::after { content: ""; position: absolute; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%; pointer-events: none; background: rgba(7,10,15,.66) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M9 6.5v11l9-5.500z'/%3E%3C/svg%3E") center / 44px no-repeat; border: 1.5px solid rgba(255,255,255,.7); transition: background-color .2s ease, border-color .2s ease; }
+.w-player.is-hover-controls.is-paused:hover::after { background-color: rgba(7,10,15,.82); border-color: #fff; }
 /* Vertical is its own layout, not a tall film in the widescreen spot: the player is as tall as the screen
    (9:16, under the menu), the details sit beside it, and the film tiles below turn tall too. */
 .w-tall { --w-tall-w: calc(min(100vh - var(--nav-h) - 48px, 920px) * 9 / 16); }

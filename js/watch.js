@@ -185,5 +185,30 @@
   btnWide.addEventListener("click", () => setShape("wide"));
   btnTall.addEventListener("click", () => setShape("tall"));
 
+  // On a device with a pointer, the player's own controls show only while the pointer (or keyboard
+  // focus) is on the player. A paused film shows a play mark so it still reads as a video; clicking
+  // the picture plays or pauses. Touch screens keep the controls, since there is nothing to hover.
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let over = false;
+    let focused = false;
+    const sync = () => { player.controls = over || focused; };
+    box.classList.add("is-hover-controls");
+    box.addEventListener("pointerenter", () => { over = true; sync(); });
+    box.addEventListener("pointerleave", () => { over = false; sync(); });
+    // Only keyboard focus keeps the controls up: a click also focuses the video, and must not pin them.
+    let viaKeys = false;
+    document.addEventListener("keydown", () => { viaKeys = true; }, true);
+    document.addEventListener("pointerdown", () => { viaKeys = false; }, true);
+    player.tabIndex = 0; // without its controls a video is skipped by Tab
+    box.addEventListener("focusin", () => { focused = viaKeys; sync(); });
+    box.addEventListener("focusout", () => { focused = false; sync(); });
+    // With its controls showing, the browser already plays or pauses on a click; cover the moment they are not.
+    player.addEventListener("click", () => { if (!player.controls) { if (player.paused) player.play().catch(() => {}); else player.pause(); } });
+    const mark = () => box.classList.toggle("is-paused", player.paused);
+    for (const name of ["play", "pause", "ended", "emptied"]) player.addEventListener(name, mark);
+    mark();
+    sync();
+  }
+
   show(current);
 })();
