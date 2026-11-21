@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Pricing page — built on tokens.css; amber = paid sharing, cyan = free local work
+   ========================================================================== */
+
+.pricing-hero { padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(28px, 4vw, 48px); text-align: center; }
+.pricing-hero .hero__title { margin-inline: auto; max-width: 16ch; text-wrap: balance; }
+.pricing-hero__lead { max-width: 60ch; margin-inline: auto; color: var(--text-200); font-size: var(--fs-lead); }
+
+/* ---- Billing switch ---- */
+.billing { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 34px; }
+.billing__switch {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border-strong);
+}
+.billing__option {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--text-300);
+  font: 500 0.92rem var(--font-sans);
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+.billing__option[aria-pressed="true"] { background: var(--glass-strong); color: var(--text-100); box-shadow: inset 0 0 0 1px var(--glass-border-strong); }
+.billing__option:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 2px; }
+.billing__note { font-family: var(--font-mono); font-size: var(--fs-mono); color: var(--text-400); letter-spacing: 0.04em; }
+
+/* ---- Plans ---- */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  padding-bottom: clamp(48px, 7vw, 96px);
+}
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+  padding: 30px 28px;
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  border: var(--border-thin);
+}
+.plan--pro {
+  background: radial-gradient(120% 80% at 100% 0%, var(--amber-glow-soft), transparent 60%), var(--glass-strong);
+  border-color: rgba(254, 115, 12, 0.45);
+  box-shadow: var(--shadow-panel);
+}
+.plan__tag {
+  position: absolute;
+  top: -12px;
+  left: 28px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1a0d02;
+  background: linear-gradient(180deg, var(--amber-300), var(--amber-500));
+}
+.plan__name { font-family: var(--font-serif); font-size: var(--fs-h3); font-weight: 500; color: var(--text-100); }
+.plan__for { color: var(--text-300); font-size: 0.95rem; margin-top: 6px; min-height: 3em; }
+
+.price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.price__was { color: var(--text-400); text-decoration: line-through; font-size: 1.4rem; font-family: var(--font-serif); }
+.price__amount { font-family: var(--font-serif); font-size: clamp(2.6rem, 2rem + 2vw, 3.4rem); line-height: 1; color: var(--text-100); letter-spacing: -0.02em; }
+.price__unit { color: var(--text-300); font-size: 0.95rem; }
+.price__detail { display: block; width: 100%; margin-top: 8px; font-size: 0.85rem; color: var(--text-400); }
+.plan--pro .price__detail { color: var(--amber-300); }
+
+.plan__cta { width: 100%; justify-content: center; }
+.plan__soon { margin-top: -10px; text-align: center; font-size: 0.8rem; color: var(--text-400); }
+
+.plan__features { display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 22px 0 0; margin: 0; border-top: var(--border-thin); }
+.plan__features-head { font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-400); }
+.plan__features li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 10px; font-size: 0.93rem; color: var(--text-200); line-height: 1.5; }
+.plan__features li::before {
+  content: "";
+  width: 8px; height: 8px;
+  margin-top: 0.5em;
+  border-radius: 50%;
+  background: var(--cyan-400);
+  box-shadow: 0 0 10px var(--cyan-glow);
+}
+.plan--pro .plan__features li::before,
+.plan--team .plan__features li::before { background: var(--amber-400); box-shadow: 0 0 10px var(--amber-glow); }
+.plan__features strong { color: var(--text-100); font-weight: 600; }
+.plan__fine { font-size: 0.8rem; color: var(--text-400); line-height: 1.5; margin-top: auto; }
+
+/* ---- Pass + add-on band ---- */
+.extras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.extra {
+  min-width: 0;
+  padding: 26px 28px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--glass-border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.extra__title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--text-100); font-weight: 500; }
+.extra__prices { display: flex; flex-wrap: wrap; gap: 10px 22px; font-variant-numeric: tabular-nums; }
+.extra__price { font-family: var(--font-mono); font-size: 0.9rem; color: var(--amber-300); }
+.extra p { color: var(--text-300); font-size: 0.93rem; }
+
+/* ---- Studio ---- */
+.studio {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 26px 28px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  border: var(--border-thin);
+}
+.studio__copy { min-width: 0; flex: 1 1 420px; }
+.studio__copy h3 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; color: var(--text-100); }
+.studio__copy p { color: var(--text-300); font-size: 0.93rem; margin-top: 6px; }
+
+/* ---- How sharing works ---- */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 36px; counter-reset: step; list-style: none; padding: 0; }
+.step { min-width: 0; padding-top: 18px; border-top: 1px solid var(--glass-border-strong); }
+.step::before { counter-increment: step; content: "Step " counter(step); font-family: var(--font-mono); font-size: var(--fs-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-300); }
+.step h3 { font-size: 1.1rem; color: var(--text-100); margin: 10px 0 6px; font-weight: 600; }
+.step p { color: var(--text-300); font-size: 0.95rem; }
+
+/* ---- Questions ---- */
+.faq { max-width: 760px; margin-top: 28px; display: flex; flex-direction: column; }
+.faq details { border-bottom: var(--border-thin); }
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--text-100);
+  font-weight: 500;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--amber-300); transition: transform .2s var(--ease-out); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 4px; border-radius: 4px; }
+.faq details p { color: var(--text-300); padding-bottom: 18px; max-width: 65ch; }
+
+@media (max-width: 960px) {
+  .plans { grid-template-columns: minmax(0, 1fr); max-width: 560px; margin-inline: auto; gap: 32px; }
+  .plan__for { min-height: 0; }
+  .extras, .steps { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .billing__option, .faq summary::after { transition: none; }
+}
+
+.extras-band { padding-bottom: clamp(56px, 8vw, 112px); }
+.pricing-hero__alpha {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border-strong);
+  background: var(--glass);
+  color: var(--cyan-300);
+  font-size: 0.9rem;
+}
+.pricing-currency { margin-top: 16px; font-size: 0.85rem; color: var(--text-400); }

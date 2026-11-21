@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowJoe Pricing — Free on your computer, paid when you share</title>
+  <meta name="description" content="FlowJoe is free on your computer with no account. Pro and Team add live sharing with clients and teammates in their browser." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://flowjoe.app/pricing/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/coffee-mug.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" sizes="180x180" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FlowJoe" />
+  <meta property="og:url" content="https://flowjoe.app/pricing/" />
+  <meta property="og:title" content="FlowJoe Pricing — Free on your computer, paid when you share" />
+  <meta property="og:description" content="FlowJoe is free on your computer with no account. Pro and Team add live sharing with clients and teammates in their browser." />
+  <meta property="og:image" content="https://flowjoe.app/img/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FlowJoe — a place where everything connects" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlowJoe Pricing — Free on your computer, paid when you share" />
+  <meta name="twitter:description" content="FlowJoe is free on your computer with no account. Pro and Team add live sharing with clients and teammates in their browser." />
+  <meta name="twitter:image" content="https://flowjoe.app/img/og-image.png" />
+  <meta name="twitter:image:alt" content="FlowJoe — a place where everything connects" />
+
+  <!-- Fonts: serif display + sans body + mono technical -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/pricing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="nav__logo" href="/" aria-label="FlowJoe home">
+        <img src="/img/flowjoe-logo.svg" alt="" width="120" height="26" />
+      </a>
+      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <nav class="nav__links" id="nav-menu" aria-label="Primary">
+        <!-- <a href="#problem">The problem</a> -->
+        <a href="/#hemispheres">The big idea</a>
+        <a href="/#joe">Meet Joe</a>
+        <a href="/#features">Why FlowJoe</a>
+        <a href="/watch/">Watch</a>
+        <a href="/pricing/" aria-current="page">Pricing</a>
+        <a href="/download/">Download</a>
+        <a href="/docs/">Docs</a>
+        <a class="nav__login-link" href="https://account.flowjoe.app/account">Log in</a>
+        <a class="nav__connect-btn" href="/#connect">Connect</a>
+      </nav>
+      <div class="nav__right">
+        <a class="btn btn--sm btn--ghost" href="https://account.flowjoe.app/account">Log in</a>
+        <a class="btn btn--sm btn--primary" href="/#connect">Connect</a>
+      </div>
+    </div>
+  </header>
+
+    <main id="main-content">
+    <section class="pricing-hero">
+      <div class="container">
+        <span class="eyebrow">Planned pricing</span>
+        <h1 class="hero__title">Free on your computer. <span class="accent">Paid when you share.</span></h1>
+        <p class="pricing-hero__lead">The whole desktop app is free, with no account and no limits on your own work. Pro and Team add live sharing: clients and teammates join your flow in their browser while you host.</p>
+        <p class="pricing-hero__alpha">FlowJoe is in alpha. These are the prices we plan to launch with. Paid plans aren't open yet.</p>
+
+        <div class="billing">
+          <div class="billing__switch" role="group" aria-label="Billing period">
+            <button type="button" class="billing__option" id="billing-annual" data-billing="annual" aria-pressed="true">Yearly</button>
+            <button type="button" class="billing__option" id="billing-monthly" data-billing="monthly" aria-pressed="false">Monthly</button>
+          </div>
+          <span class="billing__note" id="billing-note" aria-live="polite">Pro is $72 a year for founding members</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Plans">
+      <div class="container plans">
+        <article class="plan plan--solo" aria-labelledby="plan-solo">
+          <div>
+            <h2 class="plan__name" id="plan-solo">Solo</h2>
+            <p class="plan__for">The complete desktop workspace for your own writing, research and creative projects.</p>
+          </div>
+          <div class="price">
+            <span class="price__amount">$0</span>
+            <span class="price__unit">forever</span>
+            <span class="price__detail">No account needed</span>
+          </div>
+          <a class="btn btn--ghost plan__cta" href="/download/">Download FlowJoe</a>
+          <ul class="plan__features">
+            <li><span><strong>Your work stays on your computer.</strong> Work offline. Online AI, sharing and web browsing contact their providers only when you use them.</span></li>
+            <li><span><strong>Unlimited Workspace folders</strong> as ordinary folders on your drive</span></li>
+            <li><span><strong>Unlimited tree and canvas:</strong> nodes, branches, stacks, connections and colour tags</span></li>
+            <li><span><strong>Images, video, PDFs and audio</strong> in every node, with a built-in waveform player</span></li>
+            <li><span><strong>Spreadsheets, documents and calendars</strong> inside your flows</span></li>
+            <li><span><strong>Full version history</strong> on your computer, never behind a paywall</span></li>
+            <li><span><strong>Joe, your AI collaborator,</strong> with your own OpenAI or Anthropic account, or an AI command-line tool you're already signed into, at no markup</span></li>
+            <li><span><strong>Plugins</strong> for custom fields and templates, with no network access</span></li>
+            <li><span><strong>Open files:</strong> plain flow.json and standard media formats</span></li>
+          </ul>
+          <p class="plan__fine">Usage statistics are planned as opt-in, off by default. Version checks contact the update service, which receives ordinary connection information such as your IP address.</p>
+        </article>
+
+        <article class="plan plan--pro" aria-labelledby="plan-pro">
+          <span class="plan__tag" id="pro-tag">Founding price</span>
+          <div>
+            <h2 class="plan__name" id="plan-pro">Pro</h2>
+            <p class="plan__for">For consultants and creators who review, present and work live with clients.</p>
+          </div>
+          <div class="price">
+            <span class="price__was" id="pro-was"><span class="sr-only">Regular price </span>$8</span>
+            <span class="sr-only" id="pro-now">Founding price </span><span class="price__amount" id="pro-amount">$6</span>
+            <span class="price__unit" id="pro-unit">/ month</span>
+            <span class="price__detail" id="pro-detail">$72 billed yearly, kept for as long as you have your account</span>
+          </div>
+          <button type="button" class="btn btn--primary plan__cta" disabled aria-disabled="true">Start 7-day free trial</button>
+          <p class="plan__soon">Paid plans open soon. No card needed for the trial.</p>
+          <ul class="plan__features">
+            <li class="plan__features-head">Everything in Solo, plus</li>
+            <li><span><strong>Your own sharing address,</strong> with no router or firewall setup</span></li>
+            <li><span><strong>Browser guests:</strong> you plus up to 3 guests who can edit, and unlimited viewers. Guests need no account and nothing to install.</span></li>
+            <li><span><strong>Work together live:</strong> see who is there, watch edits arrive, and choose who can edit</span></li>
+            <li><span><strong>Present:</strong> lead clients through your flow while their view follows yours</span></li>
+            <li><span><strong>Joe for guests:</strong> guests can add files and brainstorm with Joe on the nodes you share</span></li>
+          </ul>
+          <p class="plan__fine">Founding price: the first 30 days after launch or the first 1,000 subscribers, whichever comes first. Yearly only. Regular Pro is $96 a year or $10 a month.</p>
+        </article>
+
+        <article class="plan plan--team" aria-labelledby="plan-team">
+          <div>
+            <h2 class="plan__name" id="plan-team">Team</h2>
+            <p class="plan__for">For studios, collectives and research groups who build together every day.</p>
+          </div>
+          <div class="price">
+            <span class="price__amount" id="team-amount">$15</span>
+            <span class="price__unit" id="team-unit">/ seat / month</span>
+            <span class="price__detail" id="team-detail">$180 per seat billed yearly. Two seats minimum.</span>
+          </div>
+          <button type="button" class="btn btn--ghost plan__cta" disabled aria-disabled="true">Get Team</button>
+          <p class="plan__soon">Paid plans open soon.</p>
+          <ul class="plan__features">
+            <li class="plan__features-head">Everything in Pro, plus</li>
+            <li><span><strong>Peer nodes:</strong> bring a teammate's branch live into your own tree, computer to computer, with no cloud storage</span></li>
+            <li><span><strong>Every seat hosts:</strong> each member gets their own sharing address and one Co-Host</span></li>
+            <li><span><strong>No editor limit</strong> for teammates and invited guests</span></li>
+            <li><span><strong>Hand over a project</strong> or merge branches when people move on</span></li>
+            <li><span><strong>Shared AI accounts</strong> with usage visible to the team</span></li>
+            <li><span><strong>Seat management</strong> in one place, and direct support</span></li>
+          </ul>
+          <p class="plan__fine">Built for two: a pair pays $36 a month, or $360 a year, with no five-seat minimum.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="extras-band" aria-label="Passes and add-ons">
+      <div class="container">
+        <div class="extras">
+          <div class="extra">
+            <h3 class="extra__title">Project Pass</h3>
+            <div class="extra__prices">
+              <span class="extra__price">$15 · 30 days of Pro sharing</span>
+              <span class="extra__price">$21 · with a Co-Host</span>
+            </div>
+            <p>For people who share now and then. Pay once, share for 30 days, and nothing renews. Buy another Pass and it starts when your existing Pass time runs out. Add a Co-Host to an active $15 Pass for $6 until that Pass ends.</p>
+            <p>Start Pro or join Team and your unused Pass time is saved for when that plan ends. While Pro or Team covers your sharing, new Passes aren't needed and can't be bought.</p>
+          </div>
+          <div class="extra">
+            <h3 class="extra__title">Co-Host for Pro</h3>
+            <div class="extra__prices">
+              <span class="extra__price">$6 a month</span>
+              <span class="extra__price">$56 a year</span>
+            </div>
+            <p>Give one person the power to help present and manage who can edit. You choose them before or during a session, can swap them mid-meeting, and stay in charge with the final say. Pro has at most one Co-Host. The Co-Host uses one of your three guest editor places.</p>
+          </div>
+        </div>
+
+        <p class="pricing-currency">Prices are in US dollars.</p>
+
+        <div class="studio">
+          <div class="studio__copy">
+            <h3>Studios with 20 or more people</h3>
+            <p>Volume pricing, invoicing, single sign-on and a sharing relay inside your own network are being considered for after launch. Tell us what you need.</p>
+          </div>
+          <a class="btn btn--ghost" href="/#connect">Talk to us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <div class="container">
+        <span class="eyebrow">How sharing works</span>
+        <h2 class="section-title" id="how-title">Your flow stays home. Guests visit.</h2>
+        <ol class="steps">
+          <li class="step">
+            <h3>Start Pro</h3>
+            <p>FlowJoe sets up your personal sharing address. There is nothing to configure on your router.</p>
+          </li>
+          <li class="step">
+            <h3>Invite people</h3>
+            <p>Send a link. Guests open it in their browser, with no account and no install.</p>
+          </li>
+          <li class="step">
+            <h3>Host the session</h3>
+            <p>Your flow stays on your computer. Guests see it live only while you host, and you decide who can edit.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <span class="eyebrow">Questions</span>
+        <h2 class="section-title" id="faq-title">Before you choose</h2>
+        <div class="faq">
+          <details>
+            <summary>What happens to my work if I stop paying?</summary>
+            <p>Nothing. Your flows, files and history stay on your computer and keep working. Only live sharing pauses.</p>
+          </details>
+          <details>
+            <summary>Do my guests need to pay or sign up?</summary>
+            <p>No. Guests join from a link in their browser. On Pro, up to three guests can edit at once, and anyone else can watch.</p>
+          </details>
+          <details>
+            <summary>Do I need a card for the trial?</summary>
+            <p>No. The 7-day Pro trial needs no card. When it ends, your work stays on your computer and only live sharing pauses.</p>
+          </details>
+          <details>
+            <summary>Is my project stored in the cloud?</summary>
+            <p>No. Your flows and media stay on your computer. Your account holds sign-in, device, plan and sharing details, never your flows or media. When you share, guests receive what you share while the session is open. When you use online AI, the context you send goes to that provider.</p>
+          </details>
+          <details>
+            <summary>Should I pick a Pass or Pro?</summary>
+            <p>A Pass suits a single project review. If you share most months, Pro costs less over a year and keeps your address open.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="/img/flowjoe-logo.svg" alt="" class="footer__logo" width="96" height="24" />
+        <p class="footer__desc">A local-first visual workspace that unites notes, files, AI chats, and creative work.</p>
+        <p class="footer__copyright mono">&copy; 2026 FlowJoe. All rights reserved.</p>
+        <!-- Social accounts: placeholders until the handles are secured. Turn each span into a link then. -->
+        <div class="footer__socials" role="group" aria-label="FlowJoe on social media (coming soon)">
+          <span class="footer__social" role="img" aria-label="Telegram — coming soon" title="Telegram — coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.35-.88 1.1.1 1.4l4.7 1.5 1.8 5.6c.2.6.9.75 1.35.3l2.6-2.5 4.7 3.5c.6.45 1.4.15 1.57-.6L22.9 4.6c.2-.85-.55-1.45-1.4-1.1zM9 13.4l8.6-5.5-6.7 6.7-.3 3.1z"/></svg></span>
+          <span class="footer__social" role="img" aria-label="Instagram — coming soon" title="Instagram — coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></svg></span>
+          <span class="footer__social" role="img" aria-label="TikTok — coming soon" title="TikTok — coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>
+          <span class="footer__social" role="img" aria-label="X — coming soon" title="X — coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
+          <span class="footer__social" role="img" aria-label="Facebook — coming soon" title="Facebook — coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.45-3.3H13.5V8.4c0-.95.3-1.6 1.65-1.6h1.75V3.85c-.3-.04-1.35-.13-2.55-.13-2.55 0-4.25 1.55-4.25 4.4v2.38H7.25v3.3h2.85V22z"/></svg></span>
+        </div>
+      </div>
+      <div class="footer__links-group">
+        <div class="footer__col">
+          <h4 class="footer__title mono">Product</h4>
+          <a href="https://flowjoe.app">Home</a>
+          <a href="/watch/">Watch</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/download/">Download</a>
+          <a href="/docs/">Docs</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title mono">Account</h4>
+          <a href="https://account.flowjoe.app/account">Sign in</a>
+          <a href="https://account.flowjoe.app/account?start=create">Create account</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__title mono">Help</h4>
+          <a href="https://docs.flowjoe.app">Guides</a>
+          <a href="mailto:support@flowjoe.app">support@flowjoe.app</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/pricing.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
