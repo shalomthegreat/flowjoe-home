@@ -40,6 +40,20 @@
   const named = (location.pathname.match(/\/watch\/([^/]+)\/?$/) || [])[1] || location.hash.slice(1);
   let current = FILMS.find((f) => f.id === named) || FILMS[0];
 
+  // Tile size: Large (three across, with each film's line) or Compact (more across, title only).
+  // Remembered in this browser only.
+  const sizeLarge = document.getElementById("size-large");
+  const sizeCompact = document.getElementById("size-compact");
+  function setSize(compact, remember) {
+    grid.classList.toggle("is-compact", compact);
+    sizeLarge.setAttribute("aria-pressed", String(!compact));
+    sizeCompact.setAttribute("aria-pressed", String(compact));
+    if (remember) { try { localStorage.setItem("flowjoe-watch-size", compact ? "compact" : "large"); } catch (error) { /* storage blocked */ } }
+  }
+  sizeLarge.addEventListener("click", () => setSize(false, true));
+  sizeCompact.addEventListener("click", () => setSize(true, true));
+  try { setSize(localStorage.getItem("flowjoe-watch-size") === "compact", false); } catch (error) { /* storage blocked */ }
+
   const filters = document.getElementById("filters");
   function addFilter(key, label) {
     const chip = document.createElement("button");

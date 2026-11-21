@@ -50,7 +50,7 @@
 .w-shape svg { width: 12px; height: 12px; }
 
 .w-list { padding-block: clamp(40px, 6vw, 72px) clamp(60px, 8vw, 110px); }
-.w-list__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+.w-list__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
 .w-list__head h3 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h3); color: var(--text-100); }
 .w-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .w-filters button { font: inherit; font-size: .88rem; color: var(--text-300); padding: 8px 16px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-border); cursor: pointer; transition: color .2s ease, border-color .2s ease, background .2s ease; }
@@ -58,6 +58,19 @@
 .w-filters button[aria-pressed="true"] { color: var(--amber-300); border-color: rgba(254,115,12,.45); background: var(--amber-glow-soft); }
 .w-filters button:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 2px; }
 .w-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+/* Compact tiles: more films per row, title only (the one-line story shows in the player's details). */
+.w-size { display: inline-flex; padding: 4px; gap: 4px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-border); }
+.w-size button { font: inherit; font-size: .85rem; color: var(--text-300); padding: 7px 14px; border-radius: 999px; border: 0; background: transparent; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.w-size button[aria-pressed="true"] { color: var(--text-100); background: var(--glass-strong); box-shadow: inset 0 0 0 1px var(--glass-border-strong); }
+.w-size button:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 2px; }
+.w-size svg { width: 12px; height: 12px; }
+.w-grid.is-compact { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.w-tall .w-grid.is-compact { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; }
+.w-grid.is-compact .w-line { display: none; }
+.w-grid.is-compact .w-tile { gap: 8px; }
+.w-grid.is-compact .w-tile b { font-size: .88rem; }
+.w-grid.is-compact .w-now { font-size: 10px; padding: 2px 6px; left: 6px; top: 6px; }
+.w-grid.is-compact .w-dur { font-size: 10px; padding: 2px 5px; right: 6px; top: 6px; }
 .w-tile[hidden] { display: none; }
 .w-tile { text-align: left; font: inherit; color: inherit; background: transparent; border: 0; padding: 0; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .w-thumb { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--glass-border); background: var(--bg-700); transition: border-color .3s ease, box-shadow .3s ease, transform .35s var(--ease-out); }
@@ -77,4 +90,6 @@
 @media (max-width: 560px) { .w-nav button span:not(.sr-only) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .w-nav button { max-width: none; padding: 9px 12px; } .w-grid { grid-template-columns: 1fr; } .w-tall .w-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
 /* Two tall tiles side by side on a small phone are too narrow for both labels on one edge. */
 @media (max-width: 400px) { .w-tall .w-now { top: auto; bottom: 10px; } }
+@media (max-width: 960px) { .w-grid.is-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); } .w-tall .w-grid.is-compact { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .w-grid.is-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .w-tall .w-grid.is-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; } .w-grid.is-compact .w-now { display: none; } }
 @media (prefers-reduced-motion: reduce) { .w-thumb { transition: none; } .w-tile:hover .w-thumb { transform: none; } }
