@@ -7,7 +7,7 @@
 // live checks) is docs/REFERENCE/WATCH_PAGE_PUBLISHING.md in the FlowJoe app repository.
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
-  const VERSION = "5";
+  const VERSION = "6";
   const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development", design: "Design & Creative"};
   const FILMS = [
     {id: "hero-one-flow", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
