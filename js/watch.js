@@ -8,7 +8,7 @@
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
   const VERSION = "5";
-  const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development"};
+  const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development", design: "Design & Creative"};
   const FILMS = [
     {id: "hero-one-flow", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
     {id: "world-builder", title: "You’re a world builder", line: "A whole story bible, and Joe finds every name spelled two ways.", dur: "1:14", cats: ["writing", "games"], credit: "Fallenbrooke Rising, by JJ Silver."},
@@ -20,7 +20,8 @@
     {id: "massage-therapist", title: "You’re a massage therapist", line: "Services, client notes and studio photos for a small practice.", dur: "0:43", cats: ["services"]},
     {id: "serial-entrepreneur", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]},
     {id: "app-builder", title: "You’re an app builder", line: "An app planned screen by screen, then built by an agent exactly as planned.", dur: "2:28", cats: ["development"]},
-    {id: "business-owner", title: "You’re a business owner", line: "A coffee roaster asks Joe once, and each Monday Joe finds new places to call.", dur: "1:48", cats: ["services"]}
+    {id: "business-owner", title: "You’re a business owner", line: "A coffee roaster asks Joe once, and each Monday Joe finds new places to call.", dur: "1:48", cats: ["services"]},
+    {id: "graphic-designer", title: "You’re a graphic designer", line: "Two branches, one link, nothing to install, and the client writes back.", dur: "1:26", cats: ["design"]}
   ];
 
   // A film may carry `wideOnly: true` while its vertical cut is not uploaded yet: Vertical then plays the widescreen file. Remove the flag when <id>-tall.mp4 is up.
