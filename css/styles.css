@@ -2189,3 +2189,8 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   .local-first__points { grid-template-columns: minmax(0, 1fr); }
   .local-first__connects { padding: 20px; }
 }
+.badge--varies {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border-strong);
+  color: var(--text-300);
+}
