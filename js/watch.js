@@ -55,21 +55,22 @@
   sizeCompact.addEventListener("click", () => setSize(true, true));
   try { setSize(localStorage.getItem("flowjoe-watch-size") === "compact", false); } catch (error) { /* storage blocked */ }
 
-  // Order: Newest first (the default) or Oldest first, by each film's `added` date and time. Films that went up
-  // at the same time keep their order in FILMS either way. Remembered in this browser only.
+  // Order: Default (the order of FILMS, set by the owner) or Newest first, by each film's `added` date and
+  // time; films that went up at the same time keep their FILMS order. The page starts on Default.
+  // The choice is remembered in this browser only.
+  const sortDefault = document.getElementById("sort-default");
   const sortNew = document.getElementById("sort-newest");
-  const sortOld = document.getElementById("sort-oldest");
-  const byDate = (oldest) => FILMS.map((f, i) => [f, i]).sort(([a, i], [b, j]) => (oldest ? (a.added || "").localeCompare(b.added || "") : (b.added || "").localeCompare(a.added || "")) || i - j).map(([f]) => f);
-  function setOrder(oldest, remember) {
-    sortNew.setAttribute("aria-pressed", String(!oldest));
-    sortOld.setAttribute("aria-pressed", String(oldest));
+  const ordered = (newest) => newest ? FILMS.map((f, i) => [f, i]).sort(([a, i], [b, j]) => (b.added || "").localeCompare(a.added || "") || i - j).map(([f]) => f) : FILMS;
+  function setOrder(newest, remember) {
+    sortDefault.setAttribute("aria-pressed", String(!newest));
+    sortNew.setAttribute("aria-pressed", String(newest));
     const tiles = new Map([...grid.children].map((t) => [t.dataset.id, t]));
-    for (const film of byDate(oldest)) if (tiles.has(film.id)) grid.append(tiles.get(film.id));
-    if (remember) { try { localStorage.setItem("flowjoe-watch-order", oldest ? "oldest" : "newest"); } catch (error) { /* storage blocked */ } }
+    for (const film of ordered(newest)) if (tiles.has(film.id)) grid.append(tiles.get(film.id));
+    if (remember) { try { localStorage.setItem("flowjoe-watch-order", newest ? "newest" : "default"); } catch (error) { /* storage blocked */ } }
     if (current) nameNeighbours();
   }
-  sortNew.addEventListener("click", () => setOrder(false, true));
-  sortOld.addEventListener("click", () => setOrder(true, true));
+  sortDefault.addEventListener("click", () => setOrder(false, true));
+  sortNew.addEventListener("click", () => setOrder(true, true));
 
   const filters = document.getElementById("filters");
   function addFilter(key, label) {
@@ -123,9 +124,9 @@
     tile.append(thumb, name, story);
     grid.append(tile);
   }
-  let oldestFirst = false;
-  try { oldestFirst = localStorage.getItem("flowjoe-watch-order") === "oldest"; } catch (error) { /* storage blocked */ }
-  setOrder(oldestFirst, false);
+  let newestFirst = false;
+  try { newestFirst = localStorage.getItem("flowjoe-watch-order") === "newest"; } catch (error) { /* storage blocked */ }
+  setOrder(newestFirst, false);
   // With no film named in the link, the page opens on the first film in the chosen order.
   if (!current) current = FILMS.find((f) => f.id === grid.firstElementChild.dataset.id);
 
