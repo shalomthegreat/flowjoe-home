@@ -1,6 +1,6 @@
 // Watch page: one big player and a grid of films. To add a film, upload
 // <id>-wide.mp4, <id>-tall.mp4, <id>-wide.jpg and <id>-tall.jpg to files.flowjoe.app/watch/
-// and add one line to FILMS with the date it went up as `added` (a film may list several categories). Bump VERSION when a file
+// and add one line to FILMS with the date and time it went up as `added` ("YYYY-MM-DDTHH:MM") (a film may list several categories). Bump VERSION when a file
 // is replaced under the same name. A category with no films is not shown. Then run
 // `node scripts/build-watch-film-pages.mjs` so the film gets its own share page (watch/<id>/).
 // New categories can be added to CATEGORIES at any time. The full how-to (web-copy settings, upload,
@@ -10,18 +10,18 @@
   const VERSION = "7";
   const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development", design: "Design & Creative"};
   const FILMS = [
-    {id: "hero-one-flow", added: "2026-11-19", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
-    {id: "world-builder", added: "2026-11-19", title: "You’re a world builder", line: "A whole story bible, and Joe finds every name spelled two ways.", dur: "1:14", cats: ["writing", "games"], credit: "Fallenbrooke Rising, by JJ Silver."},
-    {id: "graphic-novelist", added: "2026-11-19", title: "You’re a graphic novelist", line: "Scripts, sketches and pages side by side, for one book.", dur: "0:32", cats: ["writing"]},
-    {id: "dungeon-master", added: "2026-11-19", title: "You’re a dungeon master", line: "Three weeks between sessions. Joe finds the promise the party made a ferryman.", dur: "1:05", cats: ["games"]},
-    {id: "the-bard", added: "2026-11-19", title: "You’re the bard", line: "Wren owes the innkeeper a song, so Joe writes one from her own motto.", dur: "0:55", cats: ["games", "writing"]},
-    {id: "card-game-designer", added: "2026-11-19", title: "You’re a card game designer", line: "Ninety-three cards, the rules and the playtests in one place.", dur: "0:50", cats: ["games"]},
-    {id: "tabletop-game-designer", added: "2026-11-19", title: "You’re a tabletop game designer", line: "A board game from first prototype to the printed box.", dur: "1:41", cats: ["games"], credit: "Waypoint, by Waypoint Games."},
-    {id: "massage-therapist", added: "2026-11-19", title: "You’re a massage therapist", line: "Services, client notes and studio photos for a small practice.", dur: "0:43", cats: ["services"]},
-    {id: "serial-entrepreneur", added: "2026-11-19", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]},
-    {id: "app-builder", added: "2026-11-20", title: "You’re an app builder", line: "An app planned screen by screen, then built by an agent exactly as planned.", dur: "2:28", cats: ["development"]},
-    {id: "business-owner", added: "2026-11-20", title: "You’re a business owner", line: "A coffee roaster asks Joe once, and each Monday Joe finds new places to call.", dur: "1:48", cats: ["services"]},
-    {id: "graphic-designer", added: "2026-11-21", title: "You’re a graphic designer", line: "Two branches, one link, nothing to install, and the client writes back.", dur: "1:26", cats: ["design"]}
+    {id: "hero-one-flow", added: "2026-11-19T22:57", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
+    {id: "world-builder", added: "2026-11-19T22:57", title: "You’re a world builder", line: "A whole story bible, and Joe finds every name spelled two ways.", dur: "1:14", cats: ["writing", "games"], credit: "Fallenbrooke Rising, by JJ Silver."},
+    {id: "graphic-novelist", added: "2026-11-19T22:57", title: "You’re a graphic novelist", line: "Scripts, sketches and pages side by side, for one book.", dur: "0:32", cats: ["writing"]},
+    {id: "dungeon-master", added: "2026-11-19T22:57", title: "You’re a dungeon master", line: "Three weeks between sessions. Joe finds the promise the party made a ferryman.", dur: "1:05", cats: ["games"]},
+    {id: "the-bard", added: "2026-11-19T22:57", title: "You’re the bard", line: "Wren owes the innkeeper a song, so Joe writes one from her own motto.", dur: "0:55", cats: ["games", "writing"]},
+    {id: "card-game-designer", added: "2026-11-19T22:57", title: "You’re a card game designer", line: "Ninety-three cards, the rules and the playtests in one place.", dur: "0:50", cats: ["games"]},
+    {id: "tabletop-game-designer", added: "2026-11-19T22:57", title: "You’re a tabletop game designer", line: "A board game from first prototype to the printed box.", dur: "1:41", cats: ["games"], credit: "Waypoint, by Waypoint Games."},
+    {id: "massage-therapist", added: "2026-11-19T22:57", title: "You’re a massage therapist", line: "Services, client notes and studio photos for a small practice.", dur: "0:43", cats: ["services"]},
+    {id: "serial-entrepreneur", added: "2026-11-19T22:57", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]},
+    {id: "app-builder", added: "2026-11-20T00:42", title: "You’re an app builder", line: "An app planned screen by screen, then built by an agent exactly as planned.", dur: "2:28", cats: ["development"]},
+    {id: "business-owner", added: "2026-11-20T20:01", title: "You’re a business owner", line: "A coffee roaster asks Joe once, and each Monday Joe finds new places to call.", dur: "1:48", cats: ["services"]},
+    {id: "graphic-designer", added: "2026-11-21T03:51", title: "You’re a graphic designer", line: "Two branches, one link, nothing to install, and the client writes back.", dur: "1:26", cats: ["design"]}
   ];
 
   // A film may carry `wideOnly: true` while its vertical cut is not uploaded yet: Vertical then plays the widescreen file. Remove the flag when <id>-tall.mp4 is up.
@@ -55,8 +55,8 @@
   sizeCompact.addEventListener("click", () => setSize(true, true));
   try { setSize(localStorage.getItem("flowjoe-watch-size") === "compact", false); } catch (error) { /* storage blocked */ }
 
-  // Order: Newest first (the default) or Oldest first, by each film's `added` date. Films that went up
-  // the same day keep their order in FILMS either way. Remembered in this browser only.
+  // Order: Newest first (the default) or Oldest first, by each film's `added` date and time. Films that went up
+  // at the same time keep their order in FILMS either way. Remembered in this browser only.
   const sortNew = document.getElementById("sort-newest");
   const sortOld = document.getElementById("sort-oldest");
   const byDate = (oldest) => FILMS.map((f, i) => [f, i]).sort(([a, i], [b, j]) => (oldest ? (a.added || "").localeCompare(b.added || "") : (b.added || "").localeCompare(a.added || "")) || i - j).map(([f]) => f);
