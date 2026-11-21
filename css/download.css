@@ -62,3 +62,9 @@
 .dl-vfoot { margin: 14px 0 0; color: var(--text-400); font-size: var(--fs-small); }
 .dl-vfoot a { color: var(--amber-300); }
 @media (max-width: 760px) { .dl-vrow { grid-template-columns: 1fr 1fr; } .dl-vrow--head { display: none; } }
+
+.hero__promise {
+  margin-top: 18px;
+  font-size: 0.93rem;
+  color: var(--cyan-300);
+}

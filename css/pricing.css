@@ -175,3 +175,12 @@
   font-size: 0.9rem;
 }
 .pricing-currency { margin-top: 16px; font-size: 0.85rem; color: var(--text-400); }
+
+/* ---- Why the app is free ---- */
+.free-why { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.free-why li { min-width: 0; padding-top: 18px; border-top: 1px solid var(--glass-border-strong); }
+.free-why h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-100); margin-bottom: 6px; }
+.free-why p { color: var(--text-300); font-size: 0.95rem; }
+.free-why__more { display: inline-block; margin-top: 24px; color: var(--amber-300); font-size: 0.93rem; }
+.free-why__more:hover { color: var(--amber-400); }
+@media (max-width: 960px) { .free-why { grid-template-columns: minmax(0, 1fr); } }

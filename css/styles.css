@@ -2149,3 +2149,43 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   html { scroll-behavior: auto; }
   * { animation: none !important; transition-duration: .01ms !important; }
 }
+
+/* ==========================================================================
+   Local-first (home)
+   ========================================================================== */
+.local-first__header { max-width: 760px; }
+.local-first__points {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.local-first__point {
+  min-width: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--glass-border-strong);
+}
+.local-first__point h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-100); margin-bottom: 8px; }
+.local-first__point p { color: var(--text-300); font-size: 0.95rem; line-height: 1.6; }
+.local-first__connects {
+  margin-top: 40px;
+  padding: 24px 28px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--glass-border-strong);
+  max-width: 860px;
+}
+.local-first__connects-title { font-size: var(--fs-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-300); margin-bottom: 12px; }
+.local-first__connects ul { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-direction: column; gap: 8px; }
+.local-first__connects li { color: var(--text-300); font-size: 0.93rem; line-height: 1.55; }
+.local-first__connects strong { color: var(--text-100); font-weight: 600; }
+.local-first__more { color: var(--amber-300); font-size: 0.93rem; }
+.local-first__more:hover { color: var(--amber-400); }
+@media (max-width: 960px) {
+  .local-first__points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .local-first__points { grid-template-columns: minmax(0, 1fr); }
+  .local-first__connects { padding: 20px; }
+}
