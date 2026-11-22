@@ -2066,6 +2066,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   .nav__right { display: none; }
   .nav__connect-btn { display: block; }
   .nav__links .nav__login-link { display: block; }
+  .nav__links .nav__login-link.is-signed-in { display: flex; align-items: center; gap: 8px; }
   .nav__links {
     position: absolute;
     top: 50px;
@@ -2227,3 +2228,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .nav.is-leaving::after { animation: none; background-size: 100% 100%; background-position: 0 0; opacity: 0.85; }
 }
+
+/* Signed in: "Log in" becomes "Account" with a small line-glyph person, same size and place. */
+.is-signed-in { display: inline-flex; align-items: center; gap: 6px; }
+.nav__account-icon { width: 16px; height: 16px; flex: none; }

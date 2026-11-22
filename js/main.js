@@ -295,6 +295,30 @@
     });
   }
 
+  /* ---- Signed in? The header says "Account" instead of "Log in" ----
+     Asks the account site only for a yes/no (it answers flowjoe.app and nobody else). Signed out, offline or
+     no answer in time: the header simply stays "Log in". Nothing is stored here. */
+  if (siteNav && window.fetch) {
+    var loginLinks = Array.prototype.filter.call(siteNav.querySelectorAll('a[href^="https://account.flowjoe.app"]'), function (a) {
+      return a.textContent.trim() === "Log in";
+    });
+    if (loginLinks.length) {
+      var statusController = window.AbortController ? new AbortController() : null;
+      var statusTimer = statusController ? setTimeout(function () { statusController.abort(); }, 4000) : null;
+      fetch("https://account.flowjoe.app/api/account/site-status", { credentials: "include", cache: "no-store", signal: statusController ? statusController.signal : undefined })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (status) {
+          if (!status || status.signedIn !== true) return;
+          loginLinks.forEach(function (a) {
+            a.innerHTML = '<svg class="nav__account-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4s5.8 1.8 7 5.4"/></svg>Account';
+            a.classList.add("is-signed-in");
+          });
+        })
+        .catch(function () {})
+        .then(function () { if (statusTimer) clearTimeout(statusTimer); });
+    }
+  }
+
   /* ---- Connect Modal ---- */
   var modal = document.getElementById("connect-modal");
   var modalBackdrop = document.getElementById("modal-backdrop");
