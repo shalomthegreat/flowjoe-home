@@ -8,7 +8,7 @@
 (function () {
   const MEDIA = "https://files.flowjoe.app/watch/";
   const VERSION = "7";
-  const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development", design: "Design & Creative"};
+  const CATEGORIES = {writing: "Writing & Publishing", games: "Game Making", services: "Professional Services", development: "Development", design: "Design & Creative", teams: "Teams & Training"};
   const FILMS = [
     {id: "hero-one-flow", added: "2026-11-19T22:57", title: "One flow", line: "A short film in production, from first idea to final cut, kept in one flow.", dur: "0:35", cats: ["writing"]},
     {id: "world-builder", added: "2026-11-19T22:57", title: "You’re a world builder", line: "A whole story bible, and Joe finds every name spelled two ways.", dur: "1:14", cats: ["writing", "games"], credit: "Fallenbrooke Rising, by JJ Silver."},
@@ -21,7 +21,8 @@
     {id: "serial-entrepreneur", added: "2026-11-19T22:57", title: "You’re a serial entrepreneur", line: "Every venture and every idea, finally in one place.", dur: "0:46", cats: ["services", "development"]},
     {id: "app-builder", added: "2026-11-20T00:42", title: "You’re an app builder", line: "An app planned screen by screen, then built by an agent exactly as planned.", dur: "2:28", cats: ["development"]},
     {id: "business-owner", added: "2026-11-20T20:01", title: "You’re a business owner", line: "A coffee roaster asks Joe once, and each Monday Joe finds new places to call.", dur: "1:48", cats: ["services"]},
-    {id: "graphic-designer", added: "2026-11-21T03:51", title: "You’re a graphic designer", line: "Two branches, one link, nothing to install, and the client writes back.", dur: "1:26", cats: ["design"]}
+    {id: "graphic-designer", added: "2026-11-21T03:51", title: "You’re a graphic designer", line: "Two branches, one link, nothing to install, and the client writes back.", dur: "1:26", cats: ["design", "teams"]},
+    {id: "corporate-trainer", added: "2026-11-22T00:03", title: "You’re a corporate trainer", line: "Two new starters, three time zones. Dana presents once, and everyone sees what she sees.", dur: "1:23", cats: ["teams", "services"]}
   ];
 
   // A film may carry `wideOnly: true` while its vertical cut is not uploaded yet: Vertical then plays the widescreen file. Remove the flag when <id>-tall.mp4 is up.
