@@ -279,6 +279,22 @@
     updateArrows();
   }
 
+  /* ---- Leaving for the account site: show progress on the header divider until the next page loads ---- */
+  var siteNav = document.querySelector(".nav");
+  if (siteNav) {
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest && e.target.closest('a[href^="https://account.flowjoe.app"]');
+      if (!link || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || link.target === "_blank") return;
+      siteNav.classList.add("is-leaving");
+      link.setAttribute("aria-busy", "true");
+    });
+    // Coming back with the browser's Back button restores the page from cache: clear the progress line.
+    window.addEventListener("pageshow", function () {
+      siteNav.classList.remove("is-leaving");
+      document.querySelectorAll('a[aria-busy="true"]').forEach(function (a) { a.removeAttribute("aria-busy"); });
+    });
+  }
+
   /* ---- Connect Modal ---- */
   var modal = document.getElementById("connect-modal");
   var modalBackdrop = document.getElementById("modal-backdrop");

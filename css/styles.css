@@ -2204,3 +2204,26 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 .app--shot img { display: block; width: 100%; height: auto; }
 .app--shot .app__bar { position: relative; background: #24262b; border-bottom: 1px solid rgba(0, 0, 0, 0.45); padding: 9px 12px; }
 .app--shot .app__title { position: absolute; left: 0; right: 0; margin: 0; text-align: center; pointer-events: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0; color: var(--text-300); }
+
+/* Leaving for the account site (Log in, Sign in, Create account): a light sweeps along the header's divider until the
+   next page takes over, so the click visibly registers while account.flowjoe.app loads */
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--amber-400) 30%, var(--cyan-400) 70%, transparent) no-repeat;
+  background-size: 45% 100%;
+  background-position: -60% 0;
+  box-shadow: 0 0 12px rgba(254, 115, 12, 0.35);
+  transition: opacity 0.15s ease;
+}
+.nav.is-leaving::after { opacity: 1; animation: nav-leaving 1.1s cubic-bezier(0.45, 0, 0.25, 1) infinite; }
+@keyframes nav-leaving { from { background-position: -60% 0; } to { background-position: 160% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .nav.is-leaving::after { animation: none; background-size: 100% 100%; background-position: 0 0; opacity: 0.85; }
+}
