@@ -2194,3 +2194,7 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
   border: 1px solid var(--glass-border-strong);
   color: var(--text-300);
 }
+
+/* Real capture of Joe's panel in the Joe section */
+.chat-panel--real { margin: 0; padding: 0; overflow: hidden; line-height: 0; }
+.chat-panel--real img { display: block; width: 100%; height: auto; }

@@ -186,3 +186,4 @@
 @media (max-width: 960px) { .free-why { grid-template-columns: minmax(0, 1fr); } }
 .extra .extra__how { margin-top: 14px; color: var(--text-200); }
 .extra .extra__how strong { color: var(--text-100); font-weight: 500; }
+.extras__buy { margin-top: 20px; color: var(--text-300); font-size: 0.95rem; }

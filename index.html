@@ -524,53 +524,9 @@
       <div class="container ai-grid">
         <!-- Interactive Chat / Seatbelt Loop Mockup -->
         <div class="ai-mockup" data-reveal>
-          <div class="chat-panel" aria-hidden="true">
-            <div class="chat-panel__bar">
-              <span class="chat-avatar"><img src="img/joe-avatar.png" alt="" width="40" height="40" /></span>
-              <div class="chat-meta">
-                <span class="chat-name">Joe AI</span>
-                <span class="chat-status mono">Embedded collaborator</span>
-              </div>
-            </div>
-            
-            <div class="chat-body">
-              <!-- User message -->
-              <div class="msg msg--user">
-                <p class="msg__text">Summarize my project brief and propose a layout.</p>
-              </div>
-
-              <!-- Joe response with Funnel + Seatbelt Gated Loop -->
-              <div class="msg msg--joe">
-                <!-- Funnel (Slide 10 highlight) -->
-                <div class="transparency-funnel">
-                  <div class="funnel-badge"><span class="icon"><svg class="gl" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span> What Joe read</div>
-                  <div class="funnel-details mono">
-                    Reading: <code>scope.txt</code> · <code>ref_images/</code> · <code>brief.pdf</code> (14,250 tokens)
-                  </div>
-                </div>
-
-                <p class="msg__text">I've analyzed your context. Here are the proposed workspace updates:</p>
-
-                <!-- AI Seatbelt Loop Card (Slide 11 highlight) -->
-                <div class="seatbelt-card">
-                  <div class="seatbelt-header">
-                    <span class="seatbelt-title"><span class="icon"><svg class="gl" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span> WAITING FOR YOUR OK</span>
-                    <span class="mono seatbelt-status">Nothing changes yet</span>
-                  </div>
-                  <ul class="seatbelt-steps">
-                    <li class="step is-completed"><span class="step-num">1</span> <strong>Analyze:</strong> Read context</li>
-                    <li class="step is-active"><span class="step-num">2</span> <strong>Preview:</strong> 3 files to update</li>
-                    <li class="step"><span class="step-num">3</span> <strong>Approve:</strong> Awaiting permission</li>
-                  </ul>
-                  <div class="seatbelt-actions">
-                    <button type="button" class="seatbelt-btn seatbelt-btn--primary" disabled>Preview</button>
-                    <button type="button" class="seatbelt-btn seatbelt-btn--secondary" disabled>Reject / Undo</button>
-                  </div>
-                </div>
-                <p class="seatbelt-waiting">Joe is waiting for your approval to continue.</p>
-              </div>
-            </div>
-          </div>
+          <figure class="chat-panel chat-panel--real">
+            <img src="img/joe-panel-real.webp" width="1160" height="1802" alt="Joe's panel in FlowJoe: asked to plan a storm sequence, Joe lists six shots and proposes three new nodes, waiting for Apply, Revise or Reject." loading="lazy" decoding="async" />
+          </figure>
             <div class="ai-mockup__note" data-reveal data-reveal-delay="3">
               <div class="ai-mockup__note-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -871,7 +827,7 @@
           <a href="#everything">All Features</a>
           <a href="#local-first">Local-First</a>
           <a class="is-disabled" aria-disabled="true" tabindex="-1">Developer API</a>
-          <a class="is-disabled" aria-disabled="true" tabindex="-1">Model Registry</a>
+          <a href="/docs/#joe/byob">AI Models</a>
         </div>
 
         <!-- Col 3 -->
