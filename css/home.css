@@ -52,8 +52,6 @@
 .chat-avatar img { display: block; width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 
 /* Hero: a real capture of the app inside the tilted window */
-.app--shot { padding: 0; overflow: hidden; }
-.app--shot img { display: block; width: 100%; height: auto; }
 
 /* Team card, refined to match the site: one glass panel, left-aligned, names beside their avatars */
 .cta-box--team {
@@ -76,8 +74,6 @@
 .cta-box--team .cta-box__buttons--team { justify-content: flex-start; margin-bottom: 16px; }
 .cta-box--team .cta-box__note { text-align: left; }
 /* A Mac window title bar above the real capture: traffic lights left, title centred */
-.app--shot .app__bar { position: relative; background: #24262b; border-bottom: 1px solid rgba(0, 0, 0, 0.45); padding: 9px 12px; }
-.app--shot .app__title { position: absolute; left: 0; right: 0; margin: 0; text-align: center; pointer-events: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0; color: var(--text-300); }
 
 /* Monotone line glyphs (replacing emoji): same thin stroke as the feature-card icons */
 .gl { width: 1.1em; height: 1.1em; display: inline-block; vertical-align: -0.18em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }

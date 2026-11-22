@@ -2198,3 +2198,9 @@ h1, h2, h3 { color: var(--text-100); line-height: 1.08; font-weight: 600; }
 /* Real capture of Joe's panel in the Joe section */
 .chat-panel--real { margin: 0; padding: 0; overflow: hidden; line-height: 0; }
 .chat-panel--real img { display: block; width: 100%; height: auto; }
+
+/* Real-app capture in the hero window (Home and Download) */
+.app--shot { padding: 0; overflow: hidden; }
+.app--shot img { display: block; width: 100%; height: auto; }
+.app--shot .app__bar { position: relative; background: #24262b; border-bottom: 1px solid rgba(0, 0, 0, 0.45); padding: 9px 12px; }
+.app--shot .app__title { position: absolute; left: 0; right: 0; margin: 0; text-align: center; pointer-events: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0; color: var(--text-300); }
