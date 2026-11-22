@@ -39,6 +39,7 @@
 
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -70,19 +71,20 @@
       </button>
       <nav class="nav__links" id="nav-menu" aria-label="Primary">
         <!-- <a href="#problem">The Problem</a> -->
-        <a href="#hemispheres">The Big Idea</a>
-        <a href="#joe">Meet Joe</a>
-        <a href="#features">Why FlowJoe</a>
+        <a href="#who">Who It's For</a>
+        <a href="#joe">Joe</a>
+        <a href="#share">Sharing</a>
+        <a href="#everything">Features</a>
         <a href="/watch/">Watch</a>
         <a href="/pricing/">Pricing</a>
         <a href="/download/">Download</a>
         <a href="/docs/">Docs</a>
         <a class="nav__login-link" href="https://account.flowjoe.app/account">Log in</a>
-        <button type="button" class="nav__connect-btn" id="mobile-connect-trigger">Connect</button>
+        <a class="nav__connect-btn" href="/download/">Download</a>
       </nav>
       <div class="nav__right">
         <a class="btn btn--sm btn--ghost" href="https://account.flowjoe.app/account">Log in</a>
-        <button type="button" class="btn btn--sm btn--primary" id="connect-modal-trigger" aria-haspopup="dialog">Connect</button>
+        <a class="btn btn--sm btn--primary" href="/download/">Download</a>
       </div>
     </div>
   </header>
@@ -93,58 +95,27 @@
       <div class="container hero__grid">
         <!-- Copy (brand voice: warm, specific, guide) -->
         <div class="hero__copy">
-          <span class="eyebrow" data-reveal>One App to Rule Them All</span>
+          <span class="eyebrow" data-reveal>Free alpha for Mac, Windows and Linux</span>
           <h1 class="hero__title" data-reveal data-reveal-delay="1">
             Finally, a place where <span class="accent">everything connects.</span>
           </h1>
           <p class="hero__lead" data-reveal data-reveal-delay="2">
-            Bring your notes, files, saved AI conversations, research, and creative work together in one
-            visual workspace &mdash; so you can <strong>spend less time searching and more time doing.</strong>
+            An outline on the left, your files and media on the right, and Joe, an AI assistant that works with both.
+            Everything stays on <strong>your own computer.</strong>
           </p>
           <div class="hero__cta" data-reveal data-reveal-delay="3">
-            <button type="button" class="btn btn--primary" id="hero-connect-trigger">Connect with us &rarr;</button>
-            <a href="#problem" class="btn btn--ghost">See how it works</a>
+            <a class="btn btn--primary" href="/download/">Download FlowJoe &rarr;</a>
+            <a href="/watch/" class="btn btn--ghost">Watch the films</a>
           </div>
           <p class="hero__note" data-reveal data-reveal-delay="3">
-            Local-first. Private by default. Your files stay on your machine. 
+            Local-first. No tracking. Your work stays on your computer.
           </p>
         </div>
 
         <!-- 3D workspace mockup with glowing callouts (recreates deck page 1) -->
         <div class="hero__stage" data-reveal data-reveal-delay="2" aria-hidden="true">
-          <div class="app" id="app">
-            <div class="app__bar">
-              <span class="dot dot--r"></span>
-              <span class="dot dot--y"></span>
-              <span class="dot dot--g"></span>
-              <span class="app__title mono">FlowJoe — Visual Intelligence Workspace</span>
-            </div>
-            <div class="app__body">
-              <!-- The Spine: structured tree -->
-              <aside class="tree">
-                <div class="tree__head">Tree</div>
-                <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> FlowJoe Devs</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Concept art</div>
-                <div class="tree__row indent2"><span class="node" style="background:#8a5cff"></span> Hero poses</div>
-                <div class="tree__row indent2"><span class="node" style="background:#8a5cff"></span> Bright idea</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Docs</div>
-                <div class="tree__row indent2"><span class="node" style="background:var(--ok)"></span> Update summary</div>
-                <div class="tree__row indent"><span class="node" style="background:#ff6bb0"></span> Music &amp; spoken</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--amber-300)"></span> Testing</div>
-                <div class="tree__row indent2"><span class="node" style="background:var(--amber-300)"></span> Embed tests</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--cyan-300)"></span> Research</div>
-              </aside>
-
-              <!-- The Canvas: media gallery -->
-              <div class="gallery">
-                <div class="card"><div class="card__media swatch--amber"></div><div class="card__meta"><div class="card__title">Bright Idea</div><div class="card__sub">stack · 12 imgs</div></div></div>
-                <div class="card"><div class="card__media swatch--iris"></div><div class="card__meta"><div class="card__title">Hero Pose</div><div class="card__sub">4K · png</div></div></div>
-                <div class="card"><div class="card__media swatch--cyan"></div><div class="card__meta"><div class="card__title">Sky Study</div><div class="card__sub">reference</div></div></div>
-                <div class="card"><div class="card__media swatch--indigo"></div><div class="card__meta"><div class="card__title">Feature — Wips</div><div class="card__sub">.fig embed</div></div></div>
-                <div class="card"><div class="card__media swatch--mint"></div><div class="card__meta"><div class="card__title">Scene 03</div><div class="card__sub">iteration</div></div></div>
-                <div class="card"><div class="card__media swatch--rose"></div><div class="card__meta"><div class="card__title">Palette</div><div class="card__sub">mood board</div></div></div>
-              </div>
-            </div>
+          <div class="app app--shot" id="app">
+            <img src="img/hero-app.jpg" alt="" width="1800" height="990" />
           </div>
 
           <!-- Callouts -->
@@ -235,228 +206,13 @@
       </div>
     </section>
 
-    <!-- ===================== 3. THE HOME-BASE ===================== -->
-    <section id="homebase" class="section homebase">
-      <div class="container">
-        <div class="homebase__header text-center">
-          <span class="eyebrow" data-reveal>The Modern Desktop</span>
-          <h2 class="section-title" data-reveal data-reveal-delay="1">
-            So much of our <span class="accent-amber">work</span> happens on the web.
-          </h2>
-          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
-            Yet your desktop hasn't evolved to keep up. It's still a dumping ground of scattered
-            files, buried tabs, and forgotten logins &mdash; a starting point that slows you down
-            instead of launching you forward.
-          </p>
-        </div>
 
-        <div class="homebase__split" data-reveal data-reveal-delay="3">
-          <!-- Copy -->
-          <div class="homebase__copy">
-            <h3 class="homebase__title">FlowJoe is your central home-base.</h3>
-            <p class="homebase__lead">
-              A single place to access, manage, and orient yourself &mdash; so you always know
-              where everything lives and where to pick back up.
-            </p>
-            <ul class="homebase__list">
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                    <path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Every link, one click away</span>
-                  <span class="homebase__item-text">All your relevant links live together &mdash; no more hunting through bookmarks and tabs.</span>
-                </div>
-              </li>
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-                    <path d="M14 2v6h6" /><path d="M8 13h8" /><path d="M8 17h6" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Docs at your fingertips</span>
-                  <span class="homebase__item-text">Keep the documents you actually use close by, ready to open the moment you need them.</span>
-                </div>
-              </li>
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" /><circle cx="12" cy="16" r="1" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Private nodes, encrypted</span>
-                  <span class="homebase__item-text">Lock sensitive notes in Private nodes. They're encrypted on your computer and open only with your password.</span>
-                </div>
-              </li>
-              <li class="homebase__item">
-                <span class="homebase__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2v4" /><path d="M12 18v4" /><path d="M4.9 4.9l2.8 2.8" /><path d="M16.3 16.3l2.8 2.8" />
-                    <path d="M2 12h4" /><path d="M18 12h4" /><path d="M4.9 19.1l2.8-2.8" /><path d="M16.3 7.7l2.8-2.8" />
-                  </svg>
-                </span>
-                <div class="homebase__item-body">
-                  <span class="homebase__item-title">Highly adaptable</span>
-                  <span class="homebase__item-text">Shape your home-base around how you actually work &mdash; it flexes to fit any workflow.</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Visual: home-base mockup -->
-          <div class="homebase__visual" aria-hidden="true">
-            <div class="app-mockup">
-              <div class="app-mockup__bar">
-                <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
-                <span class="app-mockup__title mono">FlowJoe — Home Base</span>
-              </div>
-              <div class="homebase__grid">
-                <div class="homebase__tile homebase__tile--amber">
-                  <span class="homebase__tile-label mono">LINKS</span>
-                  <span class="homebase__tile-title">Quick Access</span>
-                  <span class="homebase__tile-sub">18 pinned</span>
-                </div>
-                <div class="homebase__tile homebase__tile--cyan">
-                  <span class="homebase__tile-label mono">DOCS</span>
-                  <span class="homebase__tile-title">Active Docs</span>
-                  <span class="homebase__tile-sub">7 open</span>
-                </div>
-                <div class="homebase__tile homebase__tile--iris">
-                  <span class="homebase__tile-label mono">ACCESS</span>
-                  <span class="homebase__tile-title">Vault</span>
-                  <span class="homebase__tile-sub">secured</span>
-                </div>
-                <div class="homebase__tile homebase__tile--mint">
-                  <span class="homebase__tile-label mono">RECENT</span>
-                  <span class="homebase__tile-title">Jump back in</span>
-                  <span class="homebase__tile-sub">3 sessions</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== 4. THE BIG IDEA ===================== -->
-    <section id="hemispheres" class="section hemispheres">
-      <div class="container">
-        <div class="hemispheres__header text-center">
-          <span class="eyebrow" data-reveal>The Big Idea</span>
-          <!-- <h2 class="section-title" data-reveal data-reveal-delay="1">
-            Structure meets freedom. <span class="accent-amber-cyan">No trade-offs.</span>
-          </h2> -->
-          <h2 class="section-title" data-reveal data-reveal-delay="1">
-            Built for <span class="accent-amber">whole-brain thinking.</span>
-          </h2>
-          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
-            Most productivity tools force a rigid choice: hierarchical structure OR free-form thinking. 
-            FlowJoe unites both sides of your brain in a single, fluid workspace right on your desktop.
-          </p>
-        </div>
-
-        <!-- Interactive Split Slider Widget (framed as an app window) -->
-        <div class="slider-widget" id="hemiSlider" data-reveal data-reveal-delay="2" role="group" aria-label="Structure and freedom balance demo">
-          <div class="app-mockup">
-            <div class="app-mockup__bar">
-              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
-              <span class="app-mockup__title mono">FlowJoe — Structure meets Freedom</span>
-            </div>
-            <div class="slider-widget__container">
-              <!-- Left Side (Spine / Outline Mockup) -->
-              <div class="slider-widget__side slider-widget__side--left" id="sliderLeft">
-                <div class="widget-tree mockup-spine hot-zone hot-zone--spine">
-                  <div class="hot-zone__badge hot-zone__badge--spine">1</div>
-                  <div class="tree__head">Epic Project</div>
-                  <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> Project Scope</div>
-                  <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Research Brief</div>
-                  <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Design Direction</div>
-                  <div class="tree__row indent2"><span class="node" style="background:var(--cyan-400)"></span> Color Palette</div>
-                  <div class="tree__row indent2"><span class="node" style="background:var(--cyan-400)"></span> Typography</div>
-                  <div class="tree__row"><span class="node" style="background:#ff6bb0"></span> Implementation</div>
-                </div>
-              </div>
-
-              <!-- Right Side (Canvas / Gallery Mockup) -->
-              <div class="slider-widget__side slider-widget__side--right">
-                <div class="widget-canvas">
-                  <div class="hot-zone__badge hot-zone__badge--canvas">2</div>
-                  <div class="widget-card widget-card--1"><div class="widget-card__thumb swatch--amber"></div></div>
-                  <div class="widget-card widget-card--2"><div class="widget-card__thumb swatch--cyan"></div></div>
-                  <div class="widget-card widget-card--3"><div class="widget-card__thumb swatch--iris"></div></div>
-                </div>
-              </div>
-
-              <!-- Slider Handle -->
-              <div class="slider-widget__handle" id="sliderHandle" role="slider" tabindex="0" aria-valuemin="10" aria-valuemax="90" aria-valuenow="38" aria-label="Balance structure and freedom">
-                <div class="slider-widget__button" aria-hidden="true">
-                  <span class="slider-widget__arrow">&larr;</span>
-                  <span class="slider-widget__arrow">&rarr;</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider-widget__label">
-            <span class="mono">Drag the slider to balance Structure (The Spine) with Freedom (The Canvas)</span>
-          </div>
-        </div>
-
-        <div class="hemispheres__split" data-reveal data-reveal-delay="3">
-          <!-- Left side: Structure & Logic (Amber) -->
-          <div class="hemi-panel hemi-panel--left">
-            <div class="hemi-panel__glow hemi-panel__glow--amber"></div>
-            <div class="hemi-panel__content">
-              <div class="arch-card__badge arch-card__badge--spine">1</div>
-              <span class="hemi-panel__eyebrow color-amber">THE LEFT HEMISPHERE</span>
-              <h3 class="hemi-panel__title">Structure &amp; Logic</h3>
-              <p class="hemi-panel__lead color-amber">An infinite-depth hierarchical tree forms the spine of your project. Perfect for structure, categorization, and outlining complex ideas as they take shape.</p>
-              <div class="hemi-panel__callout">
-                <span class="hemi-panel__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 18h6" /><path d="M10 22h4" />
-                    <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
-                  </svg>
-                </span>
-                <p class="hemi-panel__callout-text">A clean structure that's quick to search and navigate.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right side: Freeform Canvas (Cyan) -->
-          <div class="hemi-panel hemi-panel--right">
-            <div class="hemi-panel__glow hemi-panel__glow--cyan"></div>
-            <div class="hemi-panel__content">
-              <div class="arch-card__badge arch-card__badge--canvas">2</div>
-              <span class="hemi-panel__eyebrow color-cyan">THE RIGHT HEMISPHERE</span>
-              <h3 class="hemi-panel__title">Visual Freedom</h3>
-              <p class="hemi-panel__lead color-cyan">An infinite visual board where you lay out rich media cards with important links and documents, compare versions, and take notes.</p>
-              <div class="hemi-panel__callout">
-                <span class="hemi-panel__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 18h6" /><path d="M10 22h4" />
-                    <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
-                  </svg>
-                </span>
-                <p class="hemi-panel__callout-text">High media richness, with relationships you can see.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ===================== 5. CORE FEATURES GRID ===================== -->
     <section id="features" class="section features">
       <div class="container">
         <div class="features__header text-center">
-          <span class="eyebrow" data-reveal>forge ideas into reality</span>
+          <span class="eyebrow" data-reveal>Inside FlowJoe</span>
           <h2 class="section-title" data-reveal data-reveal-delay="1">
             Built for the <span class="accent-cyan">flow of thought.</span>
           </h2>
@@ -522,9 +278,10 @@
                 An infinite board where files, embeds, and ideas sit side by side — and connect however you see fit.
               </p>
               <div class="feat-card__footer-tags">
-                <span class="feat-tag">Rich media cards</span>
+                <span class="feat-tag">Rich media slots</span>
                 <span class="feat-tag">Live URL embeds</span>
                 <span class="feat-tag">Free-form links</span>
+                <span class="feat-tag">Stacks of versions</span>
               </div>
             </div>
           </div>
@@ -554,54 +311,96 @@
             </div>
           </div>
 
-          <!-- Card 4: Infinite Iteration — amber (left brain / analytical) -->
-          <div class="feat-card feat-card--amber" data-reveal data-reveal-delay="2">
-            <div class="feat-card__content">
-              <div class="feat-card__head">
-                <span class="feat-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M12 3.5 20 7l-8 3.5L4 7l8-3.5Z" />
-                    <path d="M4 12l8 3.5L20 12" />
-                    <path d="M4 16.5 12 20l8-3.5" />
-                  </svg>
-                </span>
-                <span class="feat-card__badge-tag color-amber">Infinite Iteration</span>
-              </div>
-              <h3 class="feat-card__title">The stack model</h3>
-              <p class="feat-card__text">
-                Stack every revision of a project and scrub through its history — no clutter, the best rises to the top.
-              </p>
-              <div class="feat-card__footer-tags">
-                <span class="feat-tag">Card stacking</span>
-                <span class="feat-tag">Compare versions</span>
-                <span class="feat-tag">Intuitive design</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5: Sonic Intelligence — cyan (right brain / perceptual) -->
+          <!-- Card 4: Video editor -->
           <div class="feat-card feat-card--cyan" data-reveal data-reveal-delay="3">
             <div class="feat-card__content">
               <div class="feat-card__head">
                 <span class="feat-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M4 10v4" /><path d="M8 6v12" /><path d="M12 9v6" /><path d="M16 4v16" /><path d="M20 10v4" />
+                    <rect x="3" y="6" width="13" height="12" rx="2" /><path d="M16 10l5-3v10l-5-3z" />
                   </svg>
                 </span>
-                <span class="feat-card__badge-tag color-cyan">Audio built in</span>
+                <span class="feat-card__badge-tag color-cyan">Video editor</span>
               </div>
-              <h3 class="feat-card__title">Built for audio</h3>
+              <h3 class="feat-card__title">Make the film in the flow</h3>
               <p class="feat-card__text">
-                Listen to music while you work, analyse your latest AI masterpiece, or plan your next song. A full audio player, right in your workspace.
+                Generate AI video, stitch your footage into a story, add captions, build and master the soundtrack, then export one MP4. All from the slots you already collected.
               </p>
               <div class="feat-card__footer-tags">
-                <span class="feat-tag">Global Audio Player</span>
-                <span class="feat-tag">Album art</span>
-                <span class="feat-tag">Playlist functionality</span>
+                <span class="feat-tag">AI video</span>
+                <span class="feat-tag">Captions</span>
+                <span class="feat-tag">Mix and master</span>
+                <span class="feat-tag">MP4 export</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Edit and record -->
+          <div class="feat-card feat-card--amber" data-reveal data-reveal-delay="3">
+            <div class="feat-card__content">
+              <div class="feat-card__head">
+                <span class="feat-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3" /><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1" />
+                  </svg>
+                </span>
+                <span class="feat-card__badge-tag color-amber">Edit and record</span>
+              </div>
+              <h3 class="feat-card__title">No other app needed</h3>
+              <p class="feat-card__text">
+                Edit pictures with layers, filters and Looks, saved as a new version. Record your microphone, your computer's sound or the audio of a YouTube clip straight into a node. Clip web pages with the built-in browser.
+              </p>
+              <div class="feat-card__footer-tags">
+                <span class="feat-tag">Image editor</span>
+                <span class="feat-tag">Audio recorder</span>
+                <span class="feat-tag">Built-in browser</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Agents -->
+          <div class="feat-card feat-card--cyan" data-reveal data-reveal-delay="3">
+            <div class="feat-card__content">
+              <div class="feat-card__head">
+                <span class="feat-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4" y="5" width="16" height="12" rx="2" /><path d="M8 10l2 2-2 2M12 14h4" /><path d="M9 21h6" />
+                  </svg>
+                </span>
+                <span class="feat-card__badge-tag color-cyan">Agents welcome</span>
+              </div>
+              <h3 class="feat-card__title">Agents can run the whole app</h3>
+              <p class="feat-card__text">
+                Joe, Claude Code, Codex or your own scripts can do nearly everything you can: edit nodes, slots, images, spreadsheets and audio. Every change shows for review, with Undo.
+              </p>
+              <div class="feat-card__footer-tags">
+                <span class="feat-tag">Joe</span>
+                <span class="feat-tag">Coding assistants</span>
+                <span class="feat-tag">Command line</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHO IT'S FOR ===================== -->
+    <section id="who" class="section who">
+      <div class="container">
+        <div class="who__header">
+          <span class="eyebrow" data-reveal>Who it's for</span>
+          <h2 class="section-title" data-reveal data-reveal-delay="1">People whose work is <span class="accent-amber">more than notes.</span></h2>
+          <p class="section-lead maxw-lead" data-reveal data-reveal-delay="2">Writers, game makers, designers, small businesses and teams. Each film shows a real kind of work, kept in one flow. Every shot of the app is the real FlowJoe.</p>
+        </div>
+        <ul class="who__grid" data-reveal data-reveal-delay="2">
+          <li><a class="who__film" href="/watch/world-builder/"><img src="https://files.flowjoe.app/watch/world-builder-wide.jpg" alt="" loading="lazy" width="1280" height="720" /><span class="who__title">World builders</span><span class="who__line">A whole story bible, and Joe finds every name spelled two ways.</span></a></li>
+          <li><a class="who__film" href="/watch/dungeon-master/"><img src="https://files.flowjoe.app/watch/dungeon-master-wide.jpg" alt="" loading="lazy" width="1280" height="720" /><span class="who__title">Dungeon masters</span><span class="who__line">Three weeks between sessions. Joe finds the promise the party made a ferryman.</span></a></li>
+          <li><a class="who__film" href="/watch/graphic-designer/"><img src="https://files.flowjoe.app/watch/graphic-designer-wide.jpg" alt="" loading="lazy" width="1280" height="720" /><span class="who__title">Graphic designers</span><span class="who__line">Two branches, one link, nothing to install, and the client writes back.</span></a></li>
+          <li><a class="who__film" href="/watch/tabletop-game-designer/"><img src="https://files.flowjoe.app/watch/tabletop-game-designer-wide.jpg" alt="" loading="lazy" width="1280" height="720" /><span class="who__title">Game designers</span><span class="who__line">A board game from first prototype to the printed box.</span></a></li>
+          <li><a class="who__film" href="/watch/business-owner/"><img src="https://files.flowjoe.app/watch/business-owner-wide.jpg" alt="" loading="lazy" width="1280" height="720" /><span class="who__title">Business owners</span><span class="who__line">A coffee roaster asks Joe once, and each Monday Joe finds new places to call.</span></a></li>
+          <li><a class="who__film" href="/watch/app-builder/"><img src="https://files.flowjoe.app/watch/app-builder-wide.jpg" alt="" loading="lazy" width="1280" height="720" /><span class="who__title">App builders</span><span class="who__line">An app planned screen by screen, then built by an agent exactly as planned.</span></a></li>
+        </ul>
+        <a class="who__more" href="/watch/">All films &rarr;</a>
       </div>
     </section>
 
@@ -615,7 +414,7 @@
         <div class="ai-mockup" data-reveal>
           <div class="chat-panel" aria-hidden="true">
             <div class="chat-panel__bar">
-              <span class="chat-avatar">🤖</span>
+              <span class="chat-avatar"><img src="img/joe-avatar.png" alt="" width="40" height="40" /></span>
               <div class="chat-meta">
                 <span class="chat-name">Joe AI</span>
                 <span class="chat-status mono">Embedded collaborator</span>
@@ -632,7 +431,7 @@
               <div class="msg msg--joe">
                 <!-- Funnel (Slide 10 highlight) -->
                 <div class="transparency-funnel">
-                  <div class="funnel-badge"><span class="icon">🔍</span> Token Transparency Funnel</div>
+                  <div class="funnel-badge"><span class="icon">🔍</span> What Joe read</div>
                   <div class="funnel-details mono">
                     Reading: <code>scope.txt</code> · <code>ref_images/</code> · <code>brief.pdf</code> (14,250 tokens)
                   </div>
@@ -643,8 +442,8 @@
                 <!-- AI Seatbelt Loop Card (Slide 11 highlight) -->
                 <div class="seatbelt-card">
                   <div class="seatbelt-header">
-                    <span class="seatbelt-title"><span class="icon">🛡️</span> AI SEATBELT LOOP</span>
-                    <span class="mono seatbelt-status">Gated Sandbox</span>
+                    <span class="seatbelt-title"><span class="icon">🛡️</span> WAITING FOR YOUR OK</span>
+                    <span class="mono seatbelt-status">Nothing changes yet</span>
                   </div>
                   <ul class="seatbelt-steps">
                     <li class="step is-completed"><span class="step-num">1</span> <strong>Analyze:</strong> Read context</li>
@@ -705,9 +504,9 @@
 
             <!-- Feature 4 -->
             <div class="ai-feat" data-reveal data-reveal-delay="3">
-              <h3 class="ai-feat__title"><span class="icon">📝</span> JSON Synthesis (Canvas to Code)</h3>
+              <h3 class="ai-feat__title"><span class="icon">📝</span> For builders: your flow as data</h3>
               <p class="ai-feat__text">
-                Export any part of your visual workspace into clean, structured JSON data. Feed your canvas diagrams directly into other LLMs or your local scripts.
+                Export any part of your flow as clean JSON for your own scripts or other AI tools.
               </p>
             </div>
           </div>
@@ -715,81 +514,104 @@
       </div>
     </section>
 
-    <!-- ===================== 7. TRADE-OFF REFUSAL MATRIX ===================== -->
-    <section id="compare" class="section matrix-compare">
-      <div class="container">
-        <div class="matrix-compare__header text-center">
-          <span class="eyebrow" data-reveal>Why FlowJoe</span>
-          <h2 class="section-title" data-reveal data-reveal-delay="1">
-            How <span class="accent-amber">FlowJoe</span> compares
-          </h2>
-          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
-            Why settle for tools that force you to sacrifice visual freedom for structure, or privacy for AI collaboration? We refuse to compromise.
-          </p>
+    <!-- ===================== SHARE IT LIVE ===================== -->
+    <section id="share" class="section share">
+      <div class="container share__grid">
+        <div class="share__copy">
+          <span class="eyebrow" data-reveal>Share it live</span>
+          <h2 class="section-title" data-reveal data-reveal-delay="1">Show clients your work <span class="accent-amber">without uploading it.</span></h2>
+          <p class="section-lead" data-reveal data-reveal-delay="2">Send one link. People open your flow in their browser, with no account and nothing to install, while it stays on your computer. Talk it through on a call without leaving the flow.</p>
+          <ul class="share__points" data-reveal data-reveal-delay="2">
+            <li><strong>Present.</strong> Walk people through your flow and their view follows yours.</li>
+            <li><strong>Edit together.</strong> Choose who can edit, and watch changes arrive live.</li>
+            <li><strong>Talk in the flow.</strong> A group chat for everyone, plus private messages.</li>
+            <li><strong>Call them.</strong> Audio calls on Pro and Team, and video calls on Team, right inside the shared flow. <span class="soon-tag">Soon</span></li>
+            <li><strong>Your address.</strong> A link like <span class="mono">yourname.flowjoe.app</span>, with no router setup.</li>
+          </ul>
+          <a class="btn btn--ghost" href="/pricing/" data-reveal data-reveal-delay="3">Sharing comes with Pro &mdash; see planned pricing</a>
         </div>
-
-        <div class="matrix-container" data-reveal data-reveal-delay="2">
-          <table class="compare-table">
-            <caption class="sr-only">Feature comparison across note apps, cloud drives, freeform canvases, and FlowJoe</caption>
-            <thead>
-              <tr>
-                <th scope="col" class="col-feature">Capability</th>
-                <th scope="col">Note Apps</th>
-                <th scope="col">Cloud Drives</th>
-                <th scope="col">Freeform Canvases</th>
-                <th scope="col" class="col-flowjoe">FlowJoe</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Row 1 -->
-              <tr>
-                <th scope="row" class="row-feature">
-                  <strong>Logical Structure</strong>
-                  <span class="row-sub text-muted">Hierarchical trees and structured outlines</span>
-                </th>
-                <td class="cell-ok"><span class="badge badge--ok">Partial</span></td>
-                <td class="cell-ok"><span class="badge badge--ok">Yes</span></td>
-                <td class="cell-no"><span class="badge badge--no">No</span></td>
-                <td class="col-flowjoe cell-ok"><span class="badge badge--ok-strong">Yes</span></td>
-              </tr>
-              <!-- Row 2 -->
-              <tr>
-                <th scope="row" class="row-feature">
-                  <strong>Media Richness</strong>
-                  <span class="row-sub text-muted">Inline rendering of PDFs, Figma, videos, spreadsheets</span>
-                </th>
-                <td class="cell-ok"><span class="badge badge--varies">Partial</span></td>
-                <td class="cell-no"><span class="badge badge--no">No</span></td>
-                <td class="cell-ok"><span class="badge badge--ok">Yes</span></td>
-                <td class="col-flowjoe cell-ok"><span class="badge badge--ok-strong">Yes</span></td>
-              </tr>
-              <!-- Row 3 -->
-              <tr>
-                <th scope="row" class="row-feature">
-                  <strong>AI Collaboration</strong>
-                  <span class="row-sub text-muted">An AI helper that shows what it reads and asks before changing your work</span>
-                </th>
-                <td class="cell-ok"><span class="badge badge--varies">Varies</span></td>
-                <td class="cell-ok"><span class="badge badge--varies">Varies</span></td>
-                <td class="cell-no"><span class="badge badge--no">No</span></td>
-                <td class="col-flowjoe cell-ok"><span class="badge badge--ok-strong">Yes</span></td>
-              </tr>
-              <!-- Row 4 -->
-              <tr>
-                <th scope="row" class="row-feature">
-                  <strong>Local-First &amp; Private</strong>
-                  <span class="row-sub text-muted">Saved on your computer; writing, organising and opening your work all work offline</span>
-                </th>
-                <td class="cell-ok"><span class="badge badge--varies">Varies</span></td>
-                <td class="cell-no"><span class="badge badge--no">No</span></td>
-                <td class="cell-no"><span class="badge badge--no">No</span></td>
-                <td class="col-flowjoe cell-ok"><span class="badge badge--ok-strong">Yes</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <figure class="share__shot" data-reveal data-reveal-delay="2">
+          <img src="https://files.flowjoe.app/watch/corporate-trainer-wide.jpg" alt="Dana presents a flow in FlowJoe while Sam and Priya follow along in their browsers" width="1280" height="720" />
+          <figcaption>From the film <a href="/watch/corporate-trainer/">You're a corporate trainer</a>.</figcaption>
+        </figure>
       </div>
     </section>
+
+    <!-- ===================== EVERYTHING IN FLOWJOE ===================== -->
+    <section id="everything" class="section everything">
+      <div class="container">
+        <span class="eyebrow" data-reveal>Everything in FlowJoe</span>
+        <h2 class="section-title" data-reveal data-reveal-delay="1">What FlowJoe does today.</h2>
+        <div class="everything__grid" data-reveal data-reveal-delay="2">
+          <div class="everything__group">
+            <h3>Organise</h3>
+            <ul>
+              <li>Outline tree with unlimited branches</li>
+              <li>Colours and status for every branch</li>
+              <li>AI summaries for a node or the whole flow</li>
+              <li>Git repositories inside your tree</li>
+              <li>Tags and search across the whole flow</li>
+            </ul>
+          </div>
+          <div class="everything__group">
+            <h3>Collect</h3>
+            <ul>
+              <li>Images, video, PDFs, documents and audio in slots</li>
+              <li>Links and live web embeds</li>
+              <li>Built-in browser that clips pages into slots</li>
+              <li>Stacks to keep every version of a piece</li>
+              <li>Connection lines between slots</li>
+              <li>One slot shown in several places</li>
+            </ul>
+          </div>
+          <div class="everything__group">
+            <h3>Make</h3>
+            <ul>
+              <li>Spreadsheets, rich documents and calendars</li>
+              <li>Image editor that saves a new version</li>
+              <li>Video editor: stitch, caption, score, mix and export</li>
+              <li>Audio recorder for microphone, computer sound or YouTube</li>
+              <li>Audio player with playlists</li>
+              <li>Terminal beside your workspace</li>
+            </ul>
+          </div>
+          <div class="everything__group">
+            <h3>Joe, your AI</h3>
+            <ul>
+              <li>Chat about your flow, analyse spreadsheets</li>
+              <li>Generate images and video</li>
+              <li>Transcribe recordings on your computer, free</li>
+              <li>Approve every change, or undo it</li>
+              <li>Scheduled tasks that keep a flow fresh</li>
+              <li>Your own AI accounts, at no markup</li>
+            </ul>
+          </div>
+          <div class="everything__group">
+            <h3>Share</h3>
+            <ul>
+              <li>Guests view or edit in their browser</li>
+              <li>Present while everyone follows</li>
+              <li>Group chat and private messages</li>
+              <li>Audio calls, and video calls on Team <span class="soon-tag">Soon</span></li>
+              <li>Coding assistants and a command line can work on your flow</li>
+            </ul>
+          </div>
+          <div class="everything__group">
+            <h3>Keep it yours</h3>
+            <ul>
+              <li>Saved on your computer, works offline</li>
+              <li>Workspace folders you choose</li>
+              <li>Restore points to roll back any time</li>
+              <li>Private nodes, encrypted with your password</li>
+              <li>Export, import and password-protected archives</li>
+              <li>No tracking</li>
+            </ul>
+          </div>
+        </div>
+        <a class="who__more" href="/docs/">Every feature, explained in the guides &rarr;</a>
+      </div>
+    </section>
+
 
     <!-- ===================== 7b. LOCAL-FIRST ===================== -->
     <section id="local-first" class="section local-first">
@@ -835,68 +657,20 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== 8. ECOSYSTEM & FINAL CTA ===================== -->
-    <section id="ecosystem" class="section ecosystem">
-      <div class="container ecosystem__grid">
-        <!-- Left: Final CTA (Brand voice: Expert, Guide, Playful human) -->
-        <div class="ecosystem__cta">
-          <span class="eyebrow" data-reveal>The Ecosystem</span>
-          <h2 class="section-title" data-reveal data-reveal-delay="1">
-            Beyond an app.<br />A <span class="accent-amber-cyan">new standard</span> for thinking.
-          </h2>
-          <p class="section-lead" data-reveal data-reveal-delay="2">
-            The hard part is already shipping today. FlowJoe is built on an open, extensible architecture designed to adapt to your unique creative and technical workflow.
-          </p>
+    <!-- ===================== FINAL CTA ===================== -->
+    <section id="get" class="section get">
+      <div class="container get__box" data-reveal>
+        <h2 class="section-title">Try the free alpha.</h2>
+        <p class="section-lead">For Mac, Windows and Linux. No account needed. You'll need an alpha code to download; ask <a href="mailto:support@flowjoe.app">support@flowjoe.app</a> for one.</p>
+        <div class="get__buttons">
+          <a class="btn btn--primary" href="/download/">Download FlowJoe &rarr;</a>
+          <a class="btn btn--ghost" href="/watch/">Watch the films</a>
         </div>
-
-        <!-- Right: Ecosystem tech stack (layers built on a local core) -->
-        <div class="ecosystem__visual" data-reveal data-reveal-delay="2" aria-hidden="true">
-          <div class="stack">
-            <div class="stack__layer stack__layer--cyan">
-              <span class="stack__icon">🧩</span>
-              <div class="stack__meta">
-                <span class="stack__title">Plugins (coming later)</span>
-                <span class="stack__text">Snap community tools and add-ons into the canvas.</span>
-              </div>
-              <span class="stack__tag mono">EXTEND</span>
-            </div>
-
-            <!-- Hidden for now — Multiplayer Sync
-            <div class="stack__layer stack__layer--cyan">
-              <span class="stack__icon">🔄</span>
-              <div class="stack__meta">
-                <span class="stack__title">Multiplayer Sync</span>
-                <span class="stack__text">Real-time collaboration, only when you choose.</span>
-              </div>
-              <span class="stack__tag mono">EXTEND</span>
-            </div>
-            -->
-
-            <div class="stack__layer stack__layer--cyan">
-              <span class="stack__icon">🧠</span>
-              <div class="stack__meta">
-                <span class="stack__title">Custom AI Models</span>
-                <span class="stack__text">Bring your own brain: hosted, or local (coming soon).</span>
-              </div>
-              <span class="stack__tag mono">EXTEND</span>
-            </div>
-
-            <div class="stack__layer stack__layer--core">
-              <span class="stack__icon">🖥️</span>
-              <div class="stack__meta">
-                <span class="stack__title">FlowJoe Core App</span>
-                <span class="stack__text">Private, offline-first foundation on your machine.</span>
-              </div>
-              <span class="stack__tag mono">FOUNDATION</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Full-width final CTA -->
+      </div>
+      <div class="container get__team-row">
         <div class="ecosystem__cta-row">
-          <div class="cta-box glass-card" id="team-connect-content" data-reveal data-reveal-delay="3">
-            <h3 class="cta-box__title serif">Connect with the FlowJoe Team</h3>
+          <div class="cta-box glass-card cta-box--team" id="team-connect-content" data-reveal data-reveal-delay="3">
+            <h3 class="cta-box__title serif">Say hello to the team</h3>
             <p class="cta-box__text">
               We're building FlowJoe because we believe your workspace should work the way you think. Reach out if you'd like to connect or learn more.
             </p>
@@ -937,29 +711,13 @@
               </a>
             </div>
             
-            <p class="cta-box__note mono">Local-first. Private. Free alpha available now.</p>
+            <div class="cta-box__buttons cta-box__buttons--team"><a class="btn btn--ghost" href="mailto:support@flowjoe.app">Email us at support@flowjoe.app</a></div>
+            <p class="cta-box__note mono">Local-first. No tracking. Your work stays yours.</p>
           </div>
         </div>
-
-        <!-- 
-        ORIGINAL CTA VERSION - Uncomment this section to switch back to generic CTA
-        <div class="ecosystem__cta-row">
-          <div class="cta-box glass-card" id="team-connect-content" data-reveal data-reveal-delay="3">
-            <h3 class="cta-box__title serif">Think visually. Build clearly.</h3>
-            <p class="cta-box__text">
-              Bring your scattered notes, files, AI chats, and creative assets together into a workspace that actually makes sense.
-            </p>
-            <div class="cta-box__buttons">
-              <a class="btn btn--primary is-disabled" aria-disabled="true" tabindex="-1">Get FlowJoe &rarr;</a>
-              <a class="btn btn--ghost is-disabled" aria-disabled="true" tabindex="-1">Sign Up</a>
-            </div>
-            <p class="cta-box__note mono">Local-first. Private. Start creating today.</p>
-          </div>
-        </div>
-        -->
-
       </div>
     </section>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -968,7 +726,7 @@
       <div class="footer__brand">
         <img src="img/flowjoe-logo.svg" alt="" class="footer__logo" width="96" height="24" />
         <p class="footer__desc">
-          A local-first visual workspace that unites notes, files, AI chats, and creative work. Premium software with a pulse.
+          A local-first visual workspace that unites notes, files, AI chats, and creative work. Free alpha for Mac, Windows and Linux.
         </p>
         <p class="footer__copyright mono">
           &copy; 2026 FlowJoe. All rights reserved.
@@ -988,9 +746,9 @@
         <div class="footer__col">
           <h4 class="footer__title mono">Product</h4>
           <a href="#problem">The Problem</a>
-          <a href="#homebase">The Workspace</a>
-          <a href="#joe">Meet Joe</a>
-          <a href="#compare">Why FlowJoe</a>
+          <a href="#who">Who It's For</a>
+          <a href="#joe">Joe</a>
+          <a href="#share">Sharing</a>
           <a href="/watch/">Watch</a>
           <a href="/pricing/">Pricing</a>
         </div>
@@ -998,8 +756,8 @@
         <!-- Col 2 -->
         <div class="footer__col">
           <h4 class="footer__title mono">Ecosystem</h4>
-          <a href="#features">Core Features</a>
-          <a href="#ecosystem">Plugins</a>
+          <a href="#everything">All Features</a>
+          <a href="#local-first">Local-First</a>
           <a class="is-disabled" aria-disabled="true" tabindex="-1">Developer API</a>
           <a class="is-disabled" aria-disabled="true" tabindex="-1">Model Registry</a>
         </div>

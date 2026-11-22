@@ -45,6 +45,10 @@
     body { overflow: hidden; }
     .docs-frame { display: block; width: 100%; height: calc(100dvh - var(--nav-h)); border: 0; background: var(--bg-800); }
     .nav__links a[aria-current] { color: var(--text-100); }
+    /* The docs page widens the site header to the docs' column (88rem) so header and docs edges line up */
+    .nav .container { max-width: 88rem; }
+    /* With the docs' right column showing (1280px and up), Log in starts where the docs' Download starts */
+    @media (min-width: 1280px) { .nav__right { width: 264px; justify-content: space-between; } }
   </style>
 </head>
 <body>
@@ -61,19 +65,20 @@
       </button>
       <nav class="nav__links" id="nav-menu" aria-label="Primary">
         <!-- <a href="#problem">The Problem</a> -->
-        <a href="/#hemispheres">The Big Idea</a>
-        <a href="/#joe">Meet Joe</a>
-        <a href="/#features">Why FlowJoe</a>
+        <a href="/#who">Who It&#39;s For</a>
+        <a href="/#joe">Joe</a>
+        <a href="/#share">Sharing</a>
+        <a href="/#everything">Features</a>
         <a href="/watch/">Watch</a>
         <a href="/pricing/">Pricing</a>
         <a href="/download/">Download</a>
         <a href="/docs/" aria-current="page">Docs</a>
         <a class="nav__login-link" href="https://account.flowjoe.app/account">Log in</a>
-        <a class="nav__connect-btn" href="/#connect">Connect</a>
+        <a class="nav__connect-btn" href="/download/">Download</a>
       </nav>
       <div class="nav__right">
         <a class="btn btn--sm btn--ghost" href="https://account.flowjoe.app/account">Log in</a>
-        <a class="btn btn--sm btn--primary" href="/#connect">Connect</a>
+        <a class="btn btn--sm btn--primary" href="/download/">Download</a>
       </div>
     </div>
   </header>
