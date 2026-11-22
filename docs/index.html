@@ -47,6 +47,8 @@
     .nav__links a[aria-current] { color: var(--text-100); }
     /* The docs page widens the site header to the docs' column (88rem) so header and docs edges line up */
     .nav .container { max-width: 88rem; }
+    /* With the docs' "On this page" column showing (1280px and up), Log in and Download start at that column's left edge */
+    @media (min-width: 1280px) { .nav__right { width: 264px; justify-content: flex-start; } }
   </style>
 </head>
 <body>
