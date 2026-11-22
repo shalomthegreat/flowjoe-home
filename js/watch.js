@@ -23,7 +23,7 @@
     {id: "business-owner", added: "2026-11-20T20:01", title: "You’re a business owner", line: "A coffee roaster asks Joe once, and each Monday Joe finds new places to call.", dur: "1:48", cats: ["services"]},
     {id: "graphic-designer", added: "2026-11-21T03:51", title: "You’re a graphic designer", line: "Two branches, one link, nothing to install, and the client writes back.", dur: "1:26", cats: ["design", "teams"]},
     {id: "corporate-trainer", added: "2026-11-22T00:03", title: "You’re a corporate trainer", line: "Two new starters, three time zones. Dana presents once, and everyone sees what she sees.", dur: "1:23", cats: ["teams", "services"]},
-    {id: "video-game-developer", added: "2026-11-22T12:45", title: "You’re a video game developer", line: "Mochi Meadow: ten sky islands, the code beside the plan, and the playtest note that made the boss lair harder.", dur: "1:34", cats: ["games", "development"], credit: "Mochi Meadow, by the FlowJoe team.", wideOnly: true}
+    {id: "video-game-developer", added: "2026-11-22T12:45", title: "You’re a video game developer", line: "Mochi Meadow: ten sky islands, the code beside the plan, and the playtest note that made the boss lair harder.", dur: "1:34", cats: ["games", "development"], credit: "Mochi Meadow, by the FlowJoe team."}
   ];
 
   // A film may carry `wideOnly: true` while its vertical cut is not uploaded yet: Vertical then plays the widescreen file. Remove the flag when <id>-tall.mp4 is up.
