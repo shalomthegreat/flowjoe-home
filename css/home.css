@@ -78,3 +78,10 @@
 /* A Mac window title bar above the real capture: traffic lights left, title centred */
 .app--shot .app__bar { position: relative; background: #24262b; border-bottom: 1px solid rgba(0, 0, 0, 0.45); padding: 9px 12px; }
 .app--shot .app__title { position: absolute; left: 0; right: 0; margin: 0; text-align: center; pointer-events: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0; color: var(--text-300); }
+
+/* Monotone line glyphs (replacing emoji): same thin stroke as the feature-card icons */
+.gl { width: 1.1em; height: 1.1em; display: inline-block; vertical-align: -0.18em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.chaos-icon { display: inline-flex; color: var(--text-300); }
+.chaos-icon .gl { width: 20px; height: 20px; }
+.ai-feat__title .icon, .seatbelt-title .icon { color: var(--amber-300); display: inline-flex; }
+.funnel-badge .icon { color: var(--cyan-300); display: inline-flex; }
