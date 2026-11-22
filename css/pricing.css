@@ -136,7 +136,7 @@
 .step p { color: var(--text-300); font-size: 0.95rem; }
 
 /* ---- Questions ---- */
-.faq { max-width: 760px; margin-top: 28px; display: flex; flex-direction: column; }
+.faq { margin-top: 28px; display: flex; flex-direction: column; }
 .faq details { border-bottom: var(--border-thin); }
 .faq summary {
   cursor: pointer;
