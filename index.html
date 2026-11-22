@@ -70,6 +70,7 @@
         </svg>
       </button>
       <nav class="nav__links" id="nav-menu" aria-label="Primary">
+        <a href="/">Home</a>
         <!-- <a href="#problem">The Problem</a> -->
         <a href="#who">Who It's For</a>
         <a href="#joe">Joe</a>
@@ -214,6 +215,112 @@
 
 
     <!-- ===================== 5. CORE FEATURES GRID ===================== -->
+    <section id="hemispheres" class="section hemispheres">
+      <div class="container">
+        <div class="hemispheres__header text-center">
+          <span class="eyebrow" data-reveal>The Big Idea</span>
+          <!-- <h2 class="section-title" data-reveal data-reveal-delay="1">
+            Structure meets freedom. <span class="accent-amber-cyan">No trade-offs.</span>
+          </h2> -->
+          <h2 class="section-title" data-reveal data-reveal-delay="1">
+            Built for <span class="accent-amber">whole-brain thinking.</span>
+          </h2>
+          <p class="section-lead maxw-lead mx-auto" data-reveal data-reveal-delay="2">
+            Most productivity tools force a rigid choice: hierarchical structure OR free-form thinking. 
+            FlowJoe unites both sides of your brain in a single, fluid workspace right on your desktop.
+          </p>
+        </div>
+
+        <!-- Interactive Split Slider Widget (framed as an app window) -->
+        <div class="slider-widget" id="hemiSlider" data-reveal data-reveal-delay="2" role="group" aria-label="Structure and freedom balance demo">
+          <div class="app-mockup">
+            <div class="app-mockup__bar">
+              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+              <span class="app-mockup__title mono">FlowJoe — Structure meets Freedom</span>
+            </div>
+            <div class="slider-widget__container">
+              <!-- Left Side (Spine / Outline Mockup) -->
+              <div class="slider-widget__side slider-widget__side--left" id="sliderLeft">
+                <div class="widget-tree mockup-spine hot-zone hot-zone--spine">
+                  <div class="hot-zone__badge hot-zone__badge--spine">1</div>
+                  <div class="tree__head">Epic Project</div>
+                  <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> Project Scope</div>
+                  <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Research Brief</div>
+                  <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Design Direction</div>
+                  <div class="tree__row indent2"><span class="node" style="background:var(--cyan-400)"></span> Color Palette</div>
+                  <div class="tree__row indent2"><span class="node" style="background:var(--cyan-400)"></span> Typography</div>
+                  <div class="tree__row"><span class="node" style="background:#ff6bb0"></span> Implementation</div>
+                </div>
+              </div>
+
+              <!-- Right Side (Canvas / Gallery Mockup) -->
+              <div class="slider-widget__side slider-widget__side--right">
+                <div class="widget-canvas">
+                  <div class="hot-zone__badge hot-zone__badge--canvas">2</div>
+                  <div class="widget-card widget-card--1"><div class="widget-card__thumb swatch--amber"></div></div>
+                  <div class="widget-card widget-card--2"><div class="widget-card__thumb swatch--cyan"></div></div>
+                  <div class="widget-card widget-card--3"><div class="widget-card__thumb swatch--iris"></div></div>
+                </div>
+              </div>
+
+              <!-- Slider Handle -->
+              <div class="slider-widget__handle" id="sliderHandle" role="slider" tabindex="0" aria-valuemin="10" aria-valuemax="90" aria-valuenow="38" aria-label="Balance structure and freedom">
+                <div class="slider-widget__button" aria-hidden="true">
+                  <span class="slider-widget__arrow">&larr;</span>
+                  <span class="slider-widget__arrow">&rarr;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-widget__label">
+            <span class="mono">Drag the slider to balance Structure (The Spine) with Freedom (The Canvas)</span>
+          </div>
+        </div>
+
+        <div class="hemispheres__split" data-reveal data-reveal-delay="3">
+          <!-- Left side: Structure & Logic (Amber) -->
+          <div class="hemi-panel hemi-panel--left">
+            <div class="hemi-panel__glow hemi-panel__glow--amber"></div>
+            <div class="hemi-panel__content">
+              <div class="arch-card__badge arch-card__badge--spine">1</div>
+              <span class="hemi-panel__eyebrow color-amber">THE LEFT HEMISPHERE</span>
+              <h3 class="hemi-panel__title">Structure &amp; Logic</h3>
+              <p class="hemi-panel__lead color-amber">An infinite-depth hierarchical tree forms the spine of your project. Perfect for structure, categorization, and outlining complex ideas as they take shape.</p>
+              <div class="hemi-panel__callout">
+                <span class="hemi-panel__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18h6" /><path d="M10 22h4" />
+                    <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+                  </svg>
+                </span>
+                <p class="hemi-panel__callout-text">A clean structure that's quick to search and navigate.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side: Freeform Canvas (Cyan) -->
+          <div class="hemi-panel hemi-panel--right">
+            <div class="hemi-panel__glow hemi-panel__glow--cyan"></div>
+            <div class="hemi-panel__content">
+              <div class="arch-card__badge arch-card__badge--canvas">2</div>
+              <span class="hemi-panel__eyebrow color-cyan">THE RIGHT HEMISPHERE</span>
+              <h3 class="hemi-panel__title">Visual Freedom</h3>
+              <p class="hemi-panel__lead color-cyan">An infinite visual board where you lay out rich media slots with important links and documents, compare versions, and take notes.</p>
+              <div class="hemi-panel__callout">
+                <span class="hemi-panel__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 18h6" /><path d="M10 22h4" />
+                    <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+                  </svg>
+                </span>
+                <p class="hemi-panel__callout-text">High media richness, with relationships you can see.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="features" class="section features">
       <div class="container">
         <div class="features__header text-center">
@@ -763,7 +870,17 @@
           <h4 class="footer__title mono">Ecosystem</h4>
           <a href="#everything">All Features</a>
           <a href="#local-first">Local-First</a>
-          <a href="/docs/#joe/agent-bridge">Command Line &amp; Agents</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Developer API</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Model Registry</a>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer__col">
+          <h4 class="footer__title mono">Community</h4>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Discord</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">GitHub</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Twitter</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Newsletter</a>
         </div>
       </div>
     </div>

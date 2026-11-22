@@ -184,3 +184,5 @@
 .free-why__more { display: inline-block; margin-top: 24px; color: var(--amber-300); font-size: 0.93rem; }
 .free-why__more:hover { color: var(--amber-400); }
 @media (max-width: 960px) { .free-why { grid-template-columns: minmax(0, 1fr); } }
+.extra .extra__how { margin-top: 14px; color: var(--text-200); }
+.extra .extra__how strong { color: var(--text-100); font-weight: 500; }

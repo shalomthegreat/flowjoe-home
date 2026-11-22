@@ -5,7 +5,7 @@
       proWas: true,
       proAmount: "$6",
       proUnit: "/ month",
-      proDetail: "$72 billed yearly, kept for as long as you have your account",
+      proDetail: "$72 billed yearly. Founding price for the first 30 days after launch or the first 1,000 subscribers, whichever comes first, then yours to keep for as long as you have your account.",
       teamAmount: "$15",
       teamUnit: "/ seat / month",
       teamDetail: "$180 per seat billed yearly. Two seats minimum.",
