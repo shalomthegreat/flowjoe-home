@@ -91,42 +91,15 @@
           <p class="hero__note"><!--r:whatsnew--><a class="dl-whatsnew" id="whatsnew" href="/docs/#changelog#0-9-78-alpha">What’s new in 0.9.78 →</a><!--/r:whatsnew--></p>
         </div>
         <div class="hero__stage" aria-hidden="true">
-          <div class="app" id="app">
+          <div class="app app--shot" id="app">
             <div class="app__bar">
               <span class="dot dot--r"></span>
               <span class="dot dot--y"></span>
               <span class="dot dot--g"></span>
-              <span class="app__title mono">FlowJoe — Visual Intelligence Workspace</span>
+              <span class="app__title mono">FlowJoe</span>
             </div>
-            <div class="app__body">
-              <!-- The Spine: structured tree -->
-              <aside class="tree">
-                <div class="tree__head">Tree</div>
-                <div class="tree__row is-active"><span class="node" style="background:var(--amber-400)"></span> FlowJoe Devs</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--cyan-400)"></span> Concept art</div>
-                <div class="tree__row indent2"><span class="node" style="background:#8a5cff"></span> Hero poses</div>
-                <div class="tree__row indent2"><span class="node" style="background:#8a5cff"></span> Bright idea</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--ok)"></span> Docs</div>
-                <div class="tree__row indent2"><span class="node" style="background:var(--ok)"></span> Update summary</div>
-                <div class="tree__row indent"><span class="node" style="background:#ff6bb0"></span> Music &amp; spoken</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--amber-300)"></span> Testing</div>
-                <div class="tree__row indent2"><span class="node" style="background:var(--amber-300)"></span> Embed tests</div>
-                <div class="tree__row indent"><span class="node" style="background:var(--cyan-300)"></span> Research</div>
-              </aside>
-
-              <!-- The Canvas: media gallery -->
-              <div class="gallery">
-                <div class="card"><div class="card__media swatch--amber"></div><div class="card__meta"><div class="card__title">Bright Idea</div><div class="card__sub">stack · 12 imgs</div></div></div>
-                <div class="card"><div class="card__media swatch--iris"></div><div class="card__meta"><div class="card__title">Hero Pose</div><div class="card__sub">4K · png</div></div></div>
-                <div class="card"><div class="card__media swatch--cyan"></div><div class="card__meta"><div class="card__title">Sky Study</div><div class="card__sub">reference</div></div></div>
-                <div class="card"><div class="card__media swatch--indigo"></div><div class="card__meta"><div class="card__title">Feature — Wips</div><div class="card__sub">.fig embed</div></div></div>
-                <div class="card"><div class="card__media swatch--mint"></div><div class="card__meta"><div class="card__title">Scene 03</div><div class="card__sub">iteration</div></div></div>
-                <div class="card"><div class="card__media swatch--rose"></div><div class="card__meta"><div class="card__title">Palette</div><div class="card__sub">mood board</div></div></div>
-              </div>
-            </div>
+            <img src="/img/hero-app.jpg" alt="" width="2000" height="1250" />
           </div>
-
-          <!-- Callouts -->
           <div class="callout-layer">
             <div class="callout callout--amber callout--tree" data-float="1">
               <div class="callout__label">THE TREE</div>
@@ -234,8 +207,12 @@
     <div class="container footer__grid">
       <div class="footer__brand">
         <img src="/img/flowjoe-logo.svg" alt="" class="footer__logo" width="96" height="24" />
-        <p class="footer__desc">A local-first visual workspace that unites notes, files, AI chats, and creative work.</p>
-        <p class="footer__copyright mono">&copy; 2026 FlowJoe. All rights reserved.</p>
+        <p class="footer__desc">
+          A local-first visual workspace that unites notes, files, AI chats, and creative work. Free alpha for Mac, Windows and Linux.
+        </p>
+        <p class="footer__copyright mono">
+          &copy; 2026 FlowJoe. All rights reserved.
+        </p>
         <!-- Social accounts: placeholders until the handles are secured. Turn each span into a link then. -->
         <div class="footer__socials" role="group" aria-label="FlowJoe on social media (coming soon)">
           <span class="footer__social" role="img" aria-label="Telegram — coming soon" title="Telegram — coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.9.35-.88 1.1.1 1.4l4.7 1.5 1.8 5.6c.2.6.9.75 1.35.3l2.6-2.5 4.7 3.5c.6.45 1.4.15 1.57-.6L22.9 4.6c.2-.85-.55-1.45-1.4-1.1zM9 13.4l8.6-5.5-6.7 6.7-.3 3.1z"/></svg></span>
@@ -245,24 +222,35 @@
           <span class="footer__social" role="img" aria-label="Facebook — coming soon" title="Facebook — coming soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.45-3.3H13.5V8.4c0-.95.3-1.6 1.65-1.6h1.75V3.85c-.3-.04-1.35-.13-2.55-.13-2.55 0-4.25 1.55-4.25 4.4v2.38H7.25v3.3h2.85V22z"/></svg></span>
         </div>
       </div>
+      
       <div class="footer__links-group">
+        <!-- Col 1 -->
         <div class="footer__col">
           <h4 class="footer__title mono">Product</h4>
-          <a href="https://flowjoe.app">Home</a>
+          <a href="/#problem">The Problem</a>
+          <a href="/#who">Who It's For</a>
+          <a href="/#joe">Joe</a>
+          <a href="/#share">Sharing</a>
           <a href="/watch/">Watch</a>
           <a href="/pricing/">Pricing</a>
-          <a href="/download/">Download</a>
-          <a href="/docs/">Docs</a>
         </div>
+        
+        <!-- Col 2 -->
         <div class="footer__col">
-          <h4 class="footer__title mono">Account</h4>
-          <a href="https://account.flowjoe.app/account">Sign in</a>
-          <a href="https://account.flowjoe.app/account?start=create">Create account</a>
+          <h4 class="footer__title mono">Ecosystem</h4>
+          <a href="/#everything">All Features</a>
+          <a href="/#local-first">Local-First</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Developer API</a>
+          <a href="/docs/#joe/byob">AI Models</a>
         </div>
+
+        <!-- Col 3 -->
         <div class="footer__col">
-          <h4 class="footer__title mono">Help</h4>
-          <a href="https://docs.flowjoe.app">Guides</a>
-          <a href="mailto:support@flowjoe.app">support@flowjoe.app</a>
+          <h4 class="footer__title mono">Community</h4>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Discord</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">GitHub</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Twitter</a>
+          <a class="is-disabled" aria-disabled="true" tabindex="-1">Newsletter</a>
         </div>
       </div>
     </div>

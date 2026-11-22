@@ -9,6 +9,7 @@
       teamAmount: "$15",
       teamUnit: "/ seat / month",
       teamDetail: "$180 per seat billed yearly. Two seats minimum.",
+      teamPair: "The smallest team is two people: $360 a year, billed yearly. Team has no founding price.",
       note: "Pro is $72 a year for founding members",
     },
     monthly: {
@@ -19,6 +20,7 @@
       teamAmount: "$18",
       teamUnit: "/ seat / month",
       teamDetail: "Two seats minimum.",
+      teamPair: "The smallest team is two people: $36 a month, billed monthly. Team has no founding price.",
       note: "Yearly saves 20% on Pro and about 17% on Team",
     },
   };
@@ -43,6 +45,7 @@
     set("pro-detail", p.proDetail);
     set("team-amount", p.teamAmount);
     set("team-unit", p.teamUnit);
+    set("team-pair", p.teamPair);
     set("team-detail", p.teamDetail);
     set("billing-note", p.note);
   }
