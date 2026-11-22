@@ -287,7 +287,8 @@
   var modalTriggers = document.querySelectorAll("#connect-modal-trigger, #hero-connect-trigger, #mobile-connect-trigger");
   var teamConnectContent = document.getElementById("team-connect-content");
 
-  if (modal && modalBackdrop && modalClose && modalTriggers.length && modalContentTarget && teamConnectContent) {
+  // No on-page trigger is required: other pages open this window through /#connect.
+  if (modal && modalBackdrop && modalClose && modalContentTarget && teamConnectContent) {
     var openModal = function () {
       // Clone the team connect content into the modal
       modalContentTarget.innerHTML = "";
